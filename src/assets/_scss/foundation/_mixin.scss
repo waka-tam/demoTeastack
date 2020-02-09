@@ -1,0 +1,131 @@
+@charset "UTF-8";
+
+// Media Query メディアクエリ
+// ex) @include mq(md){};
+// --------------------------------------------------
+
+// Breakpoint ブレイクポイント
+$breakpoints:('sm': 'screen and (min-width: 375px)',
+  'sp-only': 'screen and (max-width: 768px)',
+  'md': 'screen and (min-width: 768px)',
+  'lg': 'screen and (min-width: 1028px)',
+  'xl': 'screen and (min-width: 1230px)',
+) !default;
+
+// @mixinでメディアクエリを呼び出す
+@mixin mq($breakpoint) {
+  @media #{map-get($breakpoints, $breakpoint)} {
+    @content;
+  }
+}
+
+// Size Auto Calculation サイズ自動計算
+// --------------------------------------------------
+
+// vw function SPデザイン幅基準のサイズ(767)
+// ex) width: get_vw(100);
+@function get_vw($size, $viewport:767) {
+  $rate: 100 / $viewport;
+  @return $rate * $size * 1vw;
+}
+
+// font-size mixin
+// ex) @include fz_vw(20);
+@mixin fz_vw($font_size:10) {
+  font-size: get_vw($font_size);
+}
+
+// margin-bottom mixin
+// ex) @include mgbtm_vw(20);
+@mixin mgbtm_vw($mg_btm:10) {
+  margin-bottom: get_vw($mg_btm);
+}
+
+// padding-bottom mixin
+// ex) @include pdbtm_vw(20);
+@mixin pdbtm_vw($pd_btm:10) {
+  padding-bottom: get_vw($pd_btm);
+}
+
+// Content Width Variable コンテンツ幅変数
+// ex) width: $cntWidth;
+// --------------------------------------------------
+$cntWidth: 1028px !default;
+
+// Font Variable フォント変数
+// ex) font-size: $baseFontSize;
+// --------------------------------------------------
+$baseFontSize: 10px !default;
+$baseFontFamily: "Noto Sans Japanese",
+"ヒラギノ角ゴシック Pro",
+"Hiragino Kaku Gothic Pro",
+游ゴシック体,
+"Yu Gothic",
+YuGothic,
+"ＭＳ Ｐゴシック",
+"MS PGothic",
+Helvetica,
+Arial,
+sans-serif !default;
+
+// Color Variable カラー変数
+// ex) color: $baseColor;
+// --------------------------------------------------
+$baseColor: #444 !default;
+$blurColor: #999 !default;
+$mainColor: #FCCF00 !default;
+$accentColor: #002B69 !default;
+$linkColor: #07f !default;
+$baseBg: #fff !default;
+
+// Form Reset フォームリセット
+// ブラウザ毎のデザインを初期化(_base.scssで全体初期化可能)
+// ex) @include form_reset;
+// --------------------------------------------------
+@mixin form_reset {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background: none;
+  border: none;
+  border-radius: 0;
+  outline: none;
+}
+
+// Form Placeholder Color フォームプレイスホルダーカラー
+// プレイスホルダーの文字色変更
+// ex) @include placeholder_color(#07f);
+// --------------------------------------------------
+@mixin placeholder_color($color) {
+  &:placeholder-shown {
+    color: $color;
+  }
+
+  &::-webkit-input-placeholder {
+    color: $color;
+  }
+
+  &:-moz-placeholder {
+    color: $color;
+    opacity: 1;
+  }
+
+  &::-moz-placeholder {
+    color: $color;
+    opacity: 1;
+  }
+
+  &:-ms-input-placeholder {
+    color: $color;
+  }
+}
+
+// Hide Text テキスト非表示
+// h1ロゴ画像へ付与したテキストを非表示
+// ex) @include text_hidden;
+// --------------------------------------------------
+@mixin text_hidden {
+  overflow: hidden;
+  text-indent: 200%;
+  white-space: nowrap;
+}

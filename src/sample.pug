@@ -1,0 +1,24 @@
+extend /_template/_layout
+
+append variables
+  //- 変更可能
+  - var pageTitle= "";
+  - var pageDescription= site.description;
+  - var pageKeywords= site.keywords;
+  //- 任意
+  - var pageOgpTitle= pageTitle;
+  - var pageOgpImage= site.ogpImage;
+  - var pageOgpType= "website";
+
+block content
+  nav(aria-label="Breadcrumb")
+    +breadcrumb([
+      ["ホーム", "/"],
+      ["サンプル", "/sample.html"]
+    ])
+  main
+    .wrapper
+      h1 サンプル
+      +picture("https://placehold.jp/300x300.png", "サンプル").responsiveImage
+           +source(lg, "https://placehold.jp/1000x1000.png")
+           +source(md, "https://placehold.jp/600x600.png")

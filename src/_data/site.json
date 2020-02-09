@@ -1,0 +1,10 @@
+{
+  "name": "サイト名",
+  "description": "サイトの概要",
+  "url": "http://example.com",
+  "ogpImage": "/ogp.jpg",
+  "fbAppId": "",
+  "fbAdmins": "",
+  "twitterCard": "summary_large_image",
+  "twitterSite": "@SiteAccount"
+}
