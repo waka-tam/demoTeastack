@@ -21,14 +21,14 @@
 - TypeScriptの利用で学習コストが上がる（configの設定次第で許容範囲の変更対応可能）
 
 ## 依存アプリケーション
-- Node v8.2以上
-- npm
-- yarn *optional
-- gulp
-- Webpack
-- Pug
-- Sass
-- TypeScript
+- [Node v8.2以上](https://nodejs.org/ja/) 
+- [npm](https://www.npmjs.com/) 
+- [Yarn *optional](https://classic.yarnpkg.com/ja/) 
+- [gulp](https://gulpjs.com/) 
+- [Webpack](https://webpack.js.org/) 
+- [Pug](https://pugjs.org/api/getting-started.html) 
+- [Sass](https://sass-lang.com/) 
+- [TypeScript](https://www.typescriptlang.org/) 
 
 ## 設定ファイル
 - [.editorconfig](https://editorconfig.org/) フォーマット統一
