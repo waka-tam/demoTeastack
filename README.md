@@ -73,7 +73,7 @@
     ※Yarnの場合
     `yarn start`
 
-### コマンド一覧
+## コマンド一覧
 `npm run start`
 
 ※Yarnの場合
@@ -144,7 +144,7 @@ HTMLのメタ言語にPugを採用し、ファイルの分割管理ができる�
 ### ディレクトリ構成
 - **\_data/site.json:** 
 - **\_mixin/_all.pug:** 
-- **\_mixin/_breadcrumb.pug:**
+- **\_mixin/_breadcrumb.pug:** 
 - **\_mixin/_picture.pug:** 
 
 [HTML5](https://developer.mozilla.org/ja/docs/Web/Guide/HTML/HTML5)
