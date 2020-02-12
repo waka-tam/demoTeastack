@@ -1,9 +1,8 @@
-'use strict';
-
-import picturefill from 'picturefill';
-import * as svg4everybody from 'svg4everybody';
-
+"use strict";
+import picturefill from "picturefill";
 picturefill();
-document.addEventListener('DOMContentLoaded', () => {
+
+import * as svg4everybody from "svg4everybody";
+document.addEventListener("DOMContentLoaded", () => {
   svg4everybody();
 });

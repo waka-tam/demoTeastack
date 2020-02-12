@@ -1,3 +1,5 @@
+/* eslint-disable no-unreachable */
+/* eslint-disable @typescript-eslint/no-var-requires */
 /**
  * プラグインの読み込み
  */
@@ -8,7 +10,7 @@ const pug = require("gulp-pug");
 const data = require("gulp-data");
 const fs = require("fs");
 const path = require("path");
-const cache = require('gulp-cached');
+const cache = require("gulp-cached");
 
 // CSS
 const sass = require("gulp-sass");
@@ -16,8 +18,10 @@ const sassGlob = require("gulp-sass-glob");
 const postcss = require("gulp-postcss");
 const flexBugsFixes = require("postcss-flexbugs-fixes");
 const autoprefixer = require("gulp-autoprefixer");
-const cleanCSS = require('gulp-clean-css');
-const sourcemaps = require('gulp-sourcemaps');
+const cleanCSS = require("gulp-clean-css");
+const sourcemaps = require("gulp-sourcemaps");
+const stylelint = require("stylelint");
+const reporter = require("postcss-reporter");
 
 // JS
 const webpack = require("webpack");
@@ -35,10 +39,10 @@ const gulpSvgSprite = require("gulp-svg-sprite");
 // Utility
 const browserSync = require("browser-sync").create();
 const connectSSI = require("connect-ssi");
-const gulpif = require('gulp-if');
-const changed = require('gulp-changed');
-const plumber = require('gulp-plumber');
-const notify = require('gulp-notify');
+const gulpif = require("gulp-if");
+const changed = require("gulp-changed");
+const plumber = require("gulp-plumber");
+const notify = require("gulp-notify");
 const del = require("del");
 
 /**
@@ -58,7 +62,7 @@ const src = {
   css: "src/assets/_scss/**/*.scss",
   ts: "src/assets/ts/**/*.ts",
   img: "src/assets/img/**/*.{png,jpg,gif,svg}",
-  svgSprite: "src/assets/svg/**/*.svg",
+  svgSprite: "src/assets/svg/**/*.svg"
 };
 
 /**
@@ -69,27 +73,29 @@ const dist = {
   css: "dist/assets/css",
   js: "dist/assets/js",
   img: "dist/assets/img",
-  svgSprite: "dist/assets/svg",
+  svgSprite: "dist/assets/svg"
 };
 
 /**
  * Pugファイルのトランスパイル
  */
-gulp.task("pug", (done) => {
+gulp.task("pug", done => {
   const locals = {
     site: JSON.parse(fs.readFileSync(`${src.data}site.json`))
-  }
+  };
   return gulp
     .src([src.pug, "!src/**/_*.pug"])
-    .pipe(plumber({ errorHandler: notify.onError('Error: <%= error.message %>') }))
+    .pipe(
+      plumber({ errorHandler: notify.onError("Error: <%= error.message %>") })
+    )
     .pipe(
       data(file => {
         // 各ページのルート相対パスを格納
         locals.pageAbsolutePath = `/${path
-          .relative(file.base, file.path.replace(/.pug$/, '.html'))
-          .replace(/index\.html$/, '')}`;
+          .relative(file.base, file.path.replace(/.pug$/, ".html"))
+          .replace(/index\.html$/, "")}`;
         return locals;
-      }),
+      })
     )
     .pipe(cache("pug"))
     .pipe(
@@ -99,62 +105,62 @@ gulp.task("pug", (done) => {
         // ルート相対パスでincludeできるようにする
         basedir: "src",
         // Pugファイル整形
-        pretty: true,
-      }),
+        pretty: true
+      })
     )
     .pipe(gulp.dest(dist.root));
   done();
-})
+});
 
 /**
  * Scssファイルのトランスパイル
  */
-const postCssOption = [
-  autoprefixer,
-  flexBugsFixes
-];
-gulp.task("sass", (done) => {
+const postCssOption = [autoprefixer, flexBugsFixes, stylelint, reporter];
+gulp.task("sass", done => {
   return gulp
     .src(src.css)
     .pipe(sassGlob())
     .pipe(sourcemaps.init())
     .pipe(sass({ outputStyle: "expanded" }))
-    .pipe(plumber({ errorHandler: notify.onError('Error: <%= error.message %>') }))
+    .pipe(
+      plumber({ errorHandler: notify.onError("Error: <%= error.message %>") })
+    )
     .pipe(postcss(postCssOption))
-    .pipe(gulpif(
-      isProduction,
-      cleanCSS()
-    ))
-    .pipe(gulpif(
-      isDevelopment,
-      cleanCSS({
-        format: 'beautify',
-      })
-    ))
+    .pipe(gulpif(isProduction, cleanCSS()))
+    .pipe(
+      gulpif(
+        isDevelopment,
+        cleanCSS({
+          format: "beautify"
+        })
+      )
+    )
     .pipe(sourcemaps.write())
     .pipe(gulp.dest(dist.css));
   done();
-})
+});
 
 /**
  * WebpackによるTSファイルのコンパイル
  */
-gulp.task("webpack", (done) => {
-  return gulp
-    .src(src.ts)
-    .pipe(webpackStream(webpackConfig, webpack))
-    .pipe(gulp.dest(dist.js))
-    // エラー発生時に終了させない
-    .on('error', (error) => {
-      this.emit('end');
-    });
+gulp.task("webpack", done => {
+  return (
+    gulp
+      .src(src.ts)
+      .pipe(webpackStream(webpackConfig, webpack))
+      .pipe(gulp.dest(dist.js))
+      // エラー発生時に終了させない
+      .on("error", error => {
+        this.emit("end");
+      })
+  );
   done();
 });
 
 /**
  * 画像圧縮
  */
-gulp.task("image", (done) => {
+gulp.task("image", done => {
   return gulp
     .src(src.img)
     .pipe(changed(dist.img))
@@ -163,19 +169,19 @@ gulp.task("image", (done) => {
         errorHandler(err) {
           // eslint-disable-next-line no-console
           console.log(err.messageFormatted);
-          this.emit('end');
-        },
-      }),
+          this.emit("end");
+        }
+      })
     )
     .pipe(
       imagemin([
         imageminMozjpeg({
           // 画質
-          quality: 70,
+          quality: 70
         }),
         imageminPngquant({
           // 画質
-          quality: [0.7, 0.8],
+          quality: [0.7, 0.8]
         }),
         imagemin.svgo({
           plugins: [
@@ -190,33 +196,35 @@ gulp.task("image", (done) => {
             // 重複や不要な`<g>`タグを削除
             { collapseGroups: false },
             // SVG内に<style>や<script>がなければidを削除
-            { cleanupIDs: false },
-          ],
+            { cleanupIDs: false }
+          ]
         }),
         imagemin.optipng(),
-        imagemin.gifsicle(),
-      ]),
+        imagemin.gifsicle()
+      ])
     )
-    .pipe(gulp.dest(dist.img))
+    .pipe(gulp.dest(dist.img));
   done();
 });
 
 /**
  * SVGスプライト作成
  */
-gulp.task("svgSprite", (done) => {
+gulp.task("svgSprite", done => {
   return gulp
     .src(src.svgSprite)
-    .pipe(plumber({ errorHandler: notify.onError('Error: <%= error.message %>') }))
+    .pipe(
+      plumber({ errorHandler: notify.onError("Error: <%= error.message %>") })
+    )
     .pipe(
       gulpSvgSprite({
         mode: {
           // SVGファイルをsymbol要素として結束
           symbol: {
-            dest: './',
+            dest: "./",
             // 出力ファイル名
-            sprite: 'sprite.svg',
-          },
+            sprite: "sprite.svg"
+          }
         },
         shape: {
           transform: [
@@ -226,28 +234,28 @@ gulp.task("svgSprite", (done) => {
                   // `style`属性を削除
                   { removeStyleElement: true },
                   // `fill`属性を削除
-                  { removeAttrs: { attrs: 'fill' } },
-                ],
-              },
-            },
-          ],
+                  { removeAttrs: { attrs: "fill" } }
+                ]
+              }
+            }
+          ]
         },
         svg: {
           // xml宣言を出力
           xmlDeclaration: false,
           // DOCTYPE宣言を出力
-          doctypeDeclaration: false,
-        },
-      }),
+          doctypeDeclaration: false
+        }
+      })
     )
-    .pipe(gulp.dest(dist.svgSprite))
+    .pipe(gulp.dest(dist.svgSprite));
   done();
 });
 
 /**
  * 公開ファイル削除
  */
-gulp.task("clean", (done) => {
+gulp.task("clean", done => {
   return del(["dist/**", "!dist"]);
   done();
 });
@@ -259,24 +267,24 @@ const browserSyncOption = {
   server: dist.root,
   middleware: [
     connectSSI({
-      baseDir: __dirname + '/dist',
-      ext: '.html'
+      baseDir: __dirname + "/dist",
+      ext: ".html"
     })
   ]
 };
-gulp.task("serve", (done) => {
+gulp.task("serve", done => {
   browserSync.init(browserSyncOption);
   done();
-})
+});
 
 /**
  * ファイルの監視
  */
-gulp.task("watch", (done) => {
-  const browserReload = (done) => {
+gulp.task("watch", done => {
+  const browserReload = done => {
     browserSync.reload();
     done();
-  }
+  };
   gulp.watch(src.pug, gulp.series("pug"));
   gulp.watch(src.css, gulp.series("sass"));
   gulp.watch(src.ts, gulp.series("webpack"));
@@ -284,13 +292,17 @@ gulp.task("watch", (done) => {
   gulp.watch(src.svgSprite, gulp.series("svgSprite"));
   gulp.watch(dist.root, browserReload);
   done();
-})
+});
 
 gulp.task("default", gulp.series("serve", "watch"));
 
 /**
  * 開発環境ビルド
  */
-gulp.task("build", gulp.series(
-  "clean", gulp.parallel("pug", "sass", "webpack", "image", "svgSprite")
-));
+gulp.task(
+  "build",
+  gulp.series(
+    "clean",
+    gulp.parallel("pug", "sass", "webpack", "image", "svgSprite")
+  )
+);

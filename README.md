@@ -1,6 +1,6 @@
 # static-web-custom
 静的Webサイトを構築する為のテンプレートです。
-小規模開発向けテンプレートの為、プロジェクト規模や用途に応じて使い分けてください。
+中〜大規模開発向けテンプレートの為、プロジェクト規模や用途に応じて使い分けてください。
 
 ## 利用メリット
 - Pugによるテンプレート管理によってHTMLファイルの保守性が高まる
@@ -34,6 +34,8 @@
 - [.editorconfig](https://editorconfig.org/) フォーマット統一
 - [webpack.config.js](https://webpack.js.org/configuration/) WebpackでのJavaScript管理
 - [tsconfig.json](https://www.typescriptlang.org/docs/handbook/tsconfig-json.html) TypeScriptのルール設定
+- [.eslintrc.json](https://eslint.org/) JavaScriptの検証設定
+- [.stylelintrc.json](https://stylelint.io/) CSSの検証設定
 - [.gitignore](https://git-scm.com/docs/gitignore) Git管理に含めないファイル指定
 - [gulpfile.js](https://gulpjs.com/) Gulpで実行するタスク管理
 
@@ -106,6 +108,35 @@ distフォルダ内のファイルを全て削除し、本番環境タスクを�
 
 distフォルダ内のファイルを全て削除します。
 
+***
+
+`npm run lint`
+
+※Yarnの場合
+`yarn lint`
+
+JavaScriptの検証を行います。
+
+***
+
+`npm run lint:fix`
+
+※Yarnの場合
+`yarn lint:fix`
+
+JavaScriptの検証で見つかったバグを補正します。
+
+***
+
+`npm run stylelint`
+
+※Yarnの場合
+`yarn stylelint`
+
+stylelint-config-standardに基いてSCSSの補正を行います。  
+
+[stylelint-config-standard](https://github.com/stylelint/stylelint-config-standard)
+
 ## HTMLについて
 HTMLのメタ言語にPugを採用し、ファイルの分割管理ができるよう設計されています。
 共通パーツなどはPugのIncludesを利用して管理します。サイト情報やメタ情報は予めテンプレートを用意していますので適宜調整してください。
@@ -113,8 +144,8 @@ HTMLのメタ言語にPugを採用し、ファイルの分割管理ができる�
 ### ディレクトリ構成
 - **\_data/site.json:** 
 - **\_mixin/_all.pug:** 
-- **_mixin/_breadcrumb.pug:**
-- **_mixin/_picture.pug:** 
+- **\_mixin/_breadcrumb.pug:**
+- **\_mixin/_picture.pug:** 
 
 [HTML5](https://developer.mozilla.org/ja/docs/Web/Guide/HTML/HTML5)
 

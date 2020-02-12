@@ -5,7 +5,7 @@
 // --------------------------------------------------
 @for $i from 0 through 60 {
   .u-pt#{$i * 5} {
-    padding-top:#{$i * 5}px;
+    padding-top: #{$i * 5}px;
   }
 }
 
@@ -14,7 +14,7 @@
 // --------------------------------------------------
 @for $i from 0 through 60 {
   .u-pb#{$i * 5} {
-    padding-bottom:#{$i * 5}px;
+    padding-bottom: #{$i * 5}px;
   }
 }
 
@@ -23,7 +23,7 @@
 // --------------------------------------------------
 @for $i from 0 through 60 {
   .u-pl#{$i * 5} {
-    padding-left:#{$i * 5}px;
+    padding-left: #{$i * 5}px;
   }
 }
 
@@ -32,6 +32,6 @@
 // --------------------------------------------------
 @for $i from 0 through 60 {
   .u-pr#{$i * 5} {
-    padding-right:#{$i * 5}px;
+    padding-right: #{$i * 5}px;
   }
 }

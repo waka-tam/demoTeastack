@@ -1,12 +1,11 @@
-'use strict';
+"use strict";
 // サンプル処理（プロジェクト開始時には削除してください）
 namespace Sample {
-  export class sampleTtl {
-    constructor(private title: string) {
-    }
+  export class SampleTtl {
+    constructor(private title: string) {}
 
     public getTtl(): string {
-      return this.title
+      return this.title;
     }
   }
 }

@@ -1,7 +1,10 @@
+const environment = process.env.NODE_ENV || "development";
+const isProduction = environment === "production";
+
 module.exports = {
   // モード値を production に設定すると最適化された状態で、
   // development に設定するとソースマップ有効でJSファイルが出力される
-  mode: "development",
+  mode: environment,
 
   // メインとなるJavaScriptファイル（エントリーポイント）
   entry: "./src/assets/ts/main.ts",
@@ -10,7 +13,7 @@ module.exports = {
   output: {
     filename: "index.js"
   },
-
+  devtool: isProduction ? "source-map" : "eval-source-map",
   module: {
     rules: [
       {
@@ -25,6 +28,6 @@ module.exports = {
   },
   // import 文で .ts ファイルを解決するため
   resolve: {
-    extensions: [".ts"]
+    extensions: [".ts", ".js"]
   }
 };
