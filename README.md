@@ -23,7 +23,7 @@
 ## 依存アプリケーション
 - [Node v8.2以上](https://nodejs.org/ja/) 
 - [npm](https://www.npmjs.com/) 
-- [Yarn *optional](https://classic.yarnpkg.com/ja/) 
+- [Yarn](https://classic.yarnpkg.com/ja/) 
 - [gulp](https://gulpjs.com/) 
 - [Webpack](https://webpack.js.org/) 
 - [Pug](https://pugjs.org/api/getting-started.html) 
