@@ -8,6 +8,7 @@
     "build": "cross-env NODE_ENV=development gulp build",
     "release": "cross-env NODE_ENV=production gulp build",
     "clean": "gulp clean",
+    "htmlValidate": "cross-env NODE_ENV=development gulp htmlValidate",
     "stylelint": "stylelint --fix src/**/*.scss",
     "lint": "eslint src/**/*.ts",
     "lint:fix": "eslint --fix src/**/*.ts"

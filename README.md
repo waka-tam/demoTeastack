@@ -74,78 +74,105 @@
     `yarn start`
 
 ## コマンド一覧
+開発環境で事前に用意されているコマンド一覧です。  
+利用ケースも記載していますので状況に応じて使い分けてください。
+
+### 開発起動コマンド
+標準ブラウザを立ち上げ、ファイルの変更を監視し、gulpfile.jsで設定されているタスクを実行します。開発時に利用します。   
+
 `npm run start`
 
 ※Yarnの場合
 `yarn start`
 
-標準ブラウザを立ち上げ、ファイルの変更を監視し、gulpfile.jsで設定されているタスクを実行します。
-
 ***
+
+### ビルドコマンド
+distフォルダ内のファイルを全て削除し、開発環境タスクを実行します。開発時に利用します。  
 
 `npm run build`
 
 ※Yarnの場合
 `yarn build`
 
-distフォルダ内のファイルを全て削除し、開発環境タスクを実行します。
-
 ***
+
+### リリースコマンド
+distフォルダ内のファイルを全て削除し、本番環境タスクを実行します。納品時に利用します。  
 
 `npm run release`
 
 ※Yarnの場合
 `yarn release`
 
-distフォルダ内のファイルを全て削除し、本番環境タスクを実行します。
-
 ***
+### 削除コマンド
+distフォルダ内のファイルを全て削除します。不要なファイルが出力されてしまった場合などで利用します。  
 
 `npm run clean`
 
 ※Yarnの場合
 `yarn clean`
 
-distフォルダ内のファイルを全て削除します。
+***
+### HTMLバリデーションコマンド
+HTMLの検証を行います。納品・開発時に利用します。  
+
+`npm run htmlValidate`
+
+※Yarnの場合
+`yarn htmlValidate`
 
 ***
+### TypeScriptバリデーションコマンド
+TypeScriptの検証を行います。納品・開発時に利用します。
+修正必要箇所が見つかった場合はTypeScript補正コマンドを実行してみてください。  
+検証設定はeslintrc.jsonに記述されています。
 
 `npm run lint`
 
 ※Yarnの場合
 `yarn lint`
 
-JavaScriptの検証を行います。
-
 ***
+### TypeScript補正コマンド
+TypeScriptの検証で見つかったエラー内容を補正します。納品・開発時に利用します。    
+検証設定はeslintrc.jsonに記述されています。
 
 `npm run lint:fix`
 
 ※Yarnの場合
 `yarn lint:fix`
 
-JavaScriptの検証で見つかったバグを補正します。
-
 ***
+### SCSS補正コマンド
+stylelint-config-standardに基いてSCSSの補正を行います。開発時に利用します。  
+検証レポートはSCSSファイルをトランスパイル時に都度表示されます。検証設定はstylelintrc.jsonに記述されています。  
+
+[stylelint-config-standard](https://github.com/stylelint/stylelint-config-standard)
 
 `npm run stylelint`
 
 ※Yarnの場合
 `yarn stylelint`
 
-stylelint-config-standardに基いてSCSSの補正を行います。  
-
-[stylelint-config-standard](https://github.com/stylelint/stylelint-config-standard)
-
 ## HTMLについて
 HTMLのメタ言語にPugを採用し、ファイルの分割管理ができるよう設計されています。
-共通パーツなどはPugのIncludesを利用して管理します。サイト情報やメタ情報は予めテンプレートを用意していますので適宜調整してください。
+共通パーツなどはPugのIncludesを利用して管理します。  
+サイト情報やメタ情報は予めテンプレートを用意していますのでプロジェクトに合わせて変更してください。  
+マークアップはHTML5及びW3Cの規格に準拠した形で行ってください。
+HTMLバリデーションのタスクを用意していますので、納品・開発時にはHTMLバリデーションコマンドを実行して検証してください。
 
 ### ディレクトリ構成
-- **\_data/site.json:** 
-- **\_mixin/_all.pug:** 
-- **\_mixin/_breadcrumb.pug:** 
-- **\_mixin/_picture.pug:** 
+- **\_data/site.json:** サイトの基本情報を記述します。
+- **\_mixin/_all.pug:** mixinのエントリーポイントです。各mixinをまとめてインクルードする共通ファイルテンプレートです。
+- **\_mixin/_breadcrumb.pug:** MicrodataとWAI-ARIAに準拠したパンくずリストの生成を行うmixinです。
+- **\_mixin/_picture.pug:** picture要素による画像の出し分けを行うmixinです。
+- **\_partial/_site.pug:** headタグ内の記述をまとめた共通ファイルテンプレートです。
+- **\_partial/_script.pug:** JavaScriptの読み込みをまとめた共通ファイルテンプレートです。
+- **\_partial/_header.pug:** ヘッダーの共通ファイルテンプレートです。
+- **\_partial/_footer.pug:** フッターの共通ファイルテンプレートです。
+- **\_template/_layout.pug:** レイアウトを司るテンプレートです。共通ファイルテンプレートをまとめてインクルードします。
 
 [HTML5](https://developer.mozilla.org/ja/docs/Web/Guide/HTML/HTML5)
 
@@ -155,6 +182,7 @@ HTMLのメタ言語にPugを採用し、ファイルの分割管理ができる�
 CSSのメタ言語にSCSSを採用し、FLOCSSベースのCSS設計に対応します。プロジェクトに応じて改変してください。
 ユーザーエージェントの初期化にはCSS Remedyを利用しています。後方互換性を備えたデスクトップ、スマホ環境向けCSSリセットです。
 「」や『』などの約物を半角化させる為、Yaku Han JPを読み込んでいます。また、印刷用Print CSSをデフォルトで用意しています。
+CSS, SCSSバリデーションタスクを用意していますので、納品・開発時にはSCSS補正コマンドを実行して検証・補正を行ってください。
 
 [FLOCSS](https://www.tam-tam.co.jp/tipsnote/html_css/post10205.html)
 
@@ -205,10 +233,11 @@ ex) Class Name: .u-indent
 
 ## JavaScriptについて
 TypeScriptを採用し、静的型付き言語としてJavaScriptを扱います。
-TypeScriptのエントリーポイントは main.ts とします。
-インポート先モジュールはWebpackを用いてバンドルし、index.js として出力します。
+TypeScriptのエントリーポイントはmain.tsとします。
+インポート先モジュールはWebpackを用いてバンドルしindex.jsとして出力します。
 型システムは厳密にし過ぎないようにして、生産性を重視した思想でコーディングを行います。
-レガシーブラウザとの互換性を保つ為、polyfillを入れる場合は必要なモジュールを polyfill.ts でインポートしてください。
+レガシーブラウザとの互換性を保つ為、polyfillを入れる場合は必要なモジュールをpolyfill.tsでインポートしてください。
+TypeScriptのバリデーションタスクを用意していますので、納品・開発時にはTypeScriptバリデーションコマンド、TypeScript補正コマンドを実行して検証・補正を行ってください。
 
 [がんばらないTypeScript](https://employment.en-japan.com/engineerhub/entry/2019/04/16/103000)
 
@@ -296,3 +325,5 @@ sampleというページで利用する画像であればsampleフォルダを�
 </svg>
 <!--//End SVGスプライト出力 -->
 ```
+
+[Icon System with SVG Sprites](https://css-tricks.com/svg-sprites-use-better-icon-fonts/)

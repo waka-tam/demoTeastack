@@ -12,6 +12,10 @@ const fs = require("fs");
 const path = require("path");
 const cache = require("gulp-cached");
 
+//HTML
+const htmlhint = require("gulp-htmlhint");
+const w3cjs = require("gulp-w3cjs");
+
 // CSS
 const sass = require("gulp-sass");
 const sassGlob = require("gulp-sass-glob");
@@ -70,6 +74,7 @@ const src = {
  */
 const dist = {
   root: "dist/",
+  html: "dist/**/*.html",
   css: "dist/assets/css",
   js: "dist/assets/js",
   img: "dist/assets/img",
@@ -109,6 +114,22 @@ gulp.task("pug", done => {
       })
     )
     .pipe(gulp.dest(dist.root));
+  done();
+});
+
+/**
+ * HTMLファイルのバリデーション
+ */
+gulp.task("htmlValidate", done => {
+  return gulp
+    .src(dist.html)
+    .pipe(
+      plumber({ errorHandler: notify.onError("Error: <%= error.message %>") })
+    )
+    .pipe(w3cjs())
+    .pipe(htmlhint())
+    .pipe(w3cjs.reporter())
+    .pipe(htmlhint.reporter());
   done();
 });
 
