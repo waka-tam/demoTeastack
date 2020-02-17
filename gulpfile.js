@@ -136,7 +136,8 @@ gulp.task("htmlValidate", done => {
 /**
  * Scssファイルのトランスパイル
  */
-const postCssOption = [autoprefixer, flexBugsFixes, stylelint, reporter];
+// postCssOptionにstylelint, reporterを任意で設定可能
+const postCssOption = [autoprefixer, flexBugsFixes];
 gulp.task("sass", done => {
   return gulp
     .src(src.css)

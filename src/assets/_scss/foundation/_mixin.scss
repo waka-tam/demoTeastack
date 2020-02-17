@@ -122,3 +122,76 @@ $baseBg: #fff !default;
   text-indent: 200%;
   white-space: nowrap;
 }
+
+// Centering Position
+// 親要素に対してセンタリングする
+// ex) @include centerPosition(x);
+// ----------------------------------
+@mixin centerPosition($direction) {
+  position: absolute;
+
+  // 上下左右中央に配置
+  @if $direction==xy {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  // 左右中央に配置
+  @else if $direction==x {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  // 上下中央に配置
+  @else if $direction==y {
+    top: 50%;
+    transform: translateY(-50%);
+  }
+}
+
+// Background Image
+// backgroundのプロパティの記述を省略
+// ex) @include background-image(bg01 + ".jpg");
+// ----------------------------------
+// 変数に画像フォルダまでのパスを設定
+$pathImg: "/assets/img/page/" !default;
+
+@mixin background-image($fileName) {
+  // ↓ フォルダまでのパス + 画像名 でパスの記載を省略
+  background-image: url($pathImg + $fileName);
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+}
+
+// Triangle Icon 三角形
+// 疑似要素の三角形を作成
+// ex) @include triangle(right, 20px, 20px, #000 )
+// ----------------------------------
+@mixin triangle($direction, $width, $height, $color) {
+  width: 0;
+  height: 0;
+  border-style: solid;
+  $valWidth: $width / 2;
+  $valHeight: $height / 2;
+
+  @if ($direction==top) {
+    border-width: 0 $valWidth $height $valWidth;
+    border-color: transparent transparent $color transparent;
+  }
+
+  @else if ($direction==left) {
+    border-width: $valHeight $width $valHeight 0;
+    border-color: transparent $color transparent transparent;
+  }
+
+  @else if ($direction==right) {
+    border-width: $valHeight 0 $valHeight $width;
+    border-color: transparent transparent transparent $color;
+  }
+
+  @else if ($direction==bottom) {
+    border-width: $height $valWidth 0 $valWidth;
+    border-color: $color transparent transparent transparent;
+  }
+}
