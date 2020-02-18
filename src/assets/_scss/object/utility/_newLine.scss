@@ -10,7 +10,7 @@
   &::before {
     content: none;
 
-    @include mq('md') {
+    @include mq("md") {
       content: "\A";
       white-space: pre;
     }
@@ -23,7 +23,7 @@
     content: "\A";
     white-space: pre;
 
-    @include mq('md') {
+    @include mq("md") {
       content: none;
     }
   }

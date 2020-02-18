@@ -67,6 +67,7 @@
     "jquery": "^3.4.1",
     "objectFitPolyfill": "^2.3.0",
     "picturefill": "^3.0.3",
-    "svg4everybody": "^2.1.9"
+    "svg4everybody": "^2.1.9",
+    "vue": "^2.6.11"
   }
 }
