@@ -11,10 +11,12 @@ append variables
   - var pageOgpType= "website";
 
 block content
+  nav(aria-label="Breadcrumb")
+    +breadcrumb([
+      ["ホーム", "/"],
+      ["Counter", "/count.html"]
+    ])
   main
     .wrapper
-      h1.js-sample jQueryでテキスト差し替え
-      p
-        a(href="/sample.html") サンプルページへ
-      p
-        a(href="/count.html") Counterページへ
+      h1 Counterページ
+      #app

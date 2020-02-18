@@ -1,7 +1,5 @@
 const environment = process.env.NODE_ENV || "development";
 const isProduction = environment === "production";
-// eslint-disable-next-line @typescript-eslint/no-var-requires
-const path = require("path");
 
 module.exports = {
   // モード値を production に設定すると最適化された状態で、
@@ -31,7 +29,9 @@ module.exports = {
   // import 文で .ts ファイルを解決するため
   resolve: {
     // モジュールを読み込むときに検索するディレクトリの設定
-    modules: [path.join(__dirname, "resources"), "node_modules"],
-    extensions: [".ts", ".js", ".vue"]
+    extensions: [".ts", ".js", ".vue"],
+    alias: {
+      vue$: "vue/dist/vue.esm.js"
+    }
   }
 };

@@ -56,6 +56,8 @@
     "stylelint-scss": "^3.14.2",
     "ts-loader": "^6.2.1",
     "typescript": "^3.7.5",
+    "vue-loader": "^15.9.0",
+    "vue-template-compiler": "^2.6.11",
     "webpack": "^4.41.5",
     "webpack-cli": "^3.3.10",
     "webpack-stream": "^5.2.1"
@@ -68,6 +70,7 @@
     "objectFitPolyfill": "^2.3.0",
     "picturefill": "^3.0.3",
     "svg4everybody": "^2.1.9",
-    "vue": "^2.6.11"
+    "vue": "^2.6.11",
+    "vue-class-component": "^7.2.3"
   }
 }
