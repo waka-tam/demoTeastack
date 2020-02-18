@@ -302,17 +302,16 @@ gulp.task("serve", done => {
 /**
  * ファイルの監視
  */
+gulp.task("browserReload", done => {
+  browserSync.reload();
+  done();
+});
 gulp.task("watch", done => {
-  const browserReload = done => {
-    browserSync.reload();
-    done();
-  };
-  gulp.watch(src.pug, gulp.series("pug"));
-  gulp.watch(src.css, gulp.series("sass"));
-  gulp.watch(src.ts, gulp.series("webpack"));
-  gulp.watch(src.img, gulp.series("image"));
-  gulp.watch(src.svgSprite, gulp.series("svgSprite"));
-  gulp.watch(dist.root, browserReload);
+  gulp.watch(src.pug, gulp.series("pug", "browserReload"));
+  gulp.watch(src.css, gulp.series("sass", "browserReload"));
+  gulp.watch(src.ts, gulp.series("webpack", "browserReload"));
+  gulp.watch(src.img, gulp.series("image", "browserReload"));
+  gulp.watch(src.svgSprite, gulp.series("svgSprite", "browserReload"));
   done();
 });
 
