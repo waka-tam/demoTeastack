@@ -11,12 +11,15 @@
     "htmlValidate": "cross-env NODE_ENV=development gulp htmlValidate",
     "stylelint": "stylelint --fix src/**/*.scss",
     "lint": "eslint src/**/*.ts",
-    "lint:fix": "eslint --fix src/**/*.ts"
+    "lint:fix": "eslint --fix src/**/*.ts",
+    "styleguide": "gulp styleguide:start",
+    "styleguide:build": "gulp styleguide:build"
   },
   "author": "Kazuki-tam",
   "license": "ISC",
   "devDependencies": {
     "@frctl/fractal": "^1.2.1",
+    "@frctl/mandelbrot": "^1.2.1",
     "@rsm/fractal-pug-adapter": "^0.5.0",
     "@typescript-eslint/eslint-plugin": "^2.19.2",
     "@typescript-eslint/parser": "^2.19.2",
