@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="no-js">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script>
+    window.frctl = {
+        env: 'static'
+    };
+    </script>
+    <script>var cl = document.querySelector('html').classList; cl.remove('no-js'); cl.add('has-js');</script>
+    <link rel="shortcut icon" href="themes/mandelbrot/favicon.ico" type="image/ico">
+
+<link rel="stylesheet" href="themes/mandelbrot/css/default.css?cachebust=1.2.1" type="text/css">
+
+
+<title>スタイルガイド | スタイルガイド</title>
+
+</head>
+<body>
+
+
+
+<div class="Frame" id="frame">
+
+    <div class="Frame-header">
+        <div class="Header">
+    <button class="Header-button Header-navToggle" data-action="toggle-sidebar">
+        <svg class="Header-navToggleIcon Header-navToggleIcon--open" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+    <path d="M0 0h24v24H0z" fill="none"/>
+    <path d="M19 6.4L17.6 5 12 10.6 6.4 5 5 6.4 10.6 12 5 17.6 6.4 19 12 13.4 17.6 19 19 17.6 13.4 12z"/>
+</svg>
+
+        <svg class="Header-navToggleIcon Header-navToggleIcon--closed" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+    <path d="M0 0h24v24H0z" fill="none"/>
+    <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/>
+</svg>
+
+    </button>
+    <a href="" class="Header-title" data-pjax>スタイルガイド</a>
+</div>
+
+    </div>
+
+    <div class="Frame-body" data-role="body">
+
+        <div class="Frame-panel Frame-panel--main" data-role="main">
+            <div class="Frame-inner" id="pjax-container">
+            
+
+<div class="Document">
+
+    <div class="Document-header">
+        
+        <h1 class="Document-title">スタイルガイド</h1>
+        
+
+
+        
+    </div>
+
+    <div class="Document-content">
+
+    
+
+<div class="Prose">
+
+
+
+    
+    
+    <h1 id="本スタイルガイドについて">本スタイルガイドについて</h1>
+<p>スタイルガイドジェネレーター(Fractal)でUIパーツを一覧で出力します。</p>
+<p><a href="https://fractal.build/guide/">Fractal</a></p>
+<h2 id="カテゴリー">カテゴリー</h2>
+<p>コンポーネントの分類ルールは以下になります。（必要に応じて変更してください）</p>
+<ul>
+<li><strong>Global:</strong> サイト全体で使われる要素</li>
+<li><strong>Layout:</strong> コンポーネントの余白指定などのレイアウトパターン</li>
+<li><strong>Navigation:</strong> グローバルナビやパンくずリストなどユーザーを誘導するする要素</li>
+<li><strong>Image:</strong> ロゴやメインビジュアル、アバターやサムネイルや背景画像などの画像</li>
+<li><strong>Icon:</strong> アイコンなど用途やカテゴリーを端的に示す画像、要素</li>
+<li><strong>Form:</strong> テキスト入力エリア、Selectメニューなどのフォーム要素</li>
+<li><strong>Button:</strong> オンオフやページ遷移、表示や非表示といった操作の切り替えに使われる要素</li>
+<li><strong>Heading:</strong> ページタイトルなどの見出し要素</li>
+<li><strong>Text:</strong> 文章やラベルのようなテキスト要素</li>
+<li><strong>Link:</strong> テキストリンク要素</li>
+<li><strong>List:</strong> 順序付きや定義リストまたなどの要素</li>
+<li><strong>Table:</strong> 表組であらわされる要素</li>
+<li><strong>Block:</strong> 見出しや画像、テキストなどが1つのまとめりになっているエリア</li>
+<li><strong>Interactive:</strong> アコーディオン、カルーセルなどユーザー操作で稼働する要素</li>
+<li><strong>Media:</strong> ビデオやオーディオのようなリッチメディア要素</li>
+<li><strong>ThirdParty:</strong>  ThirdParty：Google Mapsなどサードパーティサービス</li>
+<li><strong>Notification:</strong> 警告メッセージ、エラーメッセージ、ローディング、ポップアップなどユーザーに知らせる為の要素</li>
+</ul>
+<h2 id="css設計">CSS設計</h2>
+<p>CSS設計はFLOCSSを採用します。FLOCSSはレイヤーという概念が強く、レイヤーに分けてCSSを管理します。
+レイヤーは大きくFoundation、Layout、Objectに分けられ、ObjectレイヤーにProject、Component、Utilityといったサブレイヤーを配置します。</p>
+<h3 id="foundation">Foundation</h3>
+<p>リセットCSSを記述し、ブラウザのデフォルトスタイルを初期化します。
+標準で設定済みですので詳細は本テンプレートの<code>README.md</code>ファイルを参照してください。</p>
+<h3 id="layout">Layout</h3>
+<p>ページを構成するレイアウト、コンテンツ幅、余白などコンテナーブロックのスタイルを定義します。
+記述量が少ないレイヤーの為、Projectで巻き取れる場合は無理に作成する必要はありません。</p>
+<h3 id="object">Object</h3>
+<p>プロジェクト内で繰り返されるデザインパターンを定義します。</p>
+<h3 id="component">Component</h3>
+<p>再利用可能で汎用的なパターンを定義します。</p>
+<h3 id="project">Project</h3>
+<p>プロジェクト固有のパターンを定義します。</p>
+<h3 id="utility">Utility</h3>
+<p>細かなスタイル調整が必要な場合のスタイルを定義します。</p>
+<h3 id="命名規則">命名規則</h3>
+<p>命名規則は以下のように各レイヤーを表す接頭辞を付与します。</p>
+<ul>
+<li><strong>Layout:</strong> .l-*</li>
+<li><strong>Component:</strong> .c-*</li>
+<li><strong>Project:</strong> .p-*</li>
+<li><strong>Utility:</strong> .u-*</li>
+</ul>
+<h3 id="bem記法">BEM記法</h3>
+<p>class名はBEMの構造に合わせて記述します。</p>
+<p>Block__Element–modifier<br>ex) .c-article__txt–arert</p>
+<h3 id="componentとprojectの仕分け方">ComponentとProjectの仕分け方</h3>
+<p>基本的にProjectレイヤーとしてパターンを定義し、その中で抽象化できる箇所だけをComponentにするフローが推奨されます。
+パターンを作成する際は以下1~3を繰り返し行う。</p>
+<ol>
+<li>Projectレイヤーでパターンを定義する</li>
+<li>コードのリファクタリングを行い、Componentレイヤーにできる箇所がないか検討する</li>
+<li>汎用的に再利用できる箇所があればComponentに抽象化したパターンを記述する。</li>
+</ol>
+
+    
+
+
+</div>
+
+
+
+    </div>
+
+</div>
+
+
+            </div>
+        </div>
+
+        <div class="Frame-handle" data-role="frame-resize-handle"></div>
+        
+        <div class="Frame-panel Frame-panel--sidebar" data-role="sidebar">
+            <nav class="Navigation">
+
+    
+<div class="Navigation-group">
+
+<div class="Tree" data-behaviour="tree" id="tree-components">
+    <h3 class="Tree-title">components</h3>
+    <ul class="Tree-items Tree-depth-1">
+        
+    
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a class="Tree-entityLink" href="components/detail/button.html" data-pjax>
+                <span>Button</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+
+    </ul>
+</div>
+
+</div>
+
+
+
+    
+<div class="Navigation-group">
+
+<div class="Tree" data-behaviour="tree" id="tree-docs">
+    <h3 class="Tree-title">documentation</h3>
+    <ul class="Tree-items Tree-depth-1">
+        
+    
+        
+        
+        <li class="Tree-item Tree-entity is-current" data-state="current" data-role="item">
+            <a class="Tree-entityLink" href="" data-pjax>
+                <span>スタイルガイド</span>
+                
+            </a>
+        </li>
+        
+    
+
+    </ul>
+</div>
+
+</div>
+
+
+
+    
+
+
+</nav>
+
+        </div>
+    </div>
+</div>
+
+
+
+
+<script src="themes/mandelbrot/js/mandelbrot.js?cachebust=1.2.1"></script>
+
+
+
+</body>
+</html>
