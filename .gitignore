@@ -136,3 +136,4 @@ $RECYCLE.BIN/
 ### Project-specific settings ###
 # Project build output
 dist/
+styleguide/
