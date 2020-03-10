@@ -1,5 +1,9 @@
 @charset "UTF-8";
 
+/* ========================================
+  Mixin
+======================================== */
+
 // Media Query メディアクエリ
 // ex) @include mq(md){};
 // --------------------------------------------------
@@ -48,28 +52,6 @@ $breakpoints: (
 @mixin pdbtm_vw($pd_btm: 10) {
   padding-bottom: get_vw($pd_btm);
 }
-
-// Content Width Variable コンテンツ幅変数
-// ex) width: $cntWidth;
-// --------------------------------------------------
-$cntWidth: 1028px !default;
-
-// Font Variable フォント変数
-// ex) font-size: $baseFontSize;
-// --------------------------------------------------
-$baseFontSize: 10px !default;
-$baseFontFamily: "Noto Sans Japanese", "ヒラギノ角ゴシック Pro", "Hiragino Kaku Gothic Pro",
-  游ゴシック体, "Yu Gothic", yugothic, "ＭＳ Ｐゴシック", "MS PGothic", helvetica, arial, sans-serif !default;
-
-// Color Variable カラー変数
-// ex) color: $baseColor;
-// --------------------------------------------------
-$baseColor: #444 !default;
-$blurColor: #999 !default;
-$mainColor: #fccf00 !default;
-$accentColor: #002b69 !default;
-$linkColor: #07f !default;
-$baseBg: #fff !default;
 
 // Form Reset フォームリセット
 // ブラウザ毎のデザインを初期化(_base.scssで全体初期化可能)

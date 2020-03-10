@@ -207,11 +207,28 @@ CSS, SCSSバリデーションタスクを用意していますので、納品�
 - **object/project:** プロジェクト固有のパターンを構成するコンポーネントファイルを格納
 - **object/utility:** 余白やインデントといった補助的なファイルを格納
 
+#### Common
+サイト内で使用するCSSモジュールを読み込みます。SCSSファイルのエントリーポイントになります。  
+Foundationレイヤー以外のCSSモジュールはglobを用いてインポートします。
+
+**src/assets/_scss/foundation/_base.scss**
+
+#### Base
+サイトのベースとなるデフォルトスタイルを定義します。標準のリセットCSSにはCSS Remedyを採用しています。
+
+**src/assets/_scss/foundation/_base.scss**
+
+#### Variable
+再利用を想定する値を変数に格納します。
+標準でコンテンツ幅変数、フォント変数、カラー変数を用意しています。
+
+**src/assets/_scss/foundation/_variable.scss**
+
 #### Mixin
-メディアクエリ、vw自動計算、フォントサイズ自動計算、カラー変数、フォームリセット、フォームプレイスホルダーカラー、ホバーアクションなどWebフロントエンド開発で頻出する記述をMixinや変数として設定しています。
+メディアクエリ、vw自動計算、フォントサイズ自動計算、フォームリセット、フォームプレイスホルダーカラー、ホバーアクションなどWebフロントエンド開発で頻出する記述をMixinや変数として設定しています。
 利用方法は以下ディレクトリのファイル内コメントを参照してください。
 
-**src/assets/_scss/_mixin.scss**
+**src/assets/_scss/foundation/_mixin.scss**
 
 #### Utility
 margin, paddingそれぞれ5px毎に余白を取るclassを用意しています。
@@ -238,6 +255,11 @@ ex) Class Name: .u-indent
 詳しくは以下ディレクトリのファイル内コメントを参照してください。
 
 **src/assets/_scss/object/utility/_indent.scss**
+
+#### Print
+印刷用CSSを定義します。
+
+**src/assets/_scss/_print.scss**
 
 ## JavaScriptについて
 TypeScriptを採用し、静的型付き言語としてJavaScriptを扱います。
