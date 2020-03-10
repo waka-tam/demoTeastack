@@ -275,6 +275,42 @@ gulp.task("svgSprite", done => {
 });
 
 /**
+ * スタイルガイド作成
+ */
+const fractal = require("@frctl/fractal").create();
+fractal.components.engine("@rsm/fractal-pug-adapter");
+// プロジェクト関連のメタデータ設定
+fractal.set("project.title", "スタイルガイド");
+// コンポーネントの設定
+fractal.components.set("ext", ".pug");
+fractal.components.set("path", __dirname + "/src/styleguide/components");
+// ドキュメントページの設定
+fractal.docs.set("path", __dirname + "/src/styleguide/docs");
+// 静的ファイルの設定
+fractal.web.set("static.path", __dirname + "/dist/assets");
+// スタイルガイドの出力先
+fractal.web.set("builder.dest", __dirname + "/styleguide");
+// consoleの表示用
+const logger = fractal.cli.console;
+
+gulp.task("styleguide:build", () => {
+  const builder = fractal.web.builder();
+  // 出力中のconsole表示設定
+  builder.on("progress", (completed, total) => {
+    logger.update(`${total} 件中 ${completed} 件目を出力中...`, "info");
+  });
+  // 出力失敗時のconsole表示設定
+  builder.on("error", () => {
+    // eslint-disable-next-line no-undef
+    logger.error(err.message);
+  });
+  // 出力処理を実行
+  return builder.build().then(() => {
+    logger.success("スタイルガイドの出力処理が完了しました。");
+  });
+});
+
+/**
  * 公開ファイル削除
  */
 gulp.task("clean", done => {
