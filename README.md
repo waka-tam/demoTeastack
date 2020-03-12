@@ -239,7 +239,7 @@ CSS, SCSSバリデーションタスクを用意していますので、納品�
 サイト内で使用するCSSモジュールを読み込みます。SCSSファイルのエントリーポイントになります。  
 Foundationレイヤー以外のCSSモジュールはglobを用いてインポートします。
 
-**src/assets/_scss/foundation/_base.scss**
+**src/assets/_scss/common.scss**
 
 ***
 
@@ -274,23 +274,17 @@ ex) Class Name: u-mb10, u-mb15, u-mb20, u-pt10, u-pt20, u-pt30
 **src/assets/_scss/object/utility/_margin.scss**
 **src/assets/_scss/object/utility/_padding.scss**
 
-***
-
 改行位置を指定するclassを用意しています。
 ex) Class Name: .u-newLine-pc, .u-newLine-sp
 詳しくは以下ディレクトリのファイル内コメントを参照してください。
 
 **src/assets/_scss/object/utility/_newLine.scss**
 
-***
-
 CSSのDisplayプロパティを制御するclassを用意しています。
 ex) Class Name: .u-dsp-block, .u-dsp-none
 詳しくは以下ディレクトリのファイル内コメントを参照してください。
 
 **src/assets/_scss/object/utility/_display.scss**
-
-***
 
 文字インデントを制御するclassを用意しています。
 ex) Class Name: .u-indent
@@ -323,20 +317,23 @@ TypeScriptのバリデーションタスクを用意していますので、納�
 
 #### Namespace
 使用状況によって名前空間を分けてファイルを用意します。書かれた処理はHTMLに紐ずきます。
-ex) sample.ts任意の文字列を返します。
+ex) sample.tsはサンプルで任意の文字列を返します。
 詳しくは以下ディレクトリのファイル内コメントを参照してください。
 
-**src/assets/ts/namespace/sample.ts**
+**src/assets/ts/namespace/**
 
 #### Helper
 重複する判断や加工、計算などを使用用途に分けてファイルを用意します。
-ex) mediaQuery.tsメディアクエリの判定を行います。
+ex) mediaQuery.tsはメディアクエリの判定を行います。
 詳しくは以下ディレクトリのファイル内コメントを参照してください。
 
-**src/assets/ts/helper/mediaQuery.ts**
+**src/assets/ts/helper/**
 
 #### Api
 APIやDBと通信する際の処理を書いたファイルを用意します。
+ex) placeholder.tsはサンプルでAPI通信を行います。
+
+**src/assets/ts/api/**
 
 ## 画像について
 画像ファイルは標準で解像度を70%に圧縮するよう設定されています。必要に応じてgulpfile.jsの設定を変更してください。

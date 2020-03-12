@@ -6,6 +6,9 @@ import MediaQuery from "./helper/MediaQuery";
 import * as $ from "jquery";
 import Vue from "vue";
 
+// apiインポートサンプル処理（プロジェクト開始時には以下削除してください）
+import "./api/placeholder";
+
 // namespaceインポートサンプル処理（プロジェクト開始時には以下削除してください）
 import Sample from "./namespace/sample";
 import CountComponent from "./namespace/count";
