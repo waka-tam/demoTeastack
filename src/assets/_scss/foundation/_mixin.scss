@@ -1,7 +1,7 @@
 @charset "UTF-8";
 
 /* ========================================
-  Mixin
+  Mixin, Function
 ======================================== */
 
 // Media Query メディアクエリ
@@ -171,4 +171,22 @@ $pathImg: "/assets/img/page/" !default;
     border-width: $height $valWidth 0 $valWidth;
     border-color: $color transparent transparent transparent;
   }
+}
+
+// Z-index管理
+// ex) z-index: z(header);
+// ----------------------------------
+// 要素毎の順番指定
+$z-map: (header, nav);
+
+@function z($name) {
+  @return index($z-map, $name);
+}
+
+// Photoshopトラッキング（文字詰め）制御
+// Photoshopのトラッキング値をletter-spacingへ変換
+// ex) z-index: tracking(50);
+// ----------------------------------
+@function tracking($value) {
+  @return ($value / 1000) * 1em;
 }

@@ -28,3 +28,10 @@
     }
   }
 }
+
+// 改行させない
+// ex) Class Name: .u-newLine-no
+// --------------------------------------------------
+.u-newLine-no {
+  white-space: nowrap;
+}
