@@ -214,13 +214,13 @@ HTMLバリデーションのタスクを用意していますので、納品・�
 
 ## CSSについて
 CSSのメタ言語にSCSSを採用し、FLOCSSベースのCSS設計に対応します。プロジェクトに応じて改変してください。
-ユーザーエージェントの初期化にはCSS Remedyを利用しています。後方互換性を備えたデスクトップ、スマホ環境向けCSSリセットです。
+ユーザーエージェントの初期化にはHTML5 Doctor Reset CSSを利用しています。Eric Mayer’s Reset CSSをHTML5に対応させたCSSリセットです。
 「」や『』などの約物を半角化させる為、Yaku Han JPを読み込んでいます。また、印刷用Print CSSをデフォルトで用意しています。
 CSS, SCSSバリデーションタスクを用意していますので、納品・開発時にはSCSS補正コマンドを実行して検証・補正を行ってください。
 
 [FLOCSS](https://www.tam-tam.co.jp/tipsnote/html_css/post10205.html)
 
-[CSS Remedy](https://github.com/mozdevs/cssremedy/blob/master/css/remedy.css)
+[HTML5 Doctor Reset CSS](http://html5doctor.com/html-5-reset-stylesheet/)
 
 [Yaku Han JP](https://yakuhanjp.qranoko.jp/)
 
