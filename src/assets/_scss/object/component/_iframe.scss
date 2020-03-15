@@ -8,8 +8,8 @@
 // --------------------------------------------------
 .c-iframe {
   display: block;
-  overflow: hidden;
   position: relative;
+  overflow: hidden;
   height: 0;
   // アスペクト比 16:9
   padding-bottom: percentage(9 / 16);

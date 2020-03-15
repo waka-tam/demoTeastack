@@ -122,13 +122,17 @@ gulp.task("pug", done => {
  */
 gulp.task("htmlValidate", done => {
   return gulp
-    .src(dist.html)
+    .src([
+      dist.html,
+      "!dist/assets/**/*.html",
+      "!dist/styleguide-dev/**/*.html"
+    ])
     .pipe(
       plumber({ errorHandler: notify.onError("Error: <%= error.message %>") })
     )
     .pipe(w3cjs())
-    .pipe(htmlhint())
     .pipe(w3cjs.reporter())
+    .pipe(htmlhint())
     .pipe(htmlhint.reporter());
   done();
 });

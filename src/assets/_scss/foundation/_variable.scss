@@ -13,17 +13,8 @@ $cntWidth: 1028px !default;
 // ex) font-size: $baseFontSize;
 // --------------------------------------------------
 $baseFontSize: 10px !default;
-$baseFontFamily: "Noto Sans Japanese",
-"ヒラギノ角ゴシック Pro",
-"Hiragino Kaku Gothic Pro",
-游ゴシック体,
-"Yu Gothic",
-yugothic,
-"ＭＳ Ｐゴシック",
-"MS PGothic",
-helvetica,
-arial,
-sans-serif !default;
+$baseFontFamily: "Noto Sans Japanese", "ヒラギノ角ゴシック Pro", "Hiragino Kaku Gothic Pro",
+  游ゴシック体, "Yu Gothic", yugothic, "ＭＳ Ｐゴシック", "MS PGothic", helvetica, arial, sans-serif !default;
 
 // Color Variable カラー変数
 // ex) color: $baseColor;
