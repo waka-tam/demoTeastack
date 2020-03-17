@@ -1,0 +1,41 @@
+@charset "UTF-8";
+
+/* ========================================
+  Media
+======================================== */
+
+.c-media {
+  @include mq(md) {
+    display: flex;
+    align-items: center;
+  }
+}
+
+.c-media__img-wrapper {
+  margin-bottom: 1rem;
+  img {
+    width: 100%;
+  }
+
+  @include mq(md) {
+    margin-bottom: 0;
+    flex: 0 1 27.58333%;
+    margin-right: 3.333%;
+  }
+}
+
+.c-media__body {
+  flex: 1;
+  > *:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.c-media__ttl {
+  margin-bottom: 1.2rem;
+  font-size: 1.8rem;
+}
+
+.c-media__txt {
+  margin-bottom: 1rem;
+}
