@@ -1,0 +1,56 @@
+/* ========================================
+  Header
+======================================== */
+
+.p-header__logo {
+  width: 50px;
+  height: 50px;
+  text-align: center;
+  line-height: 50px;
+  border-radius: 50%;
+  background-color: $mainColor;
+  font-size: 2rem;
+}
+
+.p-header__nav {
+  display: none;
+
+  @include mq(md) {
+    display: block;
+  }
+}
+
+.p-header__nav-list {
+  display: flex;
+}
+
+.p-header__nav-item {
+  &:not(:last-child) {
+    margin-right: 2rem;
+  }
+}
+
+.p-header__nav-link {
+  color: $mainColor;
+  text-decoration: underline;
+
+  &:focus, &:hover {
+    text-decoration: none;
+  }
+}
+
+.p-header__menu-btn {
+  background-color: transparent;
+  border: none;
+  box-shadow: none;
+
+  @include mq(md) {
+    display: none;
+  }
+}
+
+.is-menuActive {
+  .p-header__nav {
+    display: block;
+  }
+}

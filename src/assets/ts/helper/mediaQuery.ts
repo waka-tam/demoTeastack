@@ -1,5 +1,3 @@
-"use strict";
-
 /**
  * `em`基準のフォントサイズ。
  */
@@ -21,6 +19,7 @@ export default class MediaQuery {
   /**
    * メディアクエリ変数返却
    */
+  // eslint-disable-next-line @typescript-eslint/explicit-function-return-type
   static get list() {
     return list;
   }
@@ -31,6 +30,7 @@ export default class MediaQuery {
    *   console.log(matches ? 'md' : 'sm');
    * });
    */
+  // eslint-disable-next-line @typescript-eslint/explicit-function-return-type
   static matches(query, layoutChangedCallback) {
     let mediaQuery = `(min-width: ${list[query] /
       BROWSER_DEFAULT_FONT_SIZE}em)`;

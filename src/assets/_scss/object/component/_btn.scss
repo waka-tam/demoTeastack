@@ -1,0 +1,49 @@
+@charset "UTF-8";
+
+/* ========================================
+  Button
+======================================== */
+
+// 標準ボタンモジュール
+.c-btn {
+  -webkit-appearance: none;
+  display: inline-block;
+  width: 300px;
+  max-width: 100%;
+  padding: 2rem 1rem;
+  font-size: 1.6rem;
+  border-radius: 5px;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.c-btn-main {
+  @extend .c-btn;
+  background-color: $linkColor;
+  color: #fff;
+  border: 2px solid transparent;
+  transition: .3s;
+
+  &:focus,
+  &:hover {
+    background-color: #fff;
+    border-color: currentColor;
+    color: $linkColor;
+  }
+}
+
+.c-btn-sub {
+  @extend .c-btn;
+  background-color: $blurColor;
+  color: #fff;
+  border: 2px solid transparent;
+  transition: .3s;
+
+  &:focus,
+  &:hover {
+    background-color: #fff;
+    border-color: currentColor;
+    color: $blurColor;
+  }
+}

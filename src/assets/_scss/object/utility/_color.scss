@@ -1,0 +1,75 @@
+@charset "UTF-8";
+
+// Text Color
+// ex) Class Name: .u-txt-color--base, .u-txt-color--main
+// --------------------------------------------------
+.u-txt-color {
+  // ベースカラー
+  &--base {
+    color: $baseColor;
+  }
+  // Blurカラー
+  &--blur {
+    color: $blurColor;
+  }
+  // メインカラー
+  &--main {
+    color: $mainColor;
+  }
+  // サブカラー
+  &--sub {
+    color: $subColor;
+  }
+  // アクセントカラー
+  &--accent {
+    color: $accentColor;
+  }
+  // リンクカラー
+  &--link {
+    color: $linkColor;
+  }
+  // 背景カラー
+  &--bg {
+    color: $baseBg;
+  }
+}
+
+// Background Color
+// ex) Class Name: .u-txt-color--base, .u-txt-color--main
+// --------------------------------------------------
+.u-bg-color {
+  // ベースカラー
+  &--base {
+    background-color: $baseColor;
+  }
+
+  // Blurカラー
+  &--blur {
+    background-color: $blurColor;
+  }
+
+  // メインカラー
+  &--main {
+    background-color: $mainColor;
+  }
+
+  // サブカラー
+  &--sub {
+    background-color: $subColor;
+  }
+
+  // アクセントカラー
+  &--accent {
+    background-color: $accentColor;
+  }
+
+  // リンクカラー
+  &--link {
+    background-color: $linkColor;
+  }
+
+  // 背景カラー
+  &--bg {
+    background-color: $baseBg;
+  }
+}

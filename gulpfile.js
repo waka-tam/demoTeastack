@@ -24,8 +24,8 @@ const flexBugsFixes = require("postcss-flexbugs-fixes");
 const autoprefixer = require("gulp-autoprefixer");
 const cleanCSS = require("gulp-clean-css");
 const sourcemaps = require("gulp-sourcemaps");
-const stylelint = require("stylelint");
-const reporter = require("postcss-reporter");
+// const stylelint = require("stylelint");
+// const reporter = require("postcss-reporter");
 
 // JS
 const webpack = require("webpack");
