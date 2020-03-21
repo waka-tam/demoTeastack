@@ -1,7 +1,7 @@
 /**
  * `em`基準のフォントサイズ。
  */
-const BROWSER_DEFAULT_FONT_SIZE = 14;
+const BROWSER_DEFAULT_FONT_SIZE = 16;
 /**
  * メディアクエリ変数
  */

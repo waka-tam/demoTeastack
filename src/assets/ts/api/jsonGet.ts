@@ -1,11 +1,13 @@
 // axiosインポート
 import axios from "axios";
 
-export default function placeholder(): void {
+export default function jsonGet(request): void {
+  const baseUrl = "https://jsonplaceholder.typicode.com/";
+  const getUrl = `${baseUrl}${request}`;
   // axiosサンプル処理
   axios
     // JSONPlaceholderへのリクエスト
-    .get("https://jsonplaceholder.typicode.com/posts/1")
+    .get(getUrl)
     .then(function(response) {
       // 通信成功時の処理
       const title = document.querySelector(".js-ttl");

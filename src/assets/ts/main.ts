@@ -1,16 +1,17 @@
 // ベースファイル
 import "./polyfill";
 
-// API（プロジェクト開始時には以下削除してください）
-import placeholder from "./api/placeholder";
-
 // Namespace（プロジェクト開始時には以下削除してください）
 import commonMenu from "./namespace/common/menu";
-import top from "./namespace/top";
-import sample02 from "./namespace/sample02";
+import topTextReturn from "./namespace/top/topTextReturn";
+import sampleJsonGet from "./namespace/sample/sampleJsonGet";
+import sample02Count from "./namespace/sample02/sample02Count";
 
-// 処理実行
+// Common
 commonMenu();
-top();
-sample02();
-placeholder();
+// Top
+topTextReturn();
+// Sample
+sampleJsonGet();
+// Sample02
+sample02Count();

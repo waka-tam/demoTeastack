@@ -1,11 +1,11 @@
 import * as $ from "jquery";
-import MediaQuery from "../helper/MediaQuery";
-import Sample from "../helper/sample";
+import MediaQuery from "../../helper/MediaQuery";
+import TextReturn from "../../helper/textReturn";
 
 export default function top(): void {
   // jQueryサンプル処理（プロジェクト開始時には以下削除してください）
   // SampleTtlクラスをインスタンス化
-  const message = new Sample.SampleTtl(
+  const message = new TextReturn.SampleTtl(
     "これはjQueryのサンプル処理です!画面サイズに応じて文言が切り替わります。"
   );
   // jsメディアクエリサンプル処理（プロジェクト開始時には以下削除してください）

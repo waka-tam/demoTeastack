@@ -314,24 +314,29 @@ TypeScriptのバリデーションタスクを用意していますので、納�
 ### ディレクトリ構成
 - **main.ts:** TypeScriptのエントリーポイント
 - **namespace:** 名前空間で分けたTypeScriptファイルを格納
-- **helper:** メディアクエリの設定などある一定の判断や計算を行うTypeScriptファイルを格納
-- **api:** APIとの通信処理に用いるTypeScriptファイルを格納
+- **component:** コンポーネントを構成するTypeScriptファイルを格納
+- **helper:** 重複処理行う再利用可能なTypeScriptファイルを格納
+- **api:** APIなど外部サーバーとの通信処理に用いるTypeScriptファイルを格納
 
 #### Namespace
 使用状況によって名前空間を分けてファイルを用意します。書かれた処理はHTMLに紐ずきます。
-ex) sample.tsはサンプルで任意の文字列を返します。
+標準ではサイト内で共通して利用する処理を `namespace/common` 以下に配置し、作成ページ毎に名前空間を付与しています。
+ex) top.tsにはトップページで使用する処理が記述されています。
 詳しくは以下ディレクトリのファイル内コメントを参照してください。
 
 **src/assets/ts/namespace/**
 
 #### Helper
-重複する判断や加工、計算などを使用用途に分けてファイルを用意します。
+重複する処理を使用用途に応じてファイル分割します。  
+Class構文を利用することでさまざまな関数をひとまとめにして、再利用できます。
 ex) mediaQuery.tsはメディアクエリの判定を行います。
 詳しくは以下ディレクトリのファイル内コメントを参照してください。
 
+[クラス](https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/Classes)
+
 **src/assets/ts/helper/**
 
-#### Api
+#### API
 APIやDBと通信する際の処理を書いたファイルを用意します。
 ex) placeholder.tsはサンプルでAPI通信を行います。
 

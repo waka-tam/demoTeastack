@@ -17,8 +17,7 @@ import Component from "vue-class-component";
 export default class CountComponent extends Vue {
   count = 0;
 
-  // eslint-disable-next-line @typescript-eslint/explicit-function-return-type
-  onClick() {
+  onClick(): void {
     console.log("クリックしました！！");
     this.count = this.count + 1;
   }
