@@ -6,44 +6,48 @@
 
 // 標準ボタンモジュール
 .c-btn {
-  -webkit-appearance: none;
   display: inline-block;
   width: 300px;
   max-width: 100%;
   padding: 2rem 1rem;
-  font-size: 1.6rem;
-  border-radius: 5px;
   text-align: center;
   text-decoration: none;
+  font-size: 1.6rem;
+  border-radius: 5px;
   cursor: pointer;
+  appearance: none;
 }
 
 .c-btn-main {
   @extend .c-btn;
+
+  border: 2px solid transparent;
   background-color: $linkColor;
   color: #fff;
-  border: 2px solid transparent;
-  transition: .3s;
+  transition: 0.3s;
 
-  &:focus,
-  &:hover {
-    background-color: #fff;
+  &:hover,
+  &:focus {
+    outline: none;
     border-color: currentColor;
+    background-color: #fff;
     color: $linkColor;
   }
 }
 
 .c-btn-sub {
   @extend .c-btn;
+
+  border: 2px solid transparent;
   background-color: $blurColor;
   color: #fff;
-  border: 2px solid transparent;
-  transition: .3s;
+  transition: 0.3s;
 
-  &:focus,
-  &:hover {
-    background-color: #fff;
+  &:hover,
+  &:focus {
+    outline: none;
     border-color: currentColor;
+    background-color: #fff;
     color: $blurColor;
   }
 }

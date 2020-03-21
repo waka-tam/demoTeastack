@@ -1,0 +1,38 @@
+@charset "UTF-8";
+
+/* ========================================
+  Footer
+======================================== */
+
+.p-footer__nav {
+  display: flex;
+  justify-content: center;
+}
+
+.p-footer__nav-item {
+  list-style: none;
+
+  &:not(:last-child) {
+    margin-right: 2rem;
+    padding-right: 2rem;
+    border-right: 1px solid $accentColor;
+  }
+}
+
+.p-footer__nav-link {
+  font-weight: bold;
+  color: $accentColor;
+
+  &:focus,
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+.p-footer__copy {
+  padding: 1rem 0;
+  text-align: center;
+  font-size: 1.2rem;
+  background-color: $accentColor;
+  color: $mainColor;
+}

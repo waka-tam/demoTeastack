@@ -5,7 +5,7 @@
 ======================================== */
 
 // Media Query メディアクエリ
-// ex) @include mq(md){};
+// ex) @include mq(md){}
 // --------------------------------------------------
 
 // Breakpoint ブレイクポイント
@@ -177,7 +177,7 @@ $pathImg: "/assets/img/page/" !default;
 // ex) z-index: z(header);
 // ----------------------------------
 // 要素毎の順番指定
-$z-map: (header, nav);
+$z-map: (header, nav, navbtn);
 
 @function z($name) {
   @return index($z-map, $name);

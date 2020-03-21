@@ -21,9 +21,11 @@ const sass = require("gulp-sass");
 const sassGlob = require("gulp-sass-glob");
 const postcss = require("gulp-postcss");
 const flexBugsFixes = require("postcss-flexbugs-fixes");
-const autoprefixer = require("gulp-autoprefixer");
+const autoprefixer = require("autoprefixer");
 const cleanCSS = require("gulp-clean-css");
 const sourcemaps = require("gulp-sourcemaps");
+const cssDeclarationSorter = require("css-declaration-sorter");
+const mqpacker = require("css-mqpacker");
 // const stylelint = require("stylelint");
 // const reporter = require("postcss-reporter");
 
@@ -140,8 +142,15 @@ gulp.task("htmlValidate", done => {
 /**
  * Scssファイルのトランスパイル
  */
-// postCssOptionにstylelint, reporterを任意で設定可能
-const postCssOption = [autoprefixer, flexBugsFixes];
+// postCssOption
+const postCssOption = [
+  flexBugsFixes(),
+  autoprefixer({ grid: "autoplace" }),
+  cssDeclarationSorter({
+    order: "alphabetical"
+  }),
+  mqpacker()
+];
 gulp.task("sass", done => {
   return gulp
     .src(src.css)
@@ -341,6 +350,14 @@ gulp.task("clean", done => {
 });
 
 /**
+ * スタイルガイド開発ディレクトリ削除
+ */
+gulp.task("cleanStyleGuide", done => {
+  return del(["dist/styleguide-dev", "!dist"]);
+  done();
+});
+
+/**
  * 開発ローカルサーバー立ち上げ
  */
 const browserSyncOption = {
@@ -383,5 +400,17 @@ gulp.task(
   gulp.series(
     "clean",
     gulp.parallel("pug", "sass", "webpack", "image", "svgSprite")
+  )
+);
+
+/**
+ * 開発環境リリース
+ */
+gulp.task(
+  "release",
+  gulp.series(
+    "clean",
+    gulp.parallel("pug", "sass", "webpack", "image", "svgSprite"),
+    "cleanStyleGuide"
   )
 );

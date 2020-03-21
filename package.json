@@ -6,7 +6,7 @@
   "scripts": {
     "start": "cross-env NODE_ENV=development gulp",
     "build": "cross-env NODE_ENV=development gulp build",
-    "release": "cross-env NODE_ENV=production gulp build",
+    "release": "cross-env NODE_ENV=production gulp release",
     "clean": "gulp clean",
     "htmlValidate": "cross-env NODE_ENV=development gulp htmlValidate",
     "stylelint": "stylelint --fix src/**/*.scss",
@@ -26,6 +26,8 @@
     "browser-sync": "^2.26.7",
     "connect-ssi": "^1.1.1",
     "cross-env": "^6.0.3",
+    "css-declaration-sorter": "^5.1.2",
+    "css-mqpacker": "^7.0.0",
     "del": "^4.1.1",
     "eslint": "^6.8.0",
     "eslint-config-prettier": "^6.10.0",

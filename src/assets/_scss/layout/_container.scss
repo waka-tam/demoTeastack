@@ -5,16 +5,16 @@
 ======================================== */
 
 .l-container {
+  padding-right: 1rem;
   // スマホ時のコンテンツ余白
   padding-left: 1rem;
-  padding-right: 1rem;
 
   @include mq(md) {
     // 最大コンテンツ幅
     max-width: $cntWidth;
     margin-right: auto;
     margin-left: auto;
-    padding-left: 0;
     padding-right: 0;
+    padding-left: 0;
   }
 }

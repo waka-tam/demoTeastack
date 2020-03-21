@@ -15,21 +15,23 @@
 
 .c-media__img-wrapper {
   margin-bottom: 1rem;
-  img {
-    width: 100%;
-  }
 
   @include mq(md) {
-    margin-bottom: 0;
     // コンテンツ幅縮小時にテキストと同時に縮小(画像初期縮小値40%)
     flex: 0 1 48.4%;
     // コンテンツ幅1200px時に40px余白(デザインラフに合わせる)
     margin-right: 40 / 1200 * 100%;
+    margin-bottom: 0;
+  }
+
+  img {
+    width: 100%;
   }
 }
 
 .c-media__body {
   flex: 1;
+
   > *:last-child {
     margin-bottom: 0;
   }

@@ -5,15 +5,21 @@
 ======================================== */
 
 .l-header {
+  z-index: z(header);
   padding: 2rem 0;
   border-bottom: 1px solid #ccc;
 }
 
 .l-header__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
   max-width: $cntWidth;
   margin-right: auto;
   margin-left: auto;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+  padding: 0 0 0 3vw;
+
+  @include mq(md) {
+    padding: 0 1.5rem;
+  }
 }

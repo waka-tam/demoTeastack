@@ -1,0 +1,16 @@
+@charset "UTF-8";
+
+/* ========================================
+  Layout Footer
+======================================== */
+
+.l-footer__inner {
+  max-width: $cntWidth;
+  margin-right: auto;
+  margin-left: auto;
+  padding: 2rem 0;
+
+  @include mq(md) {
+    padding: 2rem 1.5rem;
+  }
+}

@@ -1,3 +1,5 @@
+@charset "UTF-8";
+
 /* ========================================
   Header
 ======================================== */
@@ -6,17 +8,25 @@
   width: 50px;
   height: 50px;
   text-align: center;
+  font-size: 2rem;
   line-height: 50px;
   border-radius: 50%;
   background-color: $mainColor;
-  font-size: 2rem;
 }
 
 .p-header__nav {
-  display: none;
+  z-index: z(nav);
 
-  @include mq(md) {
-    display: block;
+  @include mq(sp-only) {
+    position: fixed;
+    top: 0;
+    right: 0;
+    overflow: hidden;
+    width: 50%;
+    height: 100%;
+    padding: 3rem;
+    background-color: $mainColor;
+    transform: translateX(100%);
   }
 }
 
@@ -31,26 +41,64 @@
 }
 
 .p-header__nav-link {
-  color: $mainColor;
   text-decoration: underline;
+  color: $mainColor;
 
-  &:focus, &:hover {
+  &:focus,
+  &:hover {
     text-decoration: none;
   }
 }
 
 .p-header__menu-btn {
-  background-color: transparent;
+  z-index: z(navbtn);
   border: none;
+  background-color: transparent;
   box-shadow: none;
+  appearance: none;
 
   @include mq(md) {
     display: none;
   }
+
+  &:focus {
+    outline: none;
+  }
 }
 
 .is-menuActive {
+  position: relative;
+
   .p-header__nav {
-    display: block;
+    @include mq(sp-only) {
+      transition: all 0.5s ease;
+      transform: translateX(0);
+    }
+  }
+
+  .p-header__nav-list {
+    @include mq(sp-only) {
+      display: block;
+    }
+  }
+
+  .p-header__nav-item {
+    @include mq(sp-only) {
+      margin-right: 5vw;
+      padding: 1rem 0;
+      border-bottom: 1px solid currentColor;
+
+      &:first-child {
+        padding-top: 0;
+      }
+    }
+  }
+
+  .p-header__nav-link {
+    @include mq(sp-only) {
+      text-decoration: none;
+      font-weight: bold;
+      color: $accentColor;
+    }
   }
 }
