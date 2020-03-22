@@ -8,19 +8,18 @@ export default function jsonGet(request): void {
   axios
     // JSONPlaceholderへのリクエスト
     .get(getUrl)
-    .then(function(response) {
+    .then(response => {
       // 通信成功時の処理
       const title = document.querySelector(".js-ttl");
       const body = document.querySelector(".js-body");
       title.innerHTML = response.data.title;
       body.innerHTML = response.data.body;
-      console.log(response);
     })
-    .catch(function(error) {
+    .catch(error => {
       // エラー時の処理
       console.log(error);
     })
-    .finally(function() {
+    .finally(() => {
       // 常に実行する処理
     });
 }

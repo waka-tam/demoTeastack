@@ -2,7 +2,7 @@ import * as $ from "jquery";
 import MediaQuery from "../../helper/MediaQuery";
 import TextReturn from "../../helper/textReturn";
 
-export default function top(): void {
+export default function topTextReturn(): void {
   // jQueryサンプル処理（プロジェクト開始時には以下削除してください）
   // SampleTtlクラスをインスタンス化
   const message = new TextReturn.SampleTtl(
