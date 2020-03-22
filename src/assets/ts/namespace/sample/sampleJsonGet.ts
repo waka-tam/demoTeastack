@@ -3,6 +3,6 @@ import jsonGet from "../../api/jsonGet";
 export default function sampleJsonGet(): void {
   if (document.querySelector("#sample")) {
     const request = "posts/3";
-    console.log(jsonGet(request));
+    jsonGet(request);
   }
 }
