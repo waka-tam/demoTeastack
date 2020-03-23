@@ -10,11 +10,11 @@
 }
 
 .c-icon--before {
-  margin-right: .5em;
+  margin-right: 0.5em;
 }
 
 .c-icon--after {
-  margin-left: .5em;
+  margin-left: 0.5em;
 }
 
 .c-icon-wrap {
@@ -23,18 +23,16 @@
 }
 
 .c-icon-bg--before {
+  padding-left: 1.5em;
   // スタイルガイドでは背景画像をインラインで記述
   //background: url(/img/share/pdf.svg) no-repeat left center;
   line-height: 1em;
-  padding-left: 1.5em;
 }
 
 .c-icon-bg--after {
+  display: inline-block;
+  padding-right: 1.5em;
   // スタイルガイドでは背景画像をインラインで記述
   //background: url(/img/share/pdf.svg) no-repeat right center;
   line-height: 1em;
-  padding-right: 1.5em;
-  display: inline-block;
 }
-
-

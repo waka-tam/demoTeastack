@@ -1,0 +1,95 @@
+@charset "UTF-8";
+
+/* ========================================
+  Accordion
+======================================== */
+
+.c-accordion {
+  max-width: 680px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+// アコーディオンボタン
+.c-accordion__btn {
+  display: block;
+  position: relative;
+  width: 100%;
+  padding: 1rem 4rem 1rem 1.5rem;
+  text-align: left;
+  font-size: 1.6rem;
+  outline: none;
+  border: none;
+  border-bottom: 1px solid #2d5996;
+  background-color: $accentColor;
+  color: $mainColor;
+  cursor: pointer;
+
+  // ボタン横線
+  &::before {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 50%;
+    right: 1.5rem;
+    width: 20px;
+    height: 2px;
+    background-color: currentColor;
+    transform: translateY(-50%);
+  }
+
+  // ボタン縦線
+  &::after {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 50%;
+    right: 2.4rem;
+    width: 2px;
+    height: 20px;
+    background-color: currentColor;
+    transform: translateY(-50%);
+  }
+
+  // ホバーフォーカス時
+  &:focus,
+  &:hover {
+    background-color: $mainColor;
+    color: $accentColor;
+  }
+}
+
+// アコーディオン展開箇所
+.c-accordion__body {
+  overflow: hidden;
+  height: 0;
+  padding: 0 1.5rem;
+  line-height: 0;
+  opacity: 0;
+  transition: padding 0.25s, opacity 0.25s;
+
+  & > *:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.c-accordion__txt {
+  margin-bottom: 2rem;
+}
+
+// ボタンアクティブ
+.is-accordion-active {
+  border-bottom: none;
+
+  &::after {
+    content: none;
+  }
+}
+
+// コンテンツ展開
+.is-accordion-open {
+  height: auto;
+  padding: 1.5rem;
+  line-height: normal;
+  opacity: 1;
+}
