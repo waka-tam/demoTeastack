@@ -1,0 +1,24 @@
+@charset "UTF-8";
+
+/* ========================================
+  Form
+======================================== */
+
+.c-form {
+  max-width: 570px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.c-form__label {
+  display: block;
+  margin-bottom: 1rem;
+}
+
+.c-form__input {
+  width: 100%;
+  padding: .5rem;
+  font-size: 1.6rem;
+  line-height: 1.6;
+  border: 1px solid #ccc;
+}
