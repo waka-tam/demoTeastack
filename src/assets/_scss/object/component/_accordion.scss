@@ -15,15 +15,20 @@
   display: block;
   position: relative;
   width: 100%;
-  padding: 1rem 4rem 1rem 1.5rem;
+  padding: get_vw(20) get_vw(50) get_vw(20) get_vw(25);
   text-align: left;
-  font-size: 1.6rem;
+  @include fz_vw(26);
   outline: none;
   border: none;
   border-bottom: 1px solid #2d5996;
   background-color: $accentColor;
   color: $mainColor;
   cursor: pointer;
+
+  @include mq(md) {
+    font-size: 1.6rem;
+    padding: 1rem 4rem 1rem 1.5rem;
+  }
 
   // ボタン横線
   &::before {
@@ -63,10 +68,14 @@
 .c-accordion__body {
   overflow: hidden;
   height: 0;
-  padding: 0 1.5rem;
+  padding: 0 get_vw(25);
   line-height: 0;
   opacity: 0;
   transition: padding 0.25s, opacity 0.25s;
+
+  @include mq(md) {
+    padding: 0 1.5rem;
+  }
 
   & > *:last-child {
     margin-bottom: 0;
@@ -74,7 +83,11 @@
 }
 
 .c-accordion__txt {
-  margin-bottom: 2rem;
+  margin-bottom: get_vw(30);
+
+  @include mq(md) {
+    margin-bottom: 2rem;
+  }
 }
 
 // ボタンアクティブ
@@ -89,7 +102,11 @@
 // コンテンツ展開
 .is-accordion-open {
   height: auto;
-  padding: 1.5rem;
+  padding: get_vw(25);
   line-height: normal;
   opacity: 1;
+
+  @include mq(md) {
+    padding: 1.5rem;
+  }
 }

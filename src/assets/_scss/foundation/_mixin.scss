@@ -173,6 +173,33 @@ $pathImg: "/assets/img/page/" !default;
   }
 }
 
+// Arrow Icon 矢印アイコン
+// 疑似要素の矢印アイコンを作成
+// ex) @include arrow(top, 20px, 20px, 1px, #000)
+// ----------------------------------
+@mixin arrow($direction, $width, $height, $border, $color) {
+  width: $width;
+  height: $height;
+  border: $border solid;
+
+  @if ($direction==top) {
+    border-color: $color $color transparent transparent;
+    transform: rotate(-45deg);
+  }
+  @else if ($direction==left) {
+    border-color: transparent transparent $color $color;
+    transform: rotate(45deg);
+  }
+  @else if ($direction==right) {
+    border-color: $color $color transparent transparent;
+    transform: rotate(45deg);
+  }
+  @else if ($direction==bottom) {
+    border-color: transparent transparent $color $color;
+    transform: trotate(-45deg);
+  }
+}
+
 // Z-index管理
 // ex) z-index: z(header);
 // ----------------------------------

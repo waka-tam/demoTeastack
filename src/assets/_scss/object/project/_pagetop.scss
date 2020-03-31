@@ -1,0 +1,46 @@
+@charset "UTF-8";
+
+/* ========================================
+  Page Top
+======================================== */
+
+.p-page-top__wrapper {
+  position: fixed;
+  right: get_vw(30);
+  bottom: get_vw(30);
+
+  @include mq(md) {
+    right: 30px;
+    bottom: 30px;
+  }
+}
+
+.p-page-top__btn {
+  position: relative;
+  width: get_vw(56);
+  height: get_vw(56);
+  border: 1px solid $accentColor;
+  background-color: #fff;
+  white-space: nowrap;
+  overflow: hidden;
+  cursor: pointer;
+
+  &::after {
+    content: "";
+    @include arrow(top, get_vw(20), get_vw(20), 1px, #000);
+    position: relative;
+    top: 45%;
+    left: 30%;
+    display: block;
+
+    @include mq(md) {
+      left: 25%;
+      @include arrow(top, 20px, 20px, 1px, #000);
+    }
+  }
+
+  @include mq(md) {
+    width: 46px;
+    height: 46px;
+  }
+}

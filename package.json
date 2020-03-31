@@ -78,6 +78,7 @@
     "objectFitPolyfill": "^2.3.0",
     "picturefill": "^3.0.3",
     "svg4everybody": "^2.1.9",
+    "sweet-scroll": "^4.0.0",
     "vue": "^2.6.11",
     "vue-class-component": "^7.2.3"
   }

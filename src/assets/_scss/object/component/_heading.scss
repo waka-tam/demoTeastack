@@ -1,0 +1,37 @@
+@charset "UTF-8";
+
+/* ========================================
+  Heading
+======================================== */
+
+.c-heading--lev1 {
+  @include fz_vw(48);
+
+  @include mq(md) {
+    font-size: 3.8rem;
+  }
+}
+
+.c-heading--lev2 {
+  @include fz_vw(40);
+
+  @include mq(md) {
+    font-size: 3rem;
+  }
+}
+
+.c-heading--lev3 {
+  @include fz_vw(36);
+
+  @include mq(md) {
+    font-size: 2.6rem;
+  }
+}
+
+.c-heading--lev4 {
+  @include fz_vw(30);
+
+  @include mq(md) {
+    font-size: 2rem;
+  }
+}
