@@ -1,3 +1,7 @@
+/**
+ * Axoios サンプル
+ */
+
 // axiosインポート
 import axios from "axios";
 

@@ -1,0 +1,20 @@
+@charset "UTF-8";
+
+/* ========================================
+  Tab Navigation
+======================================== */
+
+.c-tab-nav__list {
+  display: flex;
+  list-style: none;
+}
+
+.c-tab-content {
+  &[aria-hidden="true"] {
+    display: none;
+  }
+
+  &[aria-hidden="false"] {
+    display: block;
+  }
+}

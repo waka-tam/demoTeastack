@@ -1,10 +1,13 @@
 /**
- * `em`基準のフォントサイズ。
+ * メディアクエリ判定
+ *  MediaQuery.matches('md', matches => {
+ *    console.log(matches ? 'md' : 'sm');
+ *  });
  */
+
+// `em`基準のフォントサイズ。
 const BROWSER_DEFAULT_FONT_SIZE = 16;
-/**
- * メディアクエリ変数
- */
+// メディアクエリ変数
 const list = {
   sm: 375,
   md: 768,
@@ -12,24 +15,14 @@ const list = {
   xl: 1230
 };
 
-/**
- * メディアクエリ判定
- */
+// メディアクエリ判定
 export default class MediaQuery {
-  /**
-   * メディアクエリ変数返却
-   */
+  // メディアクエリ変数返却
   // eslint-disable-next-line @typescript-eslint/explicit-function-return-type
   static get list() {
     return list;
   }
 
-  /**
-   * 利用サンプル
-   * MediaQuery.matches('md', matches => {
-   *   console.log(matches ? 'md' : 'sm');
-   * });
-   */
   // eslint-disable-next-line @typescript-eslint/explicit-function-return-type
   static matches(query, layoutChangedCallback) {
     let mediaQuery = `(min-width: ${list[query] /

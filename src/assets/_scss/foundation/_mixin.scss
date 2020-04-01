@@ -185,16 +185,13 @@ $pathImg: "/assets/img/page/" !default;
   @if ($direction==top) {
     border-color: $color $color transparent transparent;
     transform: rotate(-45deg);
-  }
-  @else if ($direction==left) {
+  } @else if ($direction==left) {
     border-color: transparent transparent $color $color;
     transform: rotate(45deg);
-  }
-  @else if ($direction==right) {
+  } @else if ($direction==right) {
     border-color: $color $color transparent transparent;
     transform: rotate(45deg);
-  }
-  @else if ($direction==bottom) {
+  } @else if ($direction==bottom) {
     border-color: transparent transparent $color $color;
     transform: trotate(-45deg);
   }

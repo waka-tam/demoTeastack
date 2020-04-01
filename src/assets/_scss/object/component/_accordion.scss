@@ -12,12 +12,13 @@
 
 // アコーディオンボタン
 .c-accordion__btn {
+  @include fz_vw(26);
+
   display: block;
   position: relative;
   width: 100%;
   padding: get_vw(20) get_vw(50) get_vw(20) get_vw(25);
   text-align: left;
-  @include fz_vw(26);
   outline: none;
   border: none;
   border-bottom: 1px solid #2d5996;
@@ -26,8 +27,8 @@
   cursor: pointer;
 
   @include mq(md) {
-    font-size: 1.6rem;
     padding: 1rem 4rem 1rem 1.5rem;
+    font-size: 1.6rem;
   }
 
   // ボタン横線

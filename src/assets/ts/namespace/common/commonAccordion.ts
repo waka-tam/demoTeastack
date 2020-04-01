@@ -1,3 +1,7 @@
+/**
+ * アコーディオンメニュー開閉
+ */
+
 export default function commonAccordion(): void {
   const trigger = document.querySelectorAll(".js-accordion-trigger");
   for (let i = 0; i < trigger.length; i++) {
