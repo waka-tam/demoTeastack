@@ -23,7 +23,7 @@
 - 利用パッケージが利用プロジェクトに対してオーバースペックになっている可能性がある
 
 ## 依存アプリケーション
-- [Node v8.2以上](https://nodejs.org/ja/) 
+- [Node v10以上](https://nodejs.org/ja/) 
 - [npm](https://www.npmjs.com/) 
 - [Yarn](https://classic.yarnpkg.com/ja/) 
 - [gulp](https://gulpjs.com/) 
@@ -31,6 +31,9 @@
 - [Pug](https://pugjs.org/api/getting-started.html) 
 - [Sass](https://sass-lang.com/) 
 - [TypeScript](https://www.typescriptlang.org/) 
+- [ESLint](https://eslint.org/) 
+- [stylelint](https://stylelint.io/) 
+- [Fractal](https://fractal.build/)
 
 ## 設定ファイル
 - [.editorconfig](https://editorconfig.org/) フォーマット統一
@@ -40,6 +43,7 @@
 - [.stylelintrc.json](https://stylelint.io/) CSSの検証設定
 - [.gitignore](https://git-scm.com/docs/gitignore) Git管理に含めないファイル指定
 - [gulpfile.js](https://gulpjs.com/) Gulpで実行するタスク管理
+- [package.json](https://docs.npmjs.com/files/package.json) NPMでのパッケージ管理
 
 ## 利用方法
 以下「開発環境の設定」にしたがってコマンドを実行すると静的Webサイト構築で必要な環境が整います。
