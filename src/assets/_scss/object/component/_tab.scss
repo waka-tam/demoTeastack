@@ -4,16 +4,56 @@
   Tab Navigation
 ======================================== */
 
+// タブレイアウト
+.c-tab {
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+// タブリスト水平スクロール
+.c-tab-nav {
+  overflow-x: auto;
+}
+
 .c-tab-nav__list {
   display: flex;
+  justify-content: flex-start;
   list-style: none;
+  align-items: center;
+  flex-wrap: nowrap;
+  white-space: nowrap;
+  margin-bottom: 1rem;
+
+  @include mq(md) {
+    justify-content: center;
+  }
+}
+
+.c-tab-nav__item {
+  width: 100%;
+
+  button {
+    @include form_reset;
+    width: 100%;
+    font-size: 1.4rem;
+    padding: 1rem;
+    cursor: pointer;
+    border-bottom: 4px solid $accentColor;
+
+    // タブアクティブ時
+    &[aria-selected="true"] {
+      border-bottom: 4px solid $mainColor;
+    }
+  }
 }
 
 .c-tab-content {
+  // タブコンテンツ非表示
   &[aria-hidden="true"] {
     display: none;
   }
 
+  // タブコンテンツ表示
   &[aria-hidden="false"] {
     display: block;
   }

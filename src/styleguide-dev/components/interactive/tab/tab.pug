@@ -1,21 +1,21 @@
 .l-container
   //- タブナビゲーションエリア パネル番号で制御
-  #tab
+  #tab.c-tab
     //- タブリスト
     .c-tab-nav
       ul(role="tablist").c-tab-nav__list
          li(role="presentation").c-tab-nav__item
-           button(role="tab" aria-controls="panel1" v-on:click="changeTab" v-bind:aria-selected="tab === 'panel1' ? 'true' : 'false'") タブ1
+           button(role="tab" aria-controls="panel1" v-on:click="changeTab" v-bind:aria-selected="tab === 'panel1' ? 'true' : 'false'") タブ切り替え1
          li(role="presentation").c-tab-nav__item
-           button(role="tab" aria-controls="panel2" v-on:click="changeTab" v-bind:aria-selected="tab === 'panel2' ? 'true' : 'false'") タブ2
+           button(role="tab" aria-controls="panel2" v-on:click="changeTab" v-bind:aria-selected="tab === 'panel2' ? 'true' : 'false'") タブ切り替え2
          li(role="presentation").c-tab-nav__item
-           button(role="tab" aria-controls="panel3" v-on:click="changeTab" v-bind:aria-selected="tab === 'panel3' ? 'true' : 'false'") タブ3
+           button(role="tab" aria-controls="panel3" v-on:click="changeTab" v-bind:aria-selected="tab === 'panel3' ? 'true' : 'false'") タブ切り替え3
          li(role="presentation").c-tab-nav__item
-           button(role="tab" aria-controls="panel4" v-on:click="changeTab" v-bind:aria-selected="tab === 'panel4' ? 'true' : 'false'") タブ4
+           button(role="tab" aria-controls="panel4" v-on:click="changeTab" v-bind:aria-selected="tab === 'panel4' ? 'true' : 'false'") タブ切り替え4
          li(role="presentation").c-tab-nav__item
-           button(role="tab" aria-controls="panel5" v-on:click="changeTab" v-bind:aria-selected="tab === 'panel5' ? 'true' : 'false'") タブ5
+           button(role="tab" aria-controls="panel5" v-on:click="changeTab" v-bind:aria-selected="tab === 'panel5' ? 'true' : 'false'") タブ切り替え5
          li(role="presentation").c-tab-nav__item
-           button(role="tab" aria-controls="panel6" v-on:click="changeTab" v-bind:aria-selected="tab === 'panel6' ? 'true' : 'false'") タブ6
+           button(role="tab" aria-controls="panel6" v-on:click="changeTab" v-bind:aria-selected="tab === 'panel6' ? 'true' : 'false'") タブ切り替え16
     //- タブコンテンツ
     div(role="tabpanel" v-bind:aria-hidden="tab !== 'panel1'")#panel1.c-tab-content
       p 彼らも今ほぼそのお話し界においてのの限りが変っなけれなく。ずっと十一月に衰弱らはついにこの推測んましじゃを云えけれどもおりたをは攻撃思っありますて、ずいぶんにもかい摘んうないでらしい。

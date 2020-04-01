@@ -19,6 +19,37 @@ block content
         a(href="/sample.html") サンプルページへ
       p
         a(href="/sample02.html") サンプル2ページへ
+      //- タブナビゲーションエリア パネル番号で制御
+      #tab.c-tab
+        //- タブリスト
+        .c-tab-nav
+        ul(role="tablist").c-tab-nav__list
+          li(role="presentation").c-tab-nav__item
+            button(role="tab" aria-controls="panel1" v-on:click="changeTab" v-bind:aria-selected="tab === 'panel1' ? 'true' : 'false'") タブ切り替え1
+          li(role="presentation").c-tab-nav__item
+            button(role="tab" aria-controls="panel2" v-on:click="changeTab" v-bind:aria-selected="tab === 'panel2' ? 'true' : 'false'") タブ切り替え2
+          li(role="presentation").c-tab-nav__item
+            button(role="tab" aria-controls="panel3" v-on:click="changeTab" v-bind:aria-selected="tab === 'panel3' ? 'true' : 'false'") タブ切り替え3
+          li(role="presentation").c-tab-nav__item
+            button(role="tab" aria-controls="panel4" v-on:click="changeTab" v-bind:aria-selected="tab === 'panel4' ? 'true' : 'false'") タブ切り替え4
+          li(role="presentation").c-tab-nav__item
+            button(role="tab" aria-controls="panel5" v-on:click="changeTab" v-bind:aria-selected="tab === 'panel5' ? 'true' : 'false'") タブ切り替え5
+          li(role="presentation").c-tab-nav__item
+            button(role="tab" aria-controls="panel6" v-on:click="changeTab" v-bind:aria-selected="tab === 'panel6' ? 'true' : 'false'") タブ切り替え16
+        //- タブコンテンツ
+        div(role="tabpanel" v-bind:aria-hidden="tab !== 'panel1'")#panel1.c-tab-content
+          p 彼らも今ほぼそのお話し界においてのの限りが変っなけれなく。ずっと十一月に衰弱らはついにこの推測んましじゃを云えけれどもおりたをは攻撃思っありますて、ずいぶんにもかい摘んうないでらしい。
+        div(role="tabpanel" v-bind:aria-hidden="tab !== 'panel2'")#panel2.c-tab-content
+          p 家族をなお大森さんがしかしそう賑わすあり旨なですん。岡田さんはさっそく根を食っば限るないのありですう。
+        div(role="tabpanel" v-bind:aria-hidden="tab !== 'panel3'")#panel3.c-tab-content
+          p 乙の時分に、その党派が場合へ落ちまで、次第上を少々今日十三一人で向けかもの飯に、私か出れない焦燥を使うた先刻さえもし踏みれる事なから、初めてこう原因にないて、どんなのがしよ事を変う淋しい起しましで。それでまあ生涯一一一個をするなりは来たというむやみです発展よりするて、秋刀魚にそのためその所にして行くでしょ訳た。
+        div(role="tabpanel" v-bind:aria-hidden="tab !== 'panel4'")#panel4.c-tab-content
+          p ゴーシュも血のかっこガラス手をからだに落ち子ました。けれどもどう気の毒ましたという鳥ました。普通でた気ますもだすると楽長のいや屋の中をはすっかり楽たなて、われわれなどゴーシュからしれことますた。出すぎあなたも二つのないんでたくさんの小屋のトロメライがいへ飛びたち第二さきげのびっくりに思って行っだたら。
+        div(role="tabpanel" v-bind:aria-hidden="tab !== 'panel5'")#panel5.c-tab-content
+          p ねずみは夜きいてっで。野ねずみは一引きあげ畑のようから仕上げてやりまし。かっこうもさま扉やそれがつかまえてきませ。一つもおいがしばらくと云いてゴーシュからねこのようから思ってゴーシュにわらいてごうごうと譜にして来た。もうぶるぶる眼を狸に云いたまし。
+        div(role="tabpanel" v-bind:aria-hidden="tab !== 'panel6'")#panel6.c-tab-content
+          p 何はまっ黒そうを云ってぞ猫泪をたったりまし舞台のあとから考えてなおりたりなっていまし。ゴムはひるまのに交響になっだだ。それも何とかあたりはこわくものましてゴーシュはうとうとうかっのだた。「前の一生けん命のかっこうへ。もっ。」
+
 
       //- SSIバナーエリア
       <!--#include virtual="/assets/ssi/ssi-bnr.html" -->

@@ -35,6 +35,33 @@ $breakpoints: (
   @return $rate * $size * 1vw;
 }
 
+// leading function リーディング算出
+// line-hightの余白打ち消しで利用
+// ex) margin-top: - get_lead();
+@function get_lead($size: 1em, $line: 1.4) {
+  $hight: $size * $line;
+  $margin: $hight - $size;
+
+  @return $margin;
+}
+
+// half leading function ハーフ・リーディング算出
+// line-hightの余白打ち消しで利用
+// ex) margin-top: - get_halflead();
+@function get_halflead($size: 1em, $line: 1.4) {
+  $hight: $size * $line;
+  $margin: $hight - $size;
+
+  @return $margin / 2;
+}
+
+// Photoshopトラッキング（文字詰め）制御
+// Photoshopのトラッキング値をletter-spacingへ変換
+// ex) z-index: tracking(50);
+@function tracking($value) {
+  @return ($value / 1000) * 1em;
+}
+
 // font-size mixin
 // ex) @include fz_vw(20);
 @mixin fz_vw($font_size: 10) {
@@ -175,6 +202,7 @@ $pathImg: "/assets/img/page/" !default;
 
 // Arrow Icon 矢印アイコン
 // 疑似要素の矢印アイコンを作成
+// 引数に(方向, 幅, 高さ, 太さ, 色)を指定
 // ex) @include arrow(top, 20px, 20px, 1px, #000)
 // ----------------------------------
 @mixin arrow($direction, $width, $height, $border, $color) {
@@ -205,12 +233,4 @@ $z-map: (header, nav, navbtn);
 
 @function z($name) {
   @return index($z-map, $name);
-}
-
-// Photoshopトラッキング（文字詰め）制御
-// Photoshopのトラッキング値をletter-spacingへ変換
-// ex) z-index: tracking(50);
-// ----------------------------------
-@function tracking($value) {
-  @return ($value / 1000) * 1em;
 }
