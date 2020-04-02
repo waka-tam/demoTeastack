@@ -8,24 +8,26 @@
 import Vue from "vue";
 
 export default function tab(tabId, panelNum): void {
-  new Vue({
-    el: tabId,
-    data: {
-      tab: panelNum
-    },
-    methods: {
-      /**
-       * クリック時のイベントハンドラー
-       */
-      // eslint-disable-next-line @typescript-eslint/explicit-function-return-type
-      changeTab(event) {
-        // イベント発生源の要素を取得
-        const element = event.currentTarget;
-        // aria-controls 属性の値を取得
-        const tabState = element.getAttribute("aria-controls");
-        // プロパティーを更新
-        this.tab = tabState;
+  if (document.querySelector(tabId)) {
+    new Vue({
+      el: tabId,
+      data: {
+        tab: panelNum
+      },
+      methods: {
+        /**
+         * クリック時のイベントハンドラー
+         */
+        // eslint-disable-next-line @typescript-eslint/explicit-function-return-type
+        changeTab(event) {
+          // イベント発生源の要素を取得
+          const element = event.currentTarget;
+          // aria-controls 属性の値を取得
+          const tabState = element.getAttribute("aria-controls");
+          // プロパティーを更新
+          this.tab = tabState;
+        }
       }
-    }
-  });
+    });
+  }
 }

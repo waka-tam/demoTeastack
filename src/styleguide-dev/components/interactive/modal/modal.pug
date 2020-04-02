@@ -1,0 +1,12 @@
+.l-container
+  #modal.c-modal
+    button(v-on:click="openModal").c-btn-main 展開する
+
+    transition-group(name="modal")
+      div(:key="showModal" v-show="showModal").c-modal__overlay
+        div(role="dialog" aria-labelledby="dialog1__ttl" aria-modal="true").c-modal__box
+          h2#dialog1__ttl.c-modal__ttl モーダル展開
+          .c-modal__txt-box
+            p.c-modal__txt 彼らも今ほぼそのお話し界においてのの限りが変っなけれなく。ずっと十一月に衰弱らはついにこの推測んましじゃを云えけれどもおりたをは攻撃思っありますて、ずいぶんにもかい摘んうないでらしい。
+          button(v-on:click="closeModal").c-modal__close-btn 閉じる
+

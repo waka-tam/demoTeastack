@@ -8,6 +8,7 @@ import topTab from "./namespace/top/topTab";
 import topAccordion from "./namespace/top/topAccordion";
 import topTextReturn from "./namespace/top/topTextReturn";
 import sampleJsonGet from "./namespace/sample/sampleJsonGet";
+import sampleModal from "./namespace/sample/sampleModal";
 import sample02Count from "./namespace/sample02/sample02Count";
 
 // Common
@@ -19,5 +20,6 @@ topTab();
 topTextReturn();
 // Sample
 sampleJsonGet();
+sampleModal();
 // Sample02
 sample02Count();
