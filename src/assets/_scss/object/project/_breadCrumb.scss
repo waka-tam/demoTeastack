@@ -1,0 +1,34 @@
+@charset "UTF-8";
+
+/* ========================================
+  Bread crumb
+======================================== */
+
+.p-bread-crumb {
+  max-width: $cntWidth;
+  margin-right: auto;
+  margin-left: auto;
+  display: flex;
+  list-style: none;
+}
+
+.p-bread-crumb__item {
+  font-size: 1.2rem;
+
+  @include mq(md) {
+    font-size: 1.4rem;
+  }
+
+  &:not(:first-child) {
+    &::before {
+      content: "＞";
+      display: inline-block;
+      padding: 0 1rem;
+      color: $blurColor;
+    }
+  }
+}
+
+.p-bread-crumb__link {
+  color: $blurColor;
+}

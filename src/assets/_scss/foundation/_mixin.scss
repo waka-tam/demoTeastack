@@ -9,8 +9,7 @@
 // --------------------------------------------------
 
 // Breakpoint ブレイクポイント
-$breakpoints: (
-  "sm": "screen and (min-width: 375px)",
+$breakpoints: ("sm": "screen and (min-width: 375px)",
   "sp-only": "screen and (max-width: 768px)",
   "md": "screen and (min-width: 768px)",
   "lg": "screen and (min-width: 1028px)",
@@ -188,13 +187,19 @@ $pathImg: "/assets/img/page/" !default;
   @if ($direction==top) {
     border-width: 0 $valWidth $height $valWidth;
     border-color: transparent transparent $color transparent;
-  } @else if ($direction==left) {
+  }
+
+  @else if ($direction==left) {
     border-width: $valHeight $width $valHeight 0;
     border-color: transparent $color transparent transparent;
-  } @else if ($direction==right) {
+  }
+
+  @else if ($direction==right) {
     border-width: $valHeight 0 $valHeight $width;
     border-color: transparent transparent transparent $color;
-  } @else if ($direction==bottom) {
+  }
+
+  @else if ($direction==bottom) {
     border-width: $height $valWidth 0 $valWidth;
     border-color: $color transparent transparent transparent;
   }
@@ -213,13 +218,19 @@ $pathImg: "/assets/img/page/" !default;
   @if ($direction==top) {
     border-color: $color $color transparent transparent;
     transform: rotate(-45deg);
-  } @else if ($direction==left) {
+  }
+
+  @else if ($direction==left) {
     border-color: transparent transparent $color $color;
     transform: rotate(45deg);
-  } @else if ($direction==right) {
+  }
+
+  @else if ($direction==right) {
     border-color: $color $color transparent transparent;
     transform: rotate(45deg);
-  } @else if ($direction==bottom) {
+  }
+
+  @else if ($direction==bottom) {
     border-color: transparent transparent $color $color;
     transform: trotate(-45deg);
   }
@@ -233,4 +244,55 @@ $z-map: (header, nav, navbtn);
 
 @function z($name) {
   @return index($z-map, $name);
+}
+
+/**
+ * ViewportScale v0.2.1
+ * Copyright (c) 2018 Kite
+ * MIT License
+ * https://github.com/ixkaito/viewportscale
+ * https://speakerdeck.com/ixkaito/taipogurahuibesituku-plus-dezainaidea?slide=52
+ */
+
+// スクリーンサイズに応じた自然な縮小
+// ex) @include vs($property, $min-viewport-width, $min-size, $max-viewport-width, $max-size);
+// ex) @include vs(font-size, 320px, 32px, 960px, 48px);
+// ex) @include vs(padding, 320px, 16px, 960px, 24px);
+// ----------------------------------
+@function strip-unit($value) {
+  @return $value / ($value * 0 + 1);
+}
+
+@mixin vs($property, $min-vp, $min-length, $max-vp, $max-length, $vp-unit: "vw") {
+  $u1: unit($min-vp);
+  $u2: unit($min-length);
+  $u3: unit($max-vp);
+  $u4: unit($max-length);
+
+  $a: strip-unit($min-vp);
+  $b: strip-unit($min-length);
+  $c: strip-unit($max-vp);
+  $d: strip-unit($max-length);
+
+  @if $u1==$u3 and $u2==$u4 {
+
+    $x: ($d - $b) / ($c - $a) * 100#{$vp-unit};
+    $y: ($c * $b - $a * $d) / ($c - $a) * 1#{$u2};
+
+    #{$property}: $min-length;
+
+    @media screen and (min-width: $min-vp) {
+      @if $y==0 {
+        #{$property}: $x;
+      }
+
+      @else {
+        #{$property}: calc(#{$x} + #{$y});
+      }
+    }
+
+    @media screen and (min-width: $max-vp) {
+      #{$property}: $max-length;
+    }
+  }
 }

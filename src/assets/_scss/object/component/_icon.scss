@@ -4,35 +4,41 @@
   Icon
 ======================================== */
 
+// アイコン標準モジュール(シングルクラス利用)
+// --------------------------------------------------
 .c-icon {
-  width: 1em;
-  height: 1em;
+  width: 1.2em;
+  height: 1.2em;
+  vertical-align: text-top;
 }
 
+// 前アイコンモジュール(マルチクラス利用/SVGスプライト利用)
+// --------------------------------------------------
 .c-icon--before {
   margin-right: 0.5em;
 }
 
+// 後アイコンモジュール(マルチクラス利用/SVGスプライト利用)
+// --------------------------------------------------
 .c-icon--after {
   margin-left: 0.5em;
 }
 
-.c-icon-wrap {
-  display: flex;
-  align-items: center;
-}
-
+// 前アイコンモジュール(シングルクラス利用/背景画像利用)
+// --------------------------------------------------
 .c-icon-bg--before {
   padding-left: 1.5em;
   // スタイルガイドでは背景画像をインラインで記述
   //background: url(/img/share/pdf.svg) no-repeat left center;
-  line-height: 1em;
+  line-height: 1.2em;
 }
 
+// 後アイコンモジュール(シングルクラス利用/背景画像利用)
+// --------------------------------------------------
 .c-icon-bg--after {
   display: inline-block;
   padding-right: 1.5em;
   // スタイルガイドでは背景画像をインラインで記述
   //background: url(/img/share/pdf.svg) no-repeat right center;
-  line-height: 1em;
+  line-height: 1.2em;
 }

@@ -1,0 +1,32 @@
+@charset "UTF-8";
+
+/* ========================================
+  Jumbotron
+======================================== */
+
+// ジャンボトロン背景画像
+.p-jumbotron {
+  width: 100%;
+  @include vs(height, 768px, 300px, 1200px, 600px);
+  background-position: center center;
+  background-size: cover;
+}
+
+// ジャンボトロンインナーコンテンツ
+.p-jumbotron__inner {
+  position: relative;
+  height: 100%;
+  max-width: $cntWidth;
+}
+
+// ジャンボトロン見出し
+.p-jumbotron__ttl {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  @include vs(padding, 768px, 20px, 1200px, 40px);
+  @include vs(font-size, 768px, 26px, 1200px, 36px);
+  color: #fff;
+  background-color: rgba(0, 0, 0, .6);
+  transform: translateY(-50%);
+}

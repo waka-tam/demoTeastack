@@ -1,0 +1,16 @@
+@charset "UTF-8";
+
+/* ========================================
+  Label
+======================================== */
+
+// ラベル標準モジュール
+// --------------------------------------------------
+.c-label {
+  display: inline-block;
+  padding: .2em .3em;
+  background-color: $accentColor;
+  color: #fff;
+  font-size: 1.2rem;
+  font-weight: bold;
+}

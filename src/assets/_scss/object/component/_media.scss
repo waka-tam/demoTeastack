@@ -4,7 +4,7 @@
   Media
 ======================================== */
 
-// 画像テキスト(シングルクラス利用)
+// 画像テキスト標準モジュール(シングルクラス利用)
 // --------------------------------------------------
 .c-media {
   @include mq(md) {
@@ -46,21 +46,23 @@
   margin-bottom: 1rem;
 }
 
-// テキスト画像(マルチクラス利用)
+// 画像テキスト反転モジュール(マルチクラス利用)
 // --------------------------------------------------
 .c-media--rev {
   @include mq(md) {
     flex-direction: row-reverse;
   }
-}
 
-.c-media__img-wrapper--rev {
-  margin-right: 0;
-}
+  .c-media__img-wrapper {
+    @include mq(md) {
+      margin-right: 0;
+    }
+  }
 
-.c-media__body {
-  @include mq(md) {
-    // コンテンツ幅1200px時に40px余白(デザインラフに合わせる)
-    margin-right: 40 / 1200 * 100%;
+  .c-media__body {
+    @include mq(md) {
+      // コンテンツ幅1200px時に40px余白(デザインラフに合わせる)
+      margin-right: 40 / 1200 * 100%;
+    }
   }
 }

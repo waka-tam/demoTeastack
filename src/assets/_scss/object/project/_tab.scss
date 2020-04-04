@@ -4,18 +4,20 @@
   Tab Navigation
 ======================================== */
 
-// タブレイアウト
-.c-tab {
+// タブナビゲーション標準モジュール
+// --------------------------------------------------
+.p-tab {
   max-width: 960px;
   margin: 0 auto;
 }
 
-// タブリスト水平スクロール
-.c-tab-nav {
+// タブリスト
+.p-tab-nav {
+  // タブリスト水平スクロール
   overflow-x: auto;
 }
 
-.c-tab-nav__list {
+.p-tab-nav__list {
   display: flex;
   justify-content: flex-start;
   list-style: none;
@@ -29,7 +31,8 @@
   }
 }
 
-.c-tab-nav__item {
+// タブアイテム
+.p-tab-nav__item {
   width: 100%;
 
   button {
@@ -47,7 +50,9 @@
   }
 }
 
-.c-tab-content {
+// タブコンテンツ
+.p-tab-content {
+
   // タブコンテンツ非表示
   &[aria-hidden="true"] {
     display: none;

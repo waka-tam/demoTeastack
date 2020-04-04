@@ -1,0 +1,40 @@
+@charset "UTF-8";
+
+/* ========================================
+  CTA（CAll to Action）
+======================================== */
+
+.p-cta {
+  padding: 3rem;
+  text-align: center;
+  border: 1px solid $accentColor;
+
+  > *:last-child {
+    margin-bottom: 0;
+  }
+}
+
+// CTA見出し
+.p-cta__ttl {
+  color: $accentColor;
+  font-size: 2rem;
+  font-weight: bold;
+  padding-bottom: 1rem;
+  margin-bottom: 2rem;
+  border-bottom: 2px solid currentColor;
+}
+
+// CTAテキスト
+.p-cta__txt {
+  margin-bottom: 1rem;
+}
+
+// CTAボタン
+.p-cta__btn {
+  background-color: $accentColor;
+
+  &:focus, &:hover {
+    color: $accentColor;
+    border-color: currentColor;
+  }
+}

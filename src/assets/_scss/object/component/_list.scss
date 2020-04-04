@@ -4,7 +4,76 @@
   List
 ======================================== */
 
+// 順序無しリスト標準モジュール(シングルクラス利用)
+// --------------------------------------------------
 .c-bullet-list {
-  width: 100%;
   list-style: none;
+}
+
+.c-bullet-list__item {
+  position: relative;
+  padding-left: 1em;
+  margin-bottom: 1rem;
+
+  &::before {
+    position: absolute;
+    content: "";
+    top: .5em;
+    left: 0;
+    display: block;
+    width: .4em;
+    height: .4em;
+    background-color: $accentColor;
+    border-radius: 50%;
+  }
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+// 順序無し水平リストモジュール(マルチクラス利用)
+// --------------------------------------------------
+.c-bullet-list--horiz {
+  @include mq(sm) {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-bottom: -1rem;
+
+    .c-bullet-list__item {
+      flex: calc(50% - 2.5rem);
+      margin-right: 1rem;
+    }
+
+    .c-bullet-list__item:nth-of-type(even) {
+      margin-right: 0;
+    }
+  }
+}
+
+// 順序ありリスト標準モジュール
+// --------------------------------------------------
+.c-order-list {
+  counter-reset: c-order-list;
+}
+
+.c-order-list__item {
+  position: relative;
+  padding-left: 1em;
+  margin-bottom: 1rem;
+
+  &::before {
+    content: counter(c-order-list) '. ';
+    position: absolute;
+    top: 0;
+    left: 0;
+    color: $accentColor;
+    font-weight: bold;
+    counter-increment: c-order-list;
+  }
+
+  &:last-child {
+    margin-bottom: 0;
+  }
 }

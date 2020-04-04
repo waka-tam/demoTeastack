@@ -4,18 +4,20 @@
   Form
 ======================================== */
 
-.c-form {
+// フォーム標準モジュール
+// --------------------------------------------------
+.p-form {
   max-width: 570px;
   margin-right: auto;
   margin-left: auto;
 }
 
-.c-form__label {
+.p-form__label {
   display: block;
   margin-bottom: 1rem;
 }
 
-.c-form__input {
+.p-form__input {
   width: 100%;
   padding: 0.5rem;
   font-size: 1.6rem;

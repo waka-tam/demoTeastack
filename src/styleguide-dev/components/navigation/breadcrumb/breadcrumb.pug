@@ -8,19 +8,19 @@
 //-     ["About", "/about/"]
 //-   ])
 mixin breadcrumb(levels)
-  ol.c-breadCrumb(itemscope itemtype="http://schema.org/BreadcrumbList")
+  ol.p-bread-crumb(itemscope itemtype="http://schema.org/BreadcrumbList")
     each level, index in levels
       - var count = index + 1
       - var link = level[1]
 
-      li.c-breadCrumb_item(itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem")
+      li.p-bread-crumb__item(itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem")
 
         if count != levels.length
-          a.c-breadCrumb_link(href=link itemprop="item")
+          a.p-bread-crumb__link(href=link itemprop="item")
             span(itemprop="name") #{level[0]}
           meta(itemprop="position" content!=count)
         else 
-          a.c-breadCrumb_link(href=link itemprop="item" aria-current="page")
+          a.p-bread-crumb__link(href=link itemprop="item" aria-current="page")
             span(itemprop="name") #{level[0]}
           meta(itemprop="position" content!=count)
 

@@ -5,21 +5,21 @@
 ======================================== */
 
 // 画面オーバーレイ
-.c-modal__overlay {
-  z-index:1;
-  position:fixed;
-  top:0;
-  left:0;
-  width:100%;
-  height:100%;
-  background-color:rgba(0, 0, 0, 0.5);
+.p-modal__overlay {
+  z-index: 1;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
 // モダーダルボックス
-.c-modal__box {
+.p-modal__box {
   position: relative;
   z-index: 2;
   width: 50%;
@@ -28,12 +28,15 @@
 }
 
 // モーダル閉じるボタン
-.c-modal__close-btn {
+.p-modal__close-btn {
   position: absolute;
   top: 1.5rem;
   right: 1.5rem;
+  cursor: pointer;
+  appearance: none;
 }
 
+// モーダルアニメーション
 .modal-enter-active,
 .modal-leave-active {
   transition: opacity .25s;
