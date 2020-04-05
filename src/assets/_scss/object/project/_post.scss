@@ -1,0 +1,50 @@
+@charset "UTF-8";
+
+/* ========================================
+  Post
+======================================== */
+
+// ポストリスト（垂直方向）標準モジュール
+// --------------------------------------------------
+.p-vert-post__item {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid #ddd;
+
+  @include mq(md) {
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+  }
+
+  &:first-child {
+    padding-top: 0;
+  }
+}
+
+.p-vert-post__header {
+  margin-bottom: 1rem;
+
+  > *:not(:last-child) {
+    margin-right: 1em;
+  }
+}
+
+.p-vert-post__date {
+  font-size: 1.2rem;
+
+  @include mq(md) {
+    font-size: 1.4rem;
+  }
+}
+
+.p-vert-post__link {
+  font-size: 1.4rem;
+
+  @include mq(md) {
+    font-size: 1.6rem;
+  }
+
+  &:focus, &:hover {
+    text-decoration: underline;
+  }
+}

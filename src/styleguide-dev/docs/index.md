@@ -73,7 +73,7 @@ CSS設計はFLOCSSを採用。FLOCSSはレイヤーという概念が強く、�
 
 ＊Page単位で名前空間を持たせる場合はProject配下にPage単位のディレクトリを作成し、`p-`の接頭辞を外す。  
 
-ex) `.top-block__element`
+ex) .top-block__element
 
 ### BEM記法
 class名はBEMの構造に合わせて記述。
