@@ -26,3 +26,8 @@ $subColor: #000 !default;
 $accentColor: #002b69 !default;
 $linkColor: #07f !default;
 $baseBg: #fff !default;
+
+// Transition トランジション変数
+// ex) transition: $baseTransition;
+// --------------------------------------------------
+$baseTransition: .25s !default;

@@ -1,0 +1,63 @@
+@charset "UTF-8";
+
+/* ========================================
+  Pager
+======================================== */
+
+// ページャー標準モジュール
+// --------------------------------------------------
+.p-pager {
+  display: flex;
+  overflow-x: auto;
+}
+
+.p-pager__inner {
+  display: flex;
+  margin-right: auto;
+  margin-left: auto;
+
+  > *:last-child {
+    margin-right: 0;
+  }
+}
+
+.p-pager__item {
+  margin-right: 1.5rem;
+}
+
+.p-pager__link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 3.4rem;
+  height: 3.4rem;
+  border: 1px solid currentColor;
+  color: $accentColor;
+  transition: $baseTransition;
+
+  @include mq(md) {
+    width: 4rem;
+    height: 4rem;
+  }
+
+  svg {
+    fill: $accentColor;
+  }
+
+  &:focus, &:hover {
+    background-color: $accentColor;
+    color: #fff;
+    opacity: .75;
+
+    svg {
+      fill: #fff;
+    }
+  }
+}
+
+.p-pager__link--active {
+  color: $accentColor;
+  background-color: $accentColor;
+  color: #fff;
+  pointer-events: none;
+}

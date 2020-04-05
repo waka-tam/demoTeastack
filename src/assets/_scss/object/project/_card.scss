@@ -1,0 +1,102 @@
+@charset "UTF-8";
+
+/* ========================================
+  Card
+======================================== */
+
+// カードレイアウト標準モジュール
+// --------------------------------------------------
+.p-card-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+// カードレイアウト2カラム
+.p-card__col2 {
+  margin-bottom: -2rem;
+
+  @include mq(md) {
+    margin-bottom: -3rem;
+  }
+
+  .p-card {
+    width: 100%;
+    margin-right: 0;
+    margin-bottom: 2rem;
+
+    @include mq(md) {
+      // 1200px時に30px余白
+      width: calc(97.5% / 2);
+      margin-right: 2.5%;
+      margin-bottom: 3rem;
+
+      &:nth-of-type(2n) {
+        margin-right: 0;
+      }
+    }
+  }
+}
+
+// カードレイアウト３カラム
+.p-card__col3 {
+  margin-bottom: -2rem;
+
+  @include mq(md) {
+    margin-bottom: -3rem;
+  }
+
+  .p-card {
+    width: 100%;
+    margin-right: 0;
+    margin-bottom: 2rem;
+
+    @include mq(md) {
+      // 1200px時に30px余白
+      width: calc(95% / 3);
+      margin-right: 2.5%;
+      margin-bottom: 3rem;
+
+      &:nth-of-type(3n) {
+        margin-right: 0;
+      }
+    }
+  }
+}
+
+// カード標準モジュール
+// --------------------------------------------------
+.p-card {
+  box-shadow: 0 3px 6px rgba(0, 0, 0, .16);
+}
+
+.p-card__img-wrapper {
+  position: relative;
+  // 画像表示領域確保 縦横比16:9でトリミング
+  padding-top: 56.25%;
+  overflow: hidden;
+
+  img {
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    transform: translateY(-50%);
+  }
+}
+
+.p-card__body {
+  padding: 1.5rem;
+
+  > *:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.p-card__ttl {
+  margin-bottom: .5rem;
+  font-size: 1.8rem;
+  font-weight: bold;
+}
+
+.p-card__txt {
+  color: $baseColor;
+}
