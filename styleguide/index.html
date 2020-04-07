@@ -77,8 +77,8 @@
 <p>作成したコンポーネントに対してステータスの付与が可能です。以下ステータスを <code>config.json</code> に記述してください。</p>
 <ul>
 <li><strong>Prototype:</strong> プロトタイプ段階を意味する（利用不可）</li>
-<li><strong>Wip:</strong> 制作の途中段階（慎重に利用してください）</li>
-<li><strong>Ready:</strong> 制作完了（自由にご利用ください）</li>
+<li><strong>Wip:</strong> 開発の途中段階（基本的に利用不可、モックレベルでのみ利用）</li>
+<li><strong>Ready:</strong> 制作完了（校了済みパーツ）</li>
 </ul>
 <h2 id="コンポーネントについて">コンポーネントについて</h2>
 <p>コンポーネントカテゴリーの分類ルールは以下です。（必要に応じて変更してください）</p>
@@ -97,12 +97,12 @@
 <li><strong>Block:</strong> 見出しや画像、テキストなどがひとまとまりになっているエリア</li>
 <li><strong>Interactive:</strong> アコーディオン、カルーセルなどユーザー操作で稼働する要素</li>
 <li><strong>RichMedia:</strong> ビデオやオーディオのようなリッチメディア要素</li>
-<li><strong>ThirdParty:</strong> Google Mapsなどサードパーティサービス</li>
+<li><strong>ThirdParty:</strong> Google Maps、YouTubeなどのサードパーティサービス</li>
 <li><strong>Notification:</strong> 警告メッセージ、エラーメッセージ、ローディング、ポップアップなどユーザーに知らせる為の要素</li>
 </ul>
 <h2 id="css設計">CSS設計</h2>
-<p>CSS設計はFLOCSSを採用。FLOCSSはレイヤーという概念が強く、レイヤーに分けてCSSを管理。
-レイヤーは大きくFoundation、Layout、Objectに分けられ、ObjectレイヤーにProject、Component、Utilityといったサブレイヤーを配置。</p>
+<p>CSS設計はFLOCSSを採用。FLOCSSはレイヤーという概念が強く、レイヤーに分けてCSSを管理する。
+レイヤーは大きくFoundation、Layout、Objectに分けられ、ObjectレイヤーにProject、Component、Utilityといったサブレイヤーを配置する。</p>
 <h3 id="foundation">Foundation</h3>
 <p>リセットCSSを記述し、ブラウザのデフォルトスタイルを初期化。
 標準で設定済みですので詳細は本テンプレートの<code>README.md</code>ファイルを参照してください。</p>
@@ -112,9 +112,10 @@
 <h3 id="object">Object</h3>
 <p>プロジェクト内で繰り返されるデザインパターンを定義。</p>
 <h3 id="component">Component</h3>
-<p>再利用可能で汎用的なパターンを定義。</p>
+<p>再利用可能で汎用的なパターンを定義。最低限の機能を持ったものが定義される。<br>要素自体が固有の幅や色といったの特色を持つことを避ける。</p>
 <h3 id="project">Project</h3>
-<p>プロジェクト固有のパターンを定義。</p>
+<p>プロジェクト固有のパターンを定義。いくつかのComponentと、それに該当しない要素によって構成されるものを定義する。
+記事一覧や、ユーザープロフィール、画像ギャラリーなどコンテンツを構成する要素などが該当する。</p>
 <h3 id="utility">Utility</h3>
 <p>細かなスタイル調整が必要な場合のスタイルを定義。</p>
 <h3 id="命名規則">命名規則</h3>
@@ -125,6 +126,8 @@
 <li><strong>Project:</strong> .p-*</li>
 <li><strong>Utility:</strong> .u-*</li>
 </ul>
+<p>＊Page単位で名前空間を持たせる場合はProject配下にPage単位のディレクトリを作成し、<code>p-</code>の接頭辞を外す。  </p>
+<p>ex) .top-block__element</p>
 <h3 id="bem記法">BEM記法</h3>
 <p>class名はBEMの構造に合わせて記述。</p>
 <p>Block__Element–modifier<br>ex) .c-article__txt–arert</p>
@@ -175,6 +178,30 @@
             
             
             
+    
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a class="Tree-entityLink" href="components/detail/card.html" data-pjax>
+                <span>Card</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #FF3333;" title="Prototype"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
     
         
         
@@ -243,8 +270,8 @@
         
         
         <li class="Tree-item Tree-entity" data-role="item">
-            <a class="Tree-entityLink" href="components/detail/input.html" data-pjax>
-                <span>Input</span>
+            <a class="Tree-entityLink" href="components/detail/inquiry.html" data-pjax>
+                <span>Inquiry</span>
                 
 
 <div class="Status Status--unlabelled">
@@ -440,6 +467,30 @@
         </li>
         
     
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a class="Tree-entityLink" href="components/detail/label.html" data-pjax>
+                <span>Label</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #FF3333;" title="Prototype"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
 
             </ul>
         </li>
@@ -480,6 +531,54 @@
         </li>
         
     
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a class="Tree-entityLink" href="components/detail/jumbotron.html" data-pjax>
+                <span>Jumbotron</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #FF3333;" title="Prototype"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a class="Tree-entityLink" href="components/detail/slider.html" data-pjax>
+                <span>Slider</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #FF3333;" title="Prototype"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
 
             </ul>
         </li>
@@ -501,6 +600,54 @@
         <li class="Tree-item Tree-entity" data-role="item">
             <a class="Tree-entityLink" href="components/detail/accordion.html" data-pjax>
                 <span>Accordion</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #FF3333;" title="Prototype"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a class="Tree-entityLink" href="components/detail/modal.html" data-pjax>
+                <span>Modal</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #FF3333;" title="Prototype"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a class="Tree-entityLink" href="components/detail/tab.html" data-pjax>
+                <span>Tab</span>
                 
 
 <div class="Status Status--unlabelled">
@@ -600,6 +747,54 @@
         </li>
         
     
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a class="Tree-entityLink" href="components/detail/order_list.html" data-pjax>
+                <span>Order List</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #FF3333;" title="Prototype"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a class="Tree-entityLink" href="components/detail/vertical_post.html" data-pjax>
+                <span>Vertical Post</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #FF3333;" title="Prototype"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
 
             </ul>
         </li>
@@ -640,6 +835,30 @@
         </li>
         
     
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a class="Tree-entityLink" href="components/detail/pager.html" data-pjax>
+                <span>Pager</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #FF3333;" title="Prototype"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
 
             </ul>
         </li>
@@ -655,6 +874,30 @@
             
             
             
+    
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a class="Tree-entityLink" href="components/detail/caution.html" data-pjax>
+                <span>Caution</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #FF3333;" title="Prototype"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
     
         
         
@@ -699,8 +942,56 @@
         
         
         <li class="Tree-item Tree-entity" data-role="item">
+            <a class="Tree-entityLink" href="components/detail/cross_table.html" data-pjax>
+                <span>Cross Table</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #FF3333;" title="Prototype"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
             <a class="Tree-entityLink" href="components/detail/horizontal_table.html" data-pjax>
                 <span>Horizontal Table</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #FF3333;" title="Prototype"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a class="Tree-entityLink" href="components/detail/vertical_table.html" data-pjax>
+                <span>Vertical Table</span>
                 
 
 <div class="Status Status--unlabelled">
