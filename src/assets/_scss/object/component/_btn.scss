@@ -65,19 +65,20 @@
 // アイコン付きボタンモジュール(SVGスプライト利用)
 // --------------------------------------------------
 .c-icon-btn {
-  position: relative;
   display: inline-block;
-  padding: .2em .3em;
+  position: relative;
+  padding: 0.2em 0.3em;
+  text-decoration: none;
   border: 1px solid currentColor;
   color: $linkColor;
-  text-decoration: none;
-  transition: .25s;
+  transition: $baseTransition;
 
   svg {
     fill: $linkColor;
   }
 
-  &:focus, &:hover {
+  &:focus,
+  &:hover {
     background-color: $linkColor;
     color: #fff;
 

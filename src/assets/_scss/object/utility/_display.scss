@@ -23,4 +23,22 @@
   &ib {
     display: inline-block;
   }
+
+  // スマホのみ表示
+  &sp {
+    display: block;
+
+    @include mq(md) {
+      display: none;
+    }
+  }
+
+  // PCのみ表示
+  &pc {
+    display: none;
+
+    @include mq(md) {
+      display: block;
+    }
+  }
 }

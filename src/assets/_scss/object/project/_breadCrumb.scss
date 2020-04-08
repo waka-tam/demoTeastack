@@ -7,10 +7,10 @@
 // パンくず標準モジュール
 // --------------------------------------------------
 .p-bread-crumb {
+  display: flex;
   max-width: $cntWidth;
   margin-right: auto;
   margin-left: auto;
-  display: flex;
   list-style: none;
 }
 

@@ -14,13 +14,13 @@
   }
 
   th {
+    vertical-align: middle;
     width: 20%;
     padding: 1.5rem;
+    font-weight: bold;
+    border-bottom: 1px solid #ddd;
     background-color: $blurColor;
     color: #fff;
-    border-bottom: 1px solid #ddd;
-    font-weight: bold;
-    vertical-align: middle;
   }
 
   td {
@@ -37,10 +37,11 @@
 // 水平テーブル標準モジュール(スクロール/マルチクラス利用)
 // --------------------------------------------------
 .p-horizontal-table--scrollX {
-  border-right-width: 0;
   overflow-x: auto;
+  border-right-width: 0;
 
-  td, th {
+  td,
+  th {
     white-space: nowrap;
   }
 
@@ -53,8 +54,8 @@
 // --------------------------------------------------
 .p-vert-table {
   overflow-x: auto;
-  border-right-width: 0;
   border: 1px solid #ddd;
+  border-right-width: 0;
 
   table {
     width: auto;
@@ -73,18 +74,18 @@
   }
 
   th {
+    vertical-align: middle;
     padding: 1.5rem;
+    font-weight: bold;
     border-right: 1px solid #ddd;
     border-bottom: 1px solid #ddd;
-    font-weight: bold;
-    vertical-align: middle;
   }
 
   td {
+    vertical-align: middle;
     padding: 1.5rem;
     border-right: 1px solid #ddd;
     border-bottom: 1px solid #ddd;
-    vertical-align: middle;
   }
 
   th,
@@ -96,8 +97,10 @@
     }
   }
 
-  td:last-child, th:last-child {
+  td:last-child,
+  th:last-child {
     border-right-width: 1px;
+
     @include mq(md) {
       border-right-width: 0;
     }
@@ -113,8 +116,8 @@
 // 交差テーブル標準モジュール(スクロール)
 // --------------------------------------------------
 .p-cross-table {
-  border: 1px solid #ddd;
   overflow-x: auto;
+  border: 1px solid #ddd;
   border-right-width: 0;
 
   table {
@@ -129,23 +132,24 @@
   }
 
   th {
+    vertical-align: middle;
     padding: 1.5rem;
-    background-color: $blurColor;
-    color: #fff;
+    font-weight: bold;
     border-right: 1px solid #ddd;
     border-bottom: 1px solid #ddd;
-    font-weight: bold;
-    vertical-align: middle;
+    background-color: $blurColor;
+    color: #fff;
   }
 
   td {
+    vertical-align: middle;
     padding: 1.5rem;
     border-right: 1px solid #ddd;
     border-bottom: 1px solid #ddd;
-    vertical-align: middle;
   }
 
-  th, td {
+  th,
+  td {
     white-space: nowrap;
 
     @include mq(md) {

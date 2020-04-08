@@ -19,12 +19,12 @@
 
 .p-tab-nav__list {
   display: flex;
-  justify-content: flex-start;
-  list-style: none;
   align-items: center;
   flex-wrap: nowrap;
-  white-space: nowrap;
+  justify-content: flex-start;
   margin-bottom: 1rem;
+  white-space: nowrap;
+  list-style: none;
 
   @include mq(md) {
     justify-content: center;
@@ -37,11 +37,12 @@
 
   button {
     @include form_reset;
+
     width: 100%;
-    font-size: 1.4rem;
     padding: 1rem;
-    cursor: pointer;
+    font-size: 1.4rem;
     border-bottom: 4px solid $accentColor;
+    cursor: pointer;
 
     // タブアクティブ時
     &[aria-selected="true"] {
@@ -52,7 +53,6 @@
 
 // タブコンテンツ
 .p-tab-content {
-
   // タブコンテンツ非表示
   &[aria-hidden="true"] {
     display: none;

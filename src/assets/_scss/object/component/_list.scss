@@ -12,19 +12,19 @@
 
 .c-bullet-list__item {
   position: relative;
-  padding-left: 1em;
   margin-bottom: 1rem;
+  padding-left: 1em;
 
   &::before {
-    position: absolute;
     content: "";
-    top: .5em;
-    left: 0;
     display: block;
-    width: .4em;
-    height: .4em;
-    background-color: $accentColor;
+    position: absolute;
+    top: 0.5em;
+    left: 0;
+    width: 0.4em;
+    height: 0.4em;
     border-radius: 50%;
+    background-color: $accentColor;
   }
 
   &:last-child {
@@ -60,16 +60,16 @@
 
 .c-order-list__item {
   position: relative;
-  padding-left: 1em;
   margin-bottom: 1rem;
+  padding-left: 1em;
 
   &::before {
-    content: counter(c-order-list) '. ';
+    content: counter(c-order-list) ". ";
     position: absolute;
     top: 0;
     left: 0;
-    color: $accentColor;
     font-weight: bold;
+    color: $accentColor;
     counter-increment: c-order-list;
   }
 

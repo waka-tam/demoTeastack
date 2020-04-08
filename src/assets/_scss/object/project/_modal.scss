@@ -8,16 +8,16 @@
 // --------------------------------------------------
 // 画面オーバーレイ
 .p-modal__overlay {
-  z-index: 1;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.5);
   display: flex;
   align-items: center;
   justify-content: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
 }
 
 // モダーダルボックス
@@ -41,10 +41,10 @@
 // モーダルアニメーション
 .modal-enter-active,
 .modal-leave-active {
-  transition: opacity .25s;
+  transition: opacity $baseTransition;
 }
 
 .modal-enter,
 .modal-leave-to {
-  opacity: 0
+  opacity: 0;
 }

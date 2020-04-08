@@ -44,7 +44,8 @@
     font-size: 1.6rem;
   }
 
-  &:focus, &:hover {
+  &:focus,
+  &:hover {
     text-decoration: underline;
   }
 }

@@ -1,0 +1,27 @@
+.l-container
+  dl.p-faq
+    //- FAQ項目
+    dt.p-faq__question
+      span.p-faq__icon Q
+      span.p-faq__ttl 依存アプリケーションはありますか？
+    dd.p-faq__answer
+      span.p-faq__icon A
+      .p-faq__body
+        p.p-faq__txt はい。npm, Gulp, Webpackに依存した開発環境となります。
+    //- FAQ項目
+    dt.p-faq__question
+      span.p-faq__icon Q
+      span.p-faq__ttl CSS設計には何を採用していますか？
+    dd.p-faq__answer
+      span.p-faq__icon A
+      .p-faq__body
+        p.p-faq__txt FLOCSSをベースに採用し、プロジェクト規模や進行方法によってECSSに寄せた記述も許容します。
+    //- FAQ項目
+    dt.p-faq__question
+      span.p-faq__icon Q
+      span.p-faq__ttl JavaScriptのファイル管理はどうしていますか？
+    dd.p-faq__answer
+      span.p-faq__icon A
+      .p-faq__body
+        p.p-faq__txt Webpackを用いてJavaScriptを分割管理します。またTypeScriptを採用し、静的型付き言語としてJavaScriptを扱います。
+         p.p-faq__txt TypeScriptのバリデーションタスクを用意していますので、納品・開発時にはTypeScriptバリデーションコマンド、TypeScript補正コマンドを実行して検証・補正を行ってください。

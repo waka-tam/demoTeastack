@@ -8,8 +8,8 @@
 import Swiper from "swiper";
 
 export default function slider(): void {
-  if (document.querySelector(".swiper-container")) {
-    new Swiper(".swiper-container", {
+  if (document.querySelector("#commonSlider")) {
+    new Swiper("#commonSlider", {
       navigation: {
         nextEl: ".swiper-button-next",
         prevEl: ".swiper-button-prev"
