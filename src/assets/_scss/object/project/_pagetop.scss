@@ -8,6 +8,7 @@
 // --------------------------------------------------
 .p-page-top__wrapper {
   position: fixed;
+  z-index: 1000;
   right: get_vw(30);
   bottom: get_vw(30);
 

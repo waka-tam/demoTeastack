@@ -4,8 +4,9 @@
  * https://swiperjs.com/
  */
 
-// swiperインポート
-import Swiper from "swiper";
+//import Swiper from "swiper";
+// swiperインポートIE11対応
+import Swiper from "swiper/js/swiper.min.js";
 
 export default function slider(): void {
   if (document.querySelector("#commonSlider")) {

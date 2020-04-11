@@ -13,3 +13,21 @@
     width: 100%;
   }
 }
+
+// スライダーボタン
+.p-slide__btn-prev,
+.p-slide__btn-next {
+  top: 50%;
+  transform: translateY(-50%);
+  @include fz_vw(54);
+  fill: #007aff;
+
+  @include mq(md) {
+    font-size: 4.4rem;
+  }
+
+  // Swiperスライダーボタン標準デザイン無効化
+  &::after {
+    content: none;
+  }
+}

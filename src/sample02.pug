@@ -19,4 +19,13 @@ block content
   main#sample02
     .wrapper
       h1 サンプル2
-      #app
+      #commonSlider.swiper-container
+        .swiper-wrapper.p-slide__wrapper
+          .swiper-slide.p-slide--full
+            img(src="https://placehold.jp/07f07f/ffffff/1200x680.png", alt="")
+          .swiper-slide.p-slide--full
+            img(src="https://placehold.jp/002b69/ffffff/1200x680.png", alt="")
+          .swiper-slide.p-slide--full
+            img(src="https://placehold.jp/fccf00/ffffff/1200x680.png", alt="")
+        .swiper-button-prev.p-slide__btn-prev <svg class="c-icon" role="img"><use xlink:href="assets/svg/sprite.svg#arrow-left"></use></svg>
+        .swiper-button-next.p-slide__btn-next <svg class="c-icon" role="img"><use xlink:href="assets/svg/sprite.svg#arrow-right"></use></svg>

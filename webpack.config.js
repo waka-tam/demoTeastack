@@ -6,6 +6,12 @@ module.exports = {
   // development に設定するとソースマップ有効でJSファイルが出力される
   mode: environment,
 
+  // パフォーマンスサイズのmaxサイズを500KiBに変更
+  performance: {
+    maxEntrypointSize: 500000,
+    maxAssetSize: 500000
+  },
+
   // メインとなるJavaScriptファイル（エントリーポイント）
   entry: "./src/assets/ts/main.ts",
 
@@ -19,8 +25,8 @@ module.exports = {
       {
         // 拡張子 .ts の場合
         test: /\.ts$/,
-        // node_modulesの除外
-        exclude: /node_modules/,
+        // node_modulesと、Swiper.jsの除外（※IE11用）
+        exclude: /node_modules\/(?!(dom7|ssr-window|swiper)\/).*/,
         // TypeScript をコンパイルする
         use: "ts-loader"
       }

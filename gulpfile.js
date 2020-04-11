@@ -155,7 +155,7 @@ gulp.task("sass", done => {
   return gulp
     .src(src.css)
     .pipe(sassGlob())
-    .pipe(sourcemaps.init())
+    .pipe(gulpif(isDevelopment, sourcemaps.init()))
     .pipe(sass({ outputStyle: "expanded" }))
     .pipe(
       plumber({ errorHandler: notify.onError("Error: <%= error.message %>") })
@@ -170,7 +170,7 @@ gulp.task("sass", done => {
         })
       )
     )
-    .pipe(sourcemaps.write())
+    .pipe(gulpif(isDevelopment, sourcemaps.write()))
     .pipe(gulp.dest(dist.css));
   done();
 });

@@ -3,9 +3,9 @@ import CountComponent from "../../component/count";
 
 // Vueサンプル処理（プロジェクト開始時には以下削除してください）
 export default function sample02Count(): void {
-  if (document.querySelector("#sample02")) {
+  if (document.querySelector("#counter")) {
     new Vue({
-      el: "#app",
+      el: "#counter",
       template: `
       <div class="app">
         <section>
