@@ -6,6 +6,14 @@
 
 // キャプション標準モジュール
 // --------------------------------------------------
+.c-caption--center {
+  text-align: center;
+}
+
+.c-caption--right {
+  text-align: right;
+}
+
 .c-caption__txt {
   margin-top: 1rem;
   font-size: 1.4rem;

@@ -1,47 +1,50 @@
 .l-container
-  form(action="").p-form
+  .p-inquiry-form-wrap
+    form(action="").p-inquiry-form
     //- 名前入力
-    .p-form-group
-      label(for="fullName").p-form__label お名前
-      input#fullName(type="text" name="fullName" required).p-form__input
+    .p-inquiry-form-group
+      label(for="fullName").p-inquiry-form__label お名前
+      input#fullName(type="text" name="fullName" required).p-inquiry-form__input
     //- メールアドレス入力
-    .p-form-group
-      label(for="email").p-form__label メールアドレス
-      input#email(type="email" name="email" required).p-form__input
+    .p-inquiry-form-group
+      label(for="email").p-inquiry-form__label メールアドレス
+      input#email(type="email" name="email" required).p-inquiry-form__input
     //- 電話番号入力
-    .p-form-group
-      label(for="tel").p-form__label 電話番号(任意)
-      input#tel(type="tel" name="tel").p-form__input
+    .p-inquiry-form-group
+      label(for="tel").p-inquiry-form__label 電話番号(任意)
+      input#tel(type="tel" name="tel").p-inquiry-form__input
     //- お問い合わせ種別選択
-    .p-form-group
-      label(for="contactType").p-form__label お問い合わせ種別
-      select#contactType(name="contactType").p-form__select
+    .p-inquiry-form-group.p-inquiry-form__select-box
+      label(for="contactType").p-inquiry-form__label お問い合わせ種別
+      select#contactType(name="contactType").p-inquiry-form__select
         option(value="Webサイト構築") Webサイト構築
         option(value="SEO改善") SEO改善
         option(value="SNS運用") SNS運用
         option(value="アプリ開発") アプリ開発
         option(value="その他") その他
     //- 連絡方法選択
-    .p-form-group
-      fieldset.p-form__field
-        legend.p-form__legend 連絡方法
-        .p-form__radio
-          input#radioOption(type="radio" name="option" value="tel" checked).p-form__radio-btn
+    .p-inquiry-form-group
+      fieldset.p-inquiry-form__field
+        legend.p-inquiry-form__legend 連絡方法
+        .p-inquiry-form__radio
+          input#radioOption(type="radio" name="option" value="tel" checked).p-inquiry-form__radio-btn
           label(for="radioOption") 電話での連絡を希望
-        .p-form__radio
-          input#radioOption2(type="radio" name="option" value="email").p-form__radio-btn
+        .p-inquiry-form__radio
+          input#radioOption2(type="radio" name="option" value="email").p-inquiry-form__radio-btn
           label(for="radioOption2") メールでの連絡を希望
-        .p-form__radio
-          input#radioOption3(type="radio" name="option" value="other").p-form__radio-btn
+        .p-inquiry-form__radio
+          input#radioOption3(type="radio" name="option" value="other").p-inquiry-form__radio-btn
           label(for="radioOption3") その他
-    .p-form-group
-      label(for="content").p-form__label お問い合わせ内容
-      textarea#content(name="content" required)
-    .p-form-group
-      input#privacy(type="checkbox" name="privacyPolicy").p-form__input
+    //- お問い合わせ内容
+    .p-inquiry-form-group
+      label(for="content").p-inquiry-form__label お問い合わせ内容
+      textarea#content(name="content" required).p-inquiry-form__text-area
+    //- プライバシーポリシーチェック
+    .p-inquiry-form-group
+      input#privacy(type="checkbox" name="privacyPolicy" required).p-inquiry-form__check
       label(for="privacy") 当社における個人情報の取り扱いについて、
         a(href="https://www.tam-tam.co.jp/privacy/" target="_blank") プライバシーポリシー
         | に同意いただいた上でお問合せください。
-    .p-form__submit
-      input(type="submit" value="送信する").p-form__submit-btn
+    .p-inquiry-form__submit
+      input(type="submit" value="送信する").p-inquiry-form__submit-btn
         

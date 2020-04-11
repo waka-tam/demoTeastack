@@ -1,0 +1,129 @@
+@charset "UTF-8";
+
+/* ========================================
+  Inquiry Form
+======================================== */
+
+// お問い合わせフォーム標準モジュール
+// --------------------------------------------------
+.p-inquiry-form-wrap {
+  max-width: 580px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.p-inquiry-form {
+  width: 100%;
+
+  > *:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.p-inquiry-form__input,
+.p-inquiry-form__text-area,
+.p-inquiry-form__select {
+  width: 100%;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  line-height: 1.6;
+
+  &:focus {
+    outline: 3px solid #fcce0069;
+  }
+}
+
+// フォームグループ
+.p-inquiry-form-group {
+  margin-bottom: 2rem;
+}
+
+// フォーム項目タイトル
+.p-inquiry-form__label,
+.p-inquiry-form__legend {
+  display: block;
+  margin-bottom: 1rem;
+  font-weight: bold;
+  color: $accentColor;
+}
+
+// インプット
+.p-inquiry-form__input {
+  width: 100%;
+  padding: .5rem;
+  box-sizing: border-box;
+  line-height: 1.6;
+  border: 1px solid #ccc;
+}
+
+// セレクトボックス
+.p-inquiry-form__select-box {
+  width: 100%;
+  position: relative;
+
+  &::after {
+    content: "";
+    display: block;
+    position: absolute;
+    bottom: 1.3em;
+    right: 1em;
+    @include arrow(bottom, 14px, 14px, 2px, $accentColor);
+
+    @include mq(md) {
+      bottom: 1em;
+    }
+  }
+}
+
+.p-inquiry-form__select {
+  appearance: none;
+  padding: 1rem .5rem;
+  font-size: 1.6rem;
+  background-color: #fff;
+
+  @include mq(md) {
+    padding: .5rem;
+  }
+
+  &::-ms-expand {
+    display: none;
+  }
+}
+
+// テキストエリア
+.p-inquiry-form__text-area {
+  appearance: none;
+  height: get_vw(200);
+  padding: .5rem;
+  box-sizing: border-box;
+  font-size: 1.6rem;
+
+  @include mq(md) {
+    height: 180px;
+  }
+}
+
+// 送信ボタン
+.p-inquiry-form__submit {
+  text-align: center;
+}
+
+.p-inquiry-form__submit-btn {
+  outline: none;
+  width: get_vw(360);
+  border: none;
+  border-radius: 2rem;
+  background-color: $mainColor;
+  padding: 1rem 1rem;
+  color: $accentColor;
+  font-weight: bold;
+  @include fz_vw(30);
+
+  @include mq(md) {
+    width: 280px;
+    padding: 1.4rem 1.4rem;
+    border-radius: 3rem;
+    font-size: 1.8rem;
+    @include alpha(.8);
+  }
+}
