@@ -5,7 +5,9 @@
 
 export default function commonTargetBlank(): void {
   const targetBlank = document.querySelectorAll("a");
-  targetBlank.forEach(element => {
+  // querySelectorAllで生成されるNodelistを配列へ変換し、IE11でforEachが利用できるようにする
+  const targetBlankArr = Array.prototype.slice.call(targetBlank);
+  targetBlankArr.forEach(element => {
     if (element.hasAttribute("target") === false) {
       return;
     }
