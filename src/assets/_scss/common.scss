@@ -7,7 +7,7 @@
 @import "foundation/_mixin.scss";
 @import "foundation/_base.scss";
 // ライブラリCSSのため利用しない場合は削除
-@import "foundation/_swiper.scss";
+@import "foundation/lib/*.scss";
 
 // =========================================
 // layout

@@ -38,6 +38,13 @@
   margin-bottom: 2rem;
 }
 
+// フォームエラーメッセージ
+.p-inquiry-form__error-txt {
+  display: block;
+  color: red;
+  font-weight: bold;
+}
+
 // フォーム項目タイトル
 .p-inquiry-form__label,
 .p-inquiry-form__legend {
@@ -52,6 +59,7 @@
   width: 100%;
   padding: .5rem;
   box-sizing: border-box;
+  font-size: 1.6rem;
   line-height: 1.6;
   border: 1px solid #ccc;
 }
@@ -119,11 +127,20 @@
   font-weight: bold;
   @include fz_vw(30);
 
+  &[disabled] {
+    background-color: $blurColor;
+    color: #fff;
+  }
+
+  &:not([disabled]) {
+    @include alpha(.8);
+    cursor: pointer;
+  }
+
   @include mq(md) {
     width: 280px;
     padding: 1.4rem 1.4rem;
     border-radius: 3rem;
     font-size: 1.8rem;
-    @include alpha(.8);
   }
 }

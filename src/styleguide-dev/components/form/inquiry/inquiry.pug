@@ -1,50 +1,63 @@
 .l-container
-  .p-inquiry-form-wrap
-    form(action="").p-inquiry-form
-    //- 名前入力
-    .p-inquiry-form-group
-      label(for="fullName").p-inquiry-form__label お名前
-      input#fullName(type="text" name="fullName" required).p-inquiry-form__input
-    //- メールアドレス入力
-    .p-inquiry-form-group
-      label(for="email").p-inquiry-form__label メールアドレス
-      input#email(type="email" name="email" required).p-inquiry-form__input
-    //- 電話番号入力
-    .p-inquiry-form-group
-      label(for="tel").p-inquiry-form__label 電話番号(任意)
-      input#tel(type="tel" name="tel").p-inquiry-form__input
-    //- お問い合わせ種別選択
-    .p-inquiry-form-group.p-inquiry-form__select-box
-      label(for="contactType").p-inquiry-form__label お問い合わせ種別
-      select#contactType(name="contactType").p-inquiry-form__select
-        option(value="Webサイト構築") Webサイト構築
-        option(value="SEO改善") SEO改善
-        option(value="SNS運用") SNS運用
-        option(value="アプリ開発") アプリ開発
-        option(value="その他") その他
-    //- 連絡方法選択
-    .p-inquiry-form-group
-      fieldset.p-inquiry-form__field
-        legend.p-inquiry-form__legend 連絡方法
-        .p-inquiry-form__radio
-          input#radioOption(type="radio" name="option" value="tel" checked).p-inquiry-form__radio-btn
-          label(for="radioOption") 電話での連絡を希望
-        .p-inquiry-form__radio
-          input#radioOption2(type="radio" name="option" value="email").p-inquiry-form__radio-btn
-          label(for="radioOption2") メールでの連絡を希望
-        .p-inquiry-form__radio
-          input#radioOption3(type="radio" name="option" value="other").p-inquiry-form__radio-btn
-          label(for="radioOption3") その他
-    //- お問い合わせ内容
-    .p-inquiry-form-group
-      label(for="content").p-inquiry-form__label お問い合わせ内容
-      textarea#content(name="content" required).p-inquiry-form__text-area
-    //- プライバシーポリシーチェック
-    .p-inquiry-form-group
-      input#privacy(type="checkbox" name="privacyPolicy" required).p-inquiry-form__check
-      label(for="privacy") 当社における個人情報の取り扱いについて、
-        a(href="https://www.tam-tam.co.jp/privacy/" target="_blank") プライバシーポリシー
-        | に同意いただいた上でお問合せください。
-    .p-inquiry-form__submit
-      input(type="submit" value="送信する").p-inquiry-form__submit-btn
-        
+  #inquiryForm.p-inquiry-form-wrap
+    validation-observer(v-slot="{ invalid }")
+      form(@submit.prevent="onSubmit").p-inquiry-form
+        //- 名前入力
+        .p-inquiry-form-group
+          validation-provider(rules="required" name="お名前" v-slot="{ errors }")
+            label(for="name").p-inquiry-form__label お名前
+            input#fullName(type="text" v-model="name").p-inquiry-form__input
+            span.p-inquiry-form__error-txt {{ errors[0] }}
+        //- メールアドレス入力
+        .p-inquiry-form-group
+          validation-provider(rules="required|email" name="メールアドレス" v-slot="{ errors }")
+            label(for="email").p-inquiry-form__label メールアドレス
+            input#email(type="email" v-model="email").p-inquiry-form__input
+            span.p-inquiry-form__error-txt {{ errors[0] }}
+        //- 電話番号入力
+        .p-inquiry-form-group
+          validation-provider(:rules="{ regex: /^0[1-9][0-9]{0,4}-[0-9]{1,5}-[0-9]{1,5}$/ }" name="電話番号" v-slot="{ errors }")
+            label(for="tel").p-inquiry-form__label 電話番号(任意)
+            input#tel(type="tel" v-model="tel").p-inquiry-form__input
+            span.p-inquiry-form__error-txt {{ errors[0] }}
+        //- お問い合わせ種別選択
+        .p-inquiry-form-group.p-inquiry-form__select-box
+          validation-provider(rules="required" name="お問い合わせ種別" v-slot="{ errors }")
+            label(for="contactType").p-inquiry-form__label お問い合わせ種別
+            select#contactType(name="お問い合わせ種別" v-model="contactType").p-inquiry-form__select
+              option(value="Webサイト構築") Webサイト構築
+              option(value="SEO改善") SEO改善
+              option(value="SNS運用") SNS運用
+              option(value="アプリ開発") アプリ開発
+              option(value="その他") その他
+            span.p-inquiry-form__error-txt {{ errors[0] }}
+        //- 連絡方法選択
+        .p-inquiry-form-group
+          fieldset.p-inquiry-form__field
+            legend.p-inquiry-form__legend 連絡方法
+            .p-inquiry-form__radio
+              input#radioOption(type="radio" value="tel" v-model="checkContact").p-inquiry-form__radio-btn
+              label(for="radioOption") 電話での連絡を希望
+            .p-inquiry-form__radio
+              input#radioOption2(type="radio" value="email" v-model="checkContact").p-inquiry-form__radio-btn
+              label(for="radioOption2") メールでの連絡を希望
+            .p-inquiry-form__radio
+              input#radioOption3(type="radio" value="other" v-model="checkContact").p-inquiry-form__radio-btn
+              label(for="radioOption3") その他
+        //- お問い合わせ内容
+        .p-inquiry-form-group
+          validation-provider(rules="required" name="お問い合わせ内容" v-slot="{ errors }")
+            label(for="content").p-inquiry-form__label お問い合わせ内容
+            textarea#content(v-model="content").p-inquiry-form__text-area
+            span.p-inquiry-form__error-txt {{ errors[0] }}
+        //- プライバシーポリシーチェック
+        .p-inquiry-form-group
+          validation-provider(:rules="{ required: { allowFalse: false } }" name="プライバシーポリシーチェック" v-slot="{ errors }")
+            input#privacy(type="checkbox" v-model="privacy").p-inquiry-form__check
+            label(for="privacy") 当社における個人情報の取り扱いについて、
+            a(href="https://www.tam-tam.co.jp/privacy/" target="_blank") プライバシーポリシー
+            | に同意いただいた上でお問合せください。
+            span.p-inquiry-form__error-txt {{ errors[0] }}
+        //- 送信ボタン
+        .p-inquiry-form__submit
+          button(type="submit" :disabled="invalid").p-inquiry-form__submit-btn 送信する

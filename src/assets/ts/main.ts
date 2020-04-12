@@ -14,6 +14,7 @@ import commonMenu from "./namespace/common/commonMenu";
 import commonSmoothScroll from "./namespace/common/commonSmoothScroll";
 import commonSlider from "./namespace/common/commonSlider";
 import commonTargetBlank from "./namespace/common/commonTargetBlank";
+import commonFormValidate from "./namespace/common/commonFormValidate";
 import topTab from "./namespace/top/topTab";
 import topAccordion from "./namespace/top/topAccordion";
 import sampleJsonGet from "./namespace/sample/sampleJsonGet";
@@ -25,6 +26,7 @@ commonMenu();
 commonSmoothScroll();
 commonSlider();
 commonTargetBlank();
+commonFormValidate();
 // Top
 topAccordion();
 topTab();
