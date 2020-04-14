@@ -288,7 +288,8 @@ $z-map: (header, nav, navbtn);
 // ex) @include alpha(.8)
 // --------------------------------------------------
 @mixin alpha($opacity: .7) {
-  &:hover {
+  &:hover,
+  &:focus {
     opacity: $opacity;
     -moz-opacity: $opacity;
     filter: alpha(opacity=#{$opacity * 100});

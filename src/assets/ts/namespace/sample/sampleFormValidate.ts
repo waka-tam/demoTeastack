@@ -33,7 +33,7 @@ extend("regex", {
   message: "正しい電話番号を入力してください(ハイフンあり)"
 });
 
-export default function commonFormValidate(): void {
+export default function sampleFormValidate(): void {
   if (document.querySelector("#inquiryForm")) {
     new Vue({
       el: "#inquiryForm",

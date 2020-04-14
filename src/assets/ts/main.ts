@@ -9,29 +9,33 @@
 // ベースファイル
 import "./polyfill";
 
-// Namespace（プロジェクト開始時には以下削除してください）
+// Namespace（プロジェクト開始時には以下ファイルを適宜削除もしくは移動させて利用してください）
+// Commonインポート
 import commonMenu from "./namespace/common/commonMenu";
 import commonSmoothScroll from "./namespace/common/commonSmoothScroll";
-import commonSlider from "./namespace/common/commonSlider";
 import commonTargetBlank from "./namespace/common/commonTargetBlank";
-import commonFormValidate from "./namespace/common/commonFormValidate";
+// Topインポート
 import topTab from "./namespace/top/topTab";
 import topAccordion from "./namespace/top/topAccordion";
+// Sampleインポート
+import sampleFormValidate from "./namespace/sample/sampleFormValidate";
 import sampleJsonGet from "./namespace/sample/sampleJsonGet";
 import sampleModal from "./namespace/sample/sampleModal";
-import sample02Count from "./namespace/sample02/sample02Count";
+// Sample02インポート
+import sample02Banner from "./namespace/sample02/sample02Banner";
+import sample02Slider from "./namespace/sample02/sample02Slider";
 
-// Common
+// Common処理実行
 commonMenu();
 commonSmoothScroll();
-commonSlider();
 commonTargetBlank();
-commonFormValidate();
-// Top
+// Top処理実行
 topAccordion();
 topTab();
-// Sample
+// Sample処理実行
+sampleFormValidate();
 sampleJsonGet();
 sampleModal();
-// Sample02
-sample02Count();
+// Sample02処理実行
+sample02Banner();
+sample02Slider();

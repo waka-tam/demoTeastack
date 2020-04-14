@@ -8,7 +8,7 @@
 // swiperインポートIE11対応
 import Swiper from "swiper/js/swiper.min.js";
 
-export default function slider(): void {
+export default function sample02Slider(): void {
   if (document.querySelector("#commonSlider")) {
     new Swiper("#commonSlider", {
       navigation: {
