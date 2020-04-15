@@ -9,6 +9,8 @@
 // ベースファイル
 import "./polyfill";
 
+// API通信処理インポート
+import jsonGet from "./api/jsonGet";
 // Namespace（プロジェクト開始時には以下ファイルを適宜削除もしくは移動させて利用してください）
 // Commonインポート
 import commonMenu from "./namespace/common/commonMenu";
@@ -19,12 +21,13 @@ import topTab from "./namespace/top/topTab";
 import topAccordion from "./namespace/top/topAccordion";
 // Sampleインポート
 import sampleFormValidate from "./namespace/sample/sampleFormValidate";
-import sampleJsonGet from "./namespace/sample/sampleJsonGet";
 import sampleModal from "./namespace/sample/sampleModal";
 // Sample02インポート
 import sample02Banner from "./namespace/sample02/sample02Banner";
 import sample02Slider from "./namespace/sample02/sample02Slider";
 
+// API通信処理
+jsonGet();
 // Common処理実行
 commonMenu();
 commonSmoothScroll();
@@ -34,7 +37,6 @@ topAccordion();
 topTab();
 // Sample処理実行
 sampleFormValidate();
-sampleJsonGet();
 sampleModal();
 // Sample02処理実行
 sample02Banner();
