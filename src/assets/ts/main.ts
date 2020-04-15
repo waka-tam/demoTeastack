@@ -7,7 +7,10 @@
 // import Vue from "vue";
 
 // ベースファイル
+// Polyfill ポリフィル
 import "./polyfill";
+// Lazy Load 画像遅延読み込み
+import "lazysizes";
 
 // Namespace（プロジェクト開始時には以下ファイルを適宜削除もしくは移動させて利用してください）
 // Commonインポート

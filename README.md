@@ -356,7 +356,16 @@ ex) placeholder.tsはサンプルでAPI通信を行います。
 
 ## 画像について
 画像ファイルは標準で解像度を70%に圧縮するよう設定されています。必要に応じてgulpfile.jsの設定を変更してください。
-画像の自動圧縮は適宜 `npm run build` を実行して不要な画像ファイルがdistディレクトリに残らないよう心がけてください。
+画像の自動圧縮は適宜 `npm run build` or `yarn build` を実行して不要な画像ファイルがdistディレクトリに残らないよう心がけてください。
+画像の遅延読み込みには`lazysizes.js`を利用できます。
+
+[lazysizes](https://github.com/aFarkas/lazysizes)
+
+利用時には`data-src`で画像を読み込み`lazyload`クラスを付与することで実装できます。
+
+```
+<img data-src="image.jpg" class="lazyload" />
+```
 
 ### 画像命名規則
 画像ファイル、フォルダー名で使用する文字記号は「半角英数字・ハイフン・アンダースコア」のみとしてください。

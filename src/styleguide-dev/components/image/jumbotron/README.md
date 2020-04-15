@@ -4,3 +4,6 @@
 [ViewportScale](https://github.com/ixkaito/viewportscale)
 
 [タイポグラフィベーシック ](https://speakerdeck.com/ixkaito/taipogurahuibesituku-plus-dezainaidea?slide=52)
+
+### モジュールパターン名
+1. Jumbotron-A-01: ジャンボトロン見出し付きパターン

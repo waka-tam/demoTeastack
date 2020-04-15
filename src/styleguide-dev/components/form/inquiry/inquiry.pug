@@ -6,7 +6,7 @@
         .p-inquiry-form-group
           validation-provider(rules="required" name="お名前" v-slot="{ errors }")
             label(for="name").p-inquiry-form__label お名前
-            input#fullName(type="text" v-model="name").p-inquiry-form__input
+            input#name(type="text" v-model="name").p-inquiry-form__input
             span.p-inquiry-form__error-txt {{ errors[0] }}
         //- メールアドレス入力
         .p-inquiry-form-group

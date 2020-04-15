@@ -100,6 +100,11 @@
 <li><strong>ThirdParty:</strong> Google Maps、YouTubeなどのサードパーティサービス</li>
 <li><strong>Notification:</strong> 警告メッセージ、エラーメッセージ、ローディング、ポップアップなどユーザーに知らせる為の要素</li>
 </ul>
+<h2 id="モジュールパターンについて">モジュールパターンについて</h2>
+<p>各モジュールやパターンにユニークな文字列を付与。接頭辞にモジュール名を記述し、パターンに応じて<code>アルファベット</code>、連番を付与して振り分ける。</p>
+<p><code>Media-A-01</code></p>
+<p><code>モジュール名-アルファベット-連番</code></p>
+<p>ユニークなモジュールパターン名を割り振ることでコーダーへの指示やコミュニケーションコストを軽減する。</p>
 <h2 id="css設計">CSS設計</h2>
 <p>CSS設計はFLOCSSを採用。FLOCSSはレイヤーという概念が強く、レイヤーに分けてCSSを管理する。
 レイヤーは大きくFoundation、Layout、Objectに分けられ、ObjectレイヤーにProject、Component、Utilityといったサブレイヤーを配置する。</p>
@@ -126,7 +131,7 @@
 <li><strong>Project:</strong> .p-*</li>
 <li><strong>Utility:</strong> .u-*</li>
 </ul>
-<p>＊Page単位で名前空間を持たせる場合はProject配下にPage単位のディレクトリを作成し、<code>p-</code>の接頭辞を外す。  </p>
+<p>＊<code>ページ単位</code>で名前空間を持たせる場合はProject配下にPage単位のディレクトリを作成し、<code>p-</code>の接頭辞を外す。  </p>
 <p>ex) .top-block__element</p>
 <h3 id="bem記法">BEM記法</h3>
 <p>class名はBEMの構造に合わせて記述。</p>
@@ -506,6 +511,30 @@
             
             
             
+    
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a class="Tree-entityLink" href="components/detail/banner.html" data-pjax>
+                <span>Banner</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #FF3333;" title="Prototype"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
     
         
         

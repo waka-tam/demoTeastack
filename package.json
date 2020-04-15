@@ -76,6 +76,7 @@
     "@types/swiper": "^5.2.1",
     "axios": "^0.19.2",
     "jquery": "^3.4.1",
+    "lazysizes": "^5.2.0",
     "objectFitPolyfill": "^2.3.0",
     "picturefill": "^3.0.3",
     "svg4everybody": "^2.1.9",

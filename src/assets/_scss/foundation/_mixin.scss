@@ -57,7 +57,7 @@ $breakpoints: (
 
 // Photoshopトラッキング（文字詰め）制御
 // Photoshopのトラッキング値をletter-spacingへ変換
-// ex) z-index: tracking(50);
+// ex) letter-spacing: tracking(50);
 @function tracking($value) {
   @return ($value / 1000) * 1em;
 }
