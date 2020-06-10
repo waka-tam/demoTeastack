@@ -10,7 +10,7 @@
   display: inline-block;
   width: 300px;
   max-width: 100%;
-  padding: 1rem 0.5rem;
+  padding: 1rem .5rem;
   text-align: center;
   text-decoration: none;
   font-size: 1.4rem;
@@ -32,7 +32,7 @@
   border: 2px solid transparent;
   background-color: $linkColor;
   color: #fff;
-  transition: 0.3s;
+  transition: .3s;
 
   &:hover,
   &:focus {
@@ -51,7 +51,7 @@
   border: 2px solid transparent;
   background-color: $blurColor;
   color: #fff;
-  transition: 0.3s;
+  transition: .3s;
 
   &:hover,
   &:focus {
@@ -67,7 +67,7 @@
 .c-icon-btn {
   display: inline-block;
   position: relative;
-  padding: 0.2em 0.3em;
+  padding: .2em .3em;
   text-decoration: none;
   border: 1px solid currentColor;
   color: $linkColor;

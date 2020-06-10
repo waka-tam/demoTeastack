@@ -15,7 +15,7 @@
       }
     ],
     "color-hex-case": "lower",
-    "number-leading-zero": null,
+    "number-leading-zero": "never",
     "value-no-vendor-prefix": null,
     "property-no-vendor-prefix": null,
     "declaration-block-no-shorthand-property-overrides": null,
