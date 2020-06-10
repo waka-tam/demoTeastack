@@ -11,7 +11,7 @@
 ======================================== */
 
 $swiperFont: "swiper-icons" !default;
-$swiper-navigation-size: 44px !default;
+$swiperNavigationSize: 44px !default;
 $swiper-theme-color: #007aff !default;
 
 @font-face {
@@ -169,9 +169,9 @@ $swiper-theme-color: #007aff !default;
   position: absolute;
   top: 50%;
   z-index: 10;
-  width: calc($swiper-navigation-size / 44 * 27);
-  height: $swiper-navigation-size;
-  margin-top: calc(-1 * $swiper-navigation-size / 2);
+  width: calc($swiperNavigationSize / 44 * 27);
+  height: $swiperNavigationSize;
+  margin-top: calc(-1 * $swiperNavigationSize / 2);
   color: $swiper-theme-color;
   cursor: pointer;
 }
@@ -188,7 +188,7 @@ $swiper-theme-color: #007aff !default;
   text-transform: none !important;
   letter-spacing: 0;
   font-family: $swiperFont;
-  font-size: $swiper-navigation-size;
+  font-size: $swiperNavigationSize;
   font-variant: initial;
 }
 

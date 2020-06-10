@@ -287,12 +287,12 @@ $z-map: (header, nav, navbtn);
 // aタグホバー時に要素を透過させる
 // ex) @include alpha(.8)
 // --------------------------------------------------
-@mixin alpha($opacity: .7) {
+@mixin alpha($opacity: 0.7) {
   &:hover,
   &:focus {
-    opacity: $opacity;
     -moz-opacity: $opacity;
-    filter: alpha(opacity=#{$opacity * 100});
+    opacity: $opacity;
     -ms-filter: "alpha(opacity=#{$opacity * 100})";
+    filter: alpha(opacity=#{$opacity * 100});
   }
 }

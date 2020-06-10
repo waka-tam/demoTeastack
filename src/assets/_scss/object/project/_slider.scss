@@ -17,9 +17,10 @@
 // スライダーボタン
 .p-slide__btn-prev,
 .p-slide__btn-next {
+  @include fz_vw(54);
+
   top: 50%;
   transform: translateY(-50%);
-  @include fz_vw(54);
   fill: #007aff;
 
   @include mq(md) {
