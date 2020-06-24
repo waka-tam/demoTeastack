@@ -212,7 +212,7 @@ gulp.task("image", done => {
       imagemin([
         imageminMozjpeg({
           // 画質
-          quality: 70
+          quality: 80
         }),
         imageminPngquant({
           // 画質
