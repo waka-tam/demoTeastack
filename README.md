@@ -24,9 +24,6 @@
 
 ## 対応環境
 このテンプレートが保証する対応環境は以下になります。
-テンプレートには一部IE非対応のJSモジュールが含まれています。（VeeValidate, Micromodal.js）
-IE非対応モジュールをIE対応させたい場合はポリフィルを入れて対応してください。
-IE対応要素が多い場合はjQueryを積極的に利用してください。
 
 ### PC
 Windows 10：Chrome最新版、MicrosoftEdge最新版、Firefox最新版、IE11
@@ -35,6 +32,10 @@ Mac OS 10.13以降：Chrome最新版、Safari最新版、Firefox最新版
 ### スマートフォン・タブレット
 iPhone, iPad iOS 12以降 ：Chrome最新版、Safari最新版
 Android 6.0以降：Chrome最新版
+
+テンプレートには一部IE非対応のJSモジュールが含まれています。（VeeValidate, Micromodal.js）
+IE非対応モジュールをIE対応させたい場合はポリフィルを入れて対応してください。
+IE対応要素が多い場合はjQueryを積極的に利用してください。
 
 ## 依存アプリケーション
 - [Node v10以上](https://nodejs.org/ja/) 
@@ -389,6 +390,8 @@ import Vue from "vue";
 ```
 
 ### 便利なプラグイン
+Web制作で頻繁に利用するプラグインを標準搭載しています。
+
 - **スライダー:** [Swiper](https://swiperjs.com/)を利用することで特定ライブラリに依存することなくスライダーやカルーセルを簡易実装できます。
 - **スムーススクロール:** [Sweet Scroll](https://github.com/wadackel/sweet-scroll)を利用することで特定ライブラリに依存することなくスクロールアニメーションが簡易実装できます。
 - **画像遅延読み込み:** [lazysizes](https://github.com/aFarkas/lazysizes)を利用することで特定ライブラリに依存することなく画像の遅延読み込みを簡易実装できます。
