@@ -6,11 +6,7 @@
  * trimTxt("テキスト", 20, "…");
  */
 
-export default function trimTxt(
-  text: string,
-  trimLength: number,
-  afterText: string
-): string {
+function trimTxt(text: string, trimLength: number, afterText: string): string {
   trimLength = trimLength || 50;
   afterText = afterText || "…";
   if (text.length < trimLength) {
@@ -18,3 +14,5 @@ export default function trimTxt(
   }
   return text.substring(0, trimLength) + afterText;
 }
+
+export { trimTxt };

@@ -3,7 +3,7 @@
  * https://developers.google.com/web/tools/lighthouse/audits/noopener?hl=ja
  */
 
-export default function commonTargetBlank(): void {
+function commonTargetBlank(): void {
   const targetBlank = document.querySelectorAll("a");
   // querySelectorAllで生成されるNodelistを配列へ変換し、IE11でforEachが利用できるようにする
   const targetBlankArr = Array.prototype.slice.call(targetBlank);
@@ -17,3 +17,5 @@ export default function commonTargetBlank(): void {
     element.setAttribute("rel", "noopener");
   });
 }
+
+export { commonTargetBlank };

@@ -5,10 +5,10 @@
 // vueインポート
 import Vue from "vue";
 // bannerコンポーネントインポート
-import BnrComponent from "../../component/banner";
+import BnrComponent from "../component/banner";
 
 // Vueバナーコンポーネント
-export default function sample02Banner(): void {
+function sample02Banner(): void {
   if (document.querySelector("#sample02Banner")) {
     new Vue({
       el: "#sample02Banner",
@@ -58,3 +58,31 @@ export default function sample02Banner(): void {
     });
   }
 }
+
+/**
+ * Swiperスライダー
+ * 利用しない場合はライブラリCSSも削除してください
+ * https://swiperjs.com/
+ */
+
+//import Swiper from "swiper";
+// swiperインポートIE11対応
+import Swiper from "swiper/js/swiper.min.js";
+
+function sample02Slider(): void {
+  if (document.querySelector("#commonSlider")) {
+    new Swiper("#commonSlider", {
+      navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev"
+      },
+      loop: true,
+      autoplay: {
+        delay: 2000,
+        disableOnInteraction: true
+      }
+    });
+  }
+}
+
+export { sample02Banner, sample02Slider };

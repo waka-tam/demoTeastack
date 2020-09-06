@@ -16,7 +16,7 @@ const list = {
 };
 
 // メディアクエリ判定
-export default class MediaQuery {
+class MediaQuery {
   // メディアクエリ変数返却
   // eslint-disable-next-line @typescript-eslint/explicit-function-return-type
   static get list() {
@@ -44,3 +44,5 @@ export default class MediaQuery {
     return uninstall;
   }
 }
+
+export { MediaQuery };

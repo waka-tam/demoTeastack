@@ -14,19 +14,19 @@ import "lazysizes";
 
 // Namespace（プロジェクト開始時には以下ファイルを適宜削除もしくは移動させて利用してください）
 // Commonインポート
-import commonMenu from "./namespace/common/commonMenu";
-import commonSmoothScroll from "./namespace/common/commonSmoothScroll";
-import commonTargetBlank from "./namespace/common/commonTargetBlank";
+import { commonMenu } from "./namespace/common/commonMenu";
+import { commonSmoothScroll } from "./namespace/common/commonSmoothScroll";
+import { commonTargetBlank } from "./namespace/common/commonTargetBlank";
 // Topインポート
-import topTab from "./namespace/top/topTab";
-import topAccordion from "./namespace/top/topAccordion";
+import { topTab, topAccordion } from "./namespace/top";
 // Sampleインポート
-import sampleFormValidate from "./namespace/sample/sampleFormValidate";
-import sampleModal from "./namespace/sample/sampleModal";
-import sampleJsonGet from "./namespace/sample/sampleJsonGet";
+import {
+  sampleModal,
+  sampleMicoModal,
+  sampleFormValidate
+} from "./namespace/sample";
 // Sample02インポート
-import sample02Banner from "./namespace/sample02/sample02Banner";
-import sample02Slider from "./namespace/sample02/sample02Slider";
+import { sample02Banner, sample02Slider } from "./namespace/sample02";
 
 // Common処理実行
 commonMenu();
@@ -38,7 +38,7 @@ topTab();
 // Sample処理実行
 sampleFormValidate();
 sampleModal();
-sampleJsonGet();
+sampleMicoModal();
 // Sample02処理実行
 sample02Banner();
 sample02Slider();

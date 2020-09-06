@@ -1,5 +1,5 @@
 /**
- * モーダル
+ * Vue.jsモーダル
  * 第一引数にID指定
  * tab("#modal");
  */
@@ -7,7 +7,7 @@
 // vueインポート
 import Vue from "vue";
 
-export default function modal(modalId): void {
+function modal(modalId): void {
   if (document.querySelector(modalId)) {
     new Vue({
       el: modalId,
@@ -25,3 +25,5 @@ export default function modal(modalId): void {
     });
   }
 }
+
+export { modal };

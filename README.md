@@ -11,16 +11,30 @@
 - 頻繁に使用するSCSSの変数やMixinが用意されている
 - 環境に応じてSCSSのトランスパイルができる（開発、公開環境による場合わけ）
 - 印刷用のprint.cssが用意されている
-- SVGスプライトでSVGの呼び出しが容易
-- JavaScriptファイルを集約管理できる
+- SVGスプライトでアイコンが容易
 - TypeScriptによる型定義ができる
 - ES2015基準でトランスパイルされる
+- Vue.js, jQueryを標準で利用することができる
 - スタイルガイドの生成ができる
 
 ## 利用デメリット
 - Pug, SCSS, FLOCSSに関する知識を前提とする
 - TypeScriptの利用で学習コストが上がる（configの設定次第で許容範囲の変更対応可能）
 - 利用パッケージが利用プロジェクトに対してオーバースペックになっている可能性がある
+
+## 対応環境
+このテンプレートが保証する対応環境は以下になります。
+テンプレートには一部IE非対応のJSモジュールが含まれています。（VeeValidate, Micromodal.js）
+IE非対応モジュールをIE対応させたい場合はポリフィルを入れて対応してください。
+IE対応要素が多い場合はjQueryを積極的に利用してください。
+
+### PC
+Windows 10：Chrome最新版、MicrosoftEdge最新版、Firefox最新版、IE11
+Mac OS 10.13以降：Chrome最新版、Safari最新版、Firefox最新版
+
+### スマートフォン・タブレット
+iPhone, iPad iOS 12以降 ：Chrome最新版、Safari最新版
+Android 6.0以降：Chrome最新版
 
 ## 依存アプリケーション
 - [Node v10以上](https://nodejs.org/ja/) 
@@ -316,8 +330,13 @@ ex) Class Name: .u-indent
 ## JavaScriptについて
 TypeScriptを採用し、静的型付き言語としてJavaScriptを扱います。
 TypeScriptのエントリーポイントはmain.tsとします。
+
 インポート先モジュールはwebpackを用いてバンドルしindex.jsとして出力します。
 型システムは厳密にし過ぎず、生産性を重視した思想でコーディングを行います。
+
+import/export構文はできる限りnamed exportを利用してください。
+[なぜ default export を使うべきではないのか？](https://engineering.linecorp.com/ja/blog/you-dont-need-default-export/)
+
 レガシーブラウザとの互換性を保つ為、polyfillを入れる場合は必要なモジュールをpolyfill.tsでインポートしてください。
 TypeScriptのバリデーションタスクを用意していますので、納品・開発時にはTypeScriptバリデーションコマンド、TypeScript補正コマンドを実行して検証・補正を行ってください。
 
@@ -353,6 +372,30 @@ APIやDBと通信する際の処理を書いたファイルを用意します。
 ex) placeholder.tsはサンプルでAPI通信を行います。
 
 **src/assets/ts/api/**
+
+### 主要ライブラリの利用方法
+#### jQuery
+jQueryを利用したい場合は利用したいモジュールで以下を記述してください。
+
+```
+import * as $ from "jquery";
+```
+
+#### Vue.js
+Vue.jsを利用したい場合は利用したいモジュールで以下を記述してください。
+
+```
+import Vue from "vue";
+```
+
+### 便利なプラグイン
+- **スライダー:** [Swiper](https://swiperjs.com/)を利用することで特定ライブラリに依存することなくスライダーやカルーセルを簡易実装できます。
+- **スムーススクロール:** [Sweet Scroll](https://github.com/wadackel/sweet-scroll)を利用することで特定ライブラリに依存することなくスクロールアニメーションが簡易実装できます。
+- **画像遅延読み込み:** [lazysizes](https://github.com/aFarkas/lazysizes)を利用することで特定ライブラリに依存することなく画像の遅延読み込みを簡易実装できます。
+- **非同期通信:** [axios](https://github.com/axios/axios)を利用することで特定ライブラリに依存することなく非同期通信を簡易実装できます。
+- **Vueコンポーネント:** [Vue Class Component](https://github.com/vuejs/vue-class-component)を利用することでVueコンポーネントを実装できます。
+- **フォームバリデーション:** [VeeValidate](https://logaretm.github.io/vee-validate/)を利用することでフォームバリデーションを簡易実装できます。（標準ではIE非対応）
+- **モーダル:** [Micromodal.js](https://micromodal.now.sh/#introduction)を利用することでWAI-ARIAガイドラインに準拠したモーダルを簡易実装できます。（標準ではIE非対応）
 
 ## 画像について
 画像ファイルは標準で解像度を70%に圧縮するよう設定されています。必要に応じてgulpfile.jsの設定を変更してください。

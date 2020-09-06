@@ -33,7 +33,7 @@ extend("regex", {
   message: "正しい電話番号を入力してください(ハイフンあり)"
 });
 
-export default function sampleFormValidate(): void {
+function sampleFormValidate(): void {
   if (document.querySelector("#inquiryForm")) {
     new Vue({
       el: "#inquiryForm",
@@ -61,3 +61,48 @@ export default function sampleFormValidate(): void {
     });
   }
 }
+
+/**
+ * Axios通信処理
+ */
+
+// Axoios GET通信処理インポート
+// import jsonGet from "../api/jsonGet";
+
+// function sampleJsonGet(): void {
+//   jsonGet
+//     .then(response => {
+//       console.log(response.data.data.pref);
+//     })
+//     .catch(error => {
+//       // エラー時の処理
+//       console.log(error);
+//     })
+//     .finally(() => {
+//       // 常に実行する処理
+//     });
+// }
+
+/**
+ * Vue.jsモーダル
+ * 第一引数にID指定
+ * tab("#modal");
+ */
+
+// タブ出力処理インポート
+import { modal } from "../helper/modal";
+
+function sampleModal(): void {
+  modal("#modal");
+}
+
+/**
+ * Micromodal.jsモーダル
+ * https://micromodal.now.sh/#introduction
+ */
+import MicroModal from "micromodal";
+function sampleMicoModal(): void {
+  MicroModal.init();
+}
+
+export { sampleModal, sampleMicoModal, sampleFormValidate };

@@ -309,7 +309,8 @@ const logger = fractal.cli.console;
 const mandelbrot = require("@frctl/mandelbrot");
 const myCustomisedTheme = mandelbrot({
   skin: "olive",
-  lang: "ja"
+  lang: "ja",
+  styles: ["default", "/css/styleguide.css"]
 });
 
 gulp.task("styleguide:start", () => {

@@ -7,7 +7,7 @@
 // vueインポート
 import Vue from "vue";
 
-export default function tab(tabId, panelNum): void {
+function tab(tabId, panelNum): void {
   if (document.querySelector(tabId)) {
     new Vue({
       el: tabId,
@@ -31,3 +31,5 @@ export default function tab(tabId, panelNum): void {
     });
   }
 }
+
+export { tab };

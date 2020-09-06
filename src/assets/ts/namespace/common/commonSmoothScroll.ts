@@ -4,7 +4,7 @@
  */
 
 import SweetScroll from "sweet-scroll";
-export default function commonSmoothScroll(): void {
+function commonSmoothScroll(): void {
   const scroller = new SweetScroll({
     trigger: 'a[href*="#"]:not([href*="/"])', // トリガーとなる要素をCSSセレクタで指定
     header: "[data-scroll-header]", // 固定ヘッダをCSSセレクタで指定
@@ -38,3 +38,5 @@ export default function commonSmoothScroll(): void {
     }
   });
 }
+
+export { commonSmoothScroll };

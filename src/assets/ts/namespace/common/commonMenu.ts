@@ -3,7 +3,7 @@
  * https://www.w3.org/TR/2014/REC-wai-aria-20140320/states_and_properties#aria-expanded
  */
 
-export default function commonMenu(): void {
+function commonMenu(): void {
   const body = document.body;
   const menu = document.querySelector(".js-menu");
   if (menu) {
@@ -19,3 +19,5 @@ export default function commonMenu(): void {
     });
   }
 }
+
+export { commonMenu };
