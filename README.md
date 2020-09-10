@@ -23,7 +23,7 @@
 - 利用パッケージが利用プロジェクトに対してオーバースペックになっている可能性がある
 
 ## 対応環境
-このテンプレートが保証する対応環境は以下になります。
+このテンプレートが保証する対応OS, ブラウザ環境は以下になります。
 
 ### PC
 Windows 10：Chrome最新版、MicrosoftEdge最新版、Firefox最新版、IE11
@@ -38,7 +38,7 @@ IE非対応モジュールをIE対応させたい場合はポリフィルを入�
 IE対応要素が多い場合はjQueryを積極的に利用してください。
 
 ## 依存アプリケーション
-- [Node v10以上](https://nodejs.org/ja/) 
+- [Node v10以上(v12.18.3推奨)](https://nodejs.org/ja/) 
 - [npm](https://www.npmjs.com/) 
 - [Yarn](https://classic.yarnpkg.com/ja/) 
 - [gulp](https://gulpjs.com/) 
@@ -105,6 +105,16 @@ IE対応要素が多い場合はjQueryを積極的に利用してください。
 
 ※Yarnの場合
 `yarn start`
+
+以下のようにローカルサーバーが起動します。
+デフォルトでは端末検証をしやすくするため、Externalで展開されます。
+
+```
+-------------------------------------
+      Local: http://localhost:3000
+   External: http://192.XXX.XX.X:3000
+-------------------------------------
+```
 
 ***
 
@@ -403,14 +413,49 @@ Web制作で頻繁に利用するプラグインを標準搭載しています�
 ## 画像について
 画像ファイルは標準で解像度を70%に圧縮するよう設定されています。必要に応じてgulpfile.jsの設定を変更してください。
 画像の自動圧縮は適宜 `npm run build` or `yarn build` を実行して不要な画像ファイルがdistディレクトリに残らないよう心がけてください。
+
+### 画像の読み込み
+画像の読み込みは状況に応じて最適な形式で処理されるようにしてください。
+
+[<img>: 画像埋め込み要素](https://developer.mozilla.org/ja/docs/Web/HTML/Element/img)
+
+#### レイアウトシフト対策
+画像ロード時に起こる表示のガタつきを防ぐため、基本的に画像にはwidth属性、height属性を指定します。
+レイアウトシフトはLighthouse v6よりパフォーマンス計測対象となっています。
+
+```
+<img src="image.jpg" width="640" height="360" alt="代替テキスト" />
+```
+
+[Optimize Cumulative Layout Shift](https://web.dev/optimize-cls/#images-without-dimensions)
+
+#### 画像の非同期読み込み
+decoding属性を利用することで画像を非同期で読み込むことができます。
+`decoding="async"`を指定すると他のコンテンツの表示が遅れないように、画像が非同期的にデコードされます。
+
+```
+<img src="image.jpg" decoding="async" width="640" height="360" alt="代替テキスト" />
+```
+
+#### 画像の遅延読み込み
+画像の遅延読み込みでエフェクト等を付与する必要がなければloading属性を利用してください。
+ファーストビュー以外で指定します。スクール表示されるような画像で利用することを推奨します。
+
+```
+<img src="image.jpg" loading="lazy" width="640" height="360" alt="代替テキスト" />
+```
+
+[Native image lazy-loading for the web!](https://addyosmani.com/blog/lazy-loading/)
+
 画像の遅延読み込みには`lazysizes.js`を利用できます。
+アニメーションやエフェクトが必要な場合に利用してください。
 
 [lazysizes](https://github.com/aFarkas/lazysizes)
 
 利用時には`data-src`で画像を読み込み`lazyload`クラスを付与することで実装できます。
 
 ```
-<img data-src="image.jpg" class="lazyload" />
+<img data-src="image.jpg" alt="代替テキスト" class="lazyload" />
 ```
 
 ### 画像命名規則

@@ -363,6 +363,8 @@ gulp.task("cleanStyleGuide", done => {
  */
 const browserSyncOption = {
   server: dist.root,
+  // startPath: "./LIST.html", server立ち上げ時にページリストを開く
+  open: "external",
   middleware: [
     connectSSI({
       baseDir: __dirname + "/dist",
