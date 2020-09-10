@@ -111,7 +111,7 @@ IE対応要素が多い場合はjQueryを積極的に利用してください。
 
 ```
 -------------------------------------
-      Local: http://localhost:3000
+   Local: http://localhost:3000
    External: http://192.XXX.XX.X:3000
 -------------------------------------
 ```
@@ -417,7 +417,7 @@ Web制作で頻繁に利用するプラグインを標準搭載しています�
 ### 画像の読み込み
 画像の読み込みは状況に応じて最適な形式で処理されるようにしてください。
 
-[<img>: 画像埋め込み要素](https://developer.mozilla.org/ja/docs/Web/HTML/Element/img)
+[画像埋め込み要素](https://developer.mozilla.org/ja/docs/Web/HTML/Element/img)
 
 #### レイアウトシフト対策
 画像ロード時に起こる表示のガタつきを防ぐため、基本的に画像にはwidth属性、height属性を指定します。
