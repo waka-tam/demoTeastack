@@ -24,6 +24,7 @@
 
 ## 対応環境
 このテンプレートが保証する対応OS, ブラウザ環境は以下になります。
+テンプレートにはIE非対応技術が一部含まれています。必要に応じてポリフィルを入れてください。
 
 ### PC
 Windows 10：Chrome最新版、MicrosoftEdge最新版、Firefox最新版、IE11
@@ -32,10 +33,6 @@ Mac OS 10.13以降：Chrome最新版、Safari最新版、Firefox最新版
 ### スマートフォン・タブレット
 iPhone, iPad iOS 12以降 ：Chrome最新版、Safari最新版
 Android 6.0以降：Chrome最新版
-
-テンプレートには一部IE非対応のJSモジュールが含まれています。（VeeValidate, Micromodal.js）
-IE非対応モジュールをIE対応させたい場合はポリフィルを入れて対応してください。
-IE対応要素が多い場合はjQueryを積極的に利用してください。
 
 ## 依存アプリケーション
 - [Node v10以上(v12.18.3推奨)](https://nodejs.org/ja/) 
@@ -501,7 +498,7 @@ sampleというページで利用する画像であればsampleフォルダー�
 * ボタン `btn`
 
 ## SVGスプライトについて
-アイコン類にはSVGスプライトを採用しています。Gulpを起動させた状態で利用したいSVGファイルを `/assets/svg` 配下へ格納するとSVGファイルを結合し `sprite.svg` として出力します。以下ディレクトリを参照してください。
+アイコン管理にはSVGスプライトを採用しています。Gulpを起動させた状態で利用したいSVGファイルを `/assets/svg` 配下へ格納するとSVGファイルを結合し `sprite.svg` として出力します。以下ディレクトリを参照してください。
 
 **src/assets/svg/**
 **dist/assets/svg/sprite.svg**
