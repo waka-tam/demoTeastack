@@ -1,0 +1,8 @@
+//- カードコンポーネント出力
+mixin card(img, imgAlt, ttl, txt)
+  .p-card
+    figure.p-card__img-wrapper
+      img(src=img, alt=imgAlt)
+    .p-card__body
+      h3.p-card__ttl ttl
+      p.p-card__txt txt

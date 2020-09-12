@@ -1,74 +1,28 @@
-.l-container
-  //- カード単体
+//- カードコンポーネント出力
+mixin card(img, imgAlt, ttl, txt)
   .p-card
     figure.p-card__img-wrapper
-      img(src="https://placehold.jp/640x480.png", alt="サンプル画像")
+      img(src=img, alt=imgAlt)
     .p-card__body
-      h3.p-card__ttl カードタイトル
-      p.p-card__txt 上部に画像があり、下部にテキストが続くモジュールを一般的に「カード」と呼ぶ。
+      h3.p-card__ttl= ttl
+      p.p-card__txt= txt
+
+.l-container
+  //- カード単体
+  +card("https://placehold.jp/640x480.png", "サンプル画像", "カードタイトル", "上部に画像があり、下部にテキストが続くモジュールを一般的に「カード」と呼ぶ。")
   //- カード2カラム
   .p-card-wrapper.p-card__col2.u-mt30
-    .p-card
-      figure.p-card__img-wrapper
-        img(src="https://placehold.jp/640x480.png", alt="サンプル画像")
-      .p-card__body
-        h3.p-card__ttl カードタイトル
-        p.p-card__txt 上部に画像があり、下部にテキストが続くモジュールを一般的に「カード」と呼ぶ。
-    .p-card
-      figure.p-card__img-wrapper
-        img(src="https://placehold.jp/640x480.png", alt="サンプル画像")
-      .p-card__body
-        h3.p-card__ttl カードタイトル
-        p.p-card__txt 上部に画像があり、下部にテキストが続くモジュールを一般的に「カード」と呼ぶ。
-    .p-card
-      figure.p-card__img-wrapper
-        img(src="https://placehold.jp/640x480.png", alt="サンプル画像")
-      .p-card__body
-        h3.p-card__ttl カードタイトル
-        p.p-card__txt 上部に画像があり、下部にテキストが続くモジュールを一般的に「カード」と呼ぶ。
-    .p-card
-      figure.p-card__img-wrapper
-        img(src="https://placehold.jp/640x480.png", alt="サンプル画像")
-      .p-card__body
-        h3.p-card__ttl カードタイトル
-        p.p-card__txt 上部に画像があり、下部にテキストが続くモジュールを一般的に「カード」と呼ぶ。
-    .p-card
-      figure.p-card__img-wrapper
-        img(src="https://placehold.jp/640x480.png", alt="サンプル画像")
-      .p-card__body
-        h3.p-card__ttl カードタイトル
-        p.p-card__txt 上部に画像があり、下部にテキストが続くモジュールを一般的に「カード」と呼ぶ。
+    +card("https://placehold.jp/640x480.png", "サンプル画像", "カードタイトル1", "上部に画像があり、下部にテキストが続くモジュールを一般的に「カード」と呼ぶ。")
+    +card("https://placehold.jp/640x480.png", "サンプル画像", "カードタイトル2", "上部に画像があり、下部にテキストが続くモジュールを一般的に「カード」と呼ぶ。")
+    +card("https://placehold.jp/640x480.png", "サンプル画像", "カードタイトル3", "上部に画像があり、下部にテキストが続くモジュールを一般的に「カード」と呼ぶ。")
+    +card("https://placehold.jp/640x480.png", "サンプル画像", "カードタイトル4", "上部に画像があり、下部にテキストが続くモジュールを一般的に「カード」と呼ぶ。")
+    +card("https://placehold.jp/640x480.png", "サンプル画像", "カードタイトル5", "上部に画像があり、下部にテキストが続くモジュールを一般的に「カード」と呼ぶ。")
   //- カード3カラム
   .p-card-wrapper.p-card__col3.u-mt30
-    .p-card
-      figure.p-card__img-wrapper
-        img(src="https://placehold.jp/640x480.png", alt="サンプル画像")
-      .p-card__body
-        h3.p-card__ttl カードタイトル
-        p.p-card__txt 上部に画像があり、下部にテキストが続くモジュールを一般的に「カード」と呼ぶ。
-    .p-card
-      figure.p-card__img-wrapper
-        img(src="https://placehold.jp/640x480.png", alt="サンプル画像")
-      .p-card__body
-        h3.p-card__ttl カードタイトル
-        p.p-card__txt 上部に画像があり、下部にテキストが続くモジュールを一般的に「カード」と呼ぶ。
-    .p-card
-      figure.p-card__img-wrapper
-        img(src="https://placehold.jp/640x480.png", alt="サンプル画像")
-      .p-card__body
-        h3.p-card__ttl カードタイトル
-        p.p-card__txt 上部に画像があり、下部にテキストが続くモジュールを一般的に「カード」と呼ぶ。
-    .p-card
-      figure.p-card__img-wrapper
-        img(src="https://placehold.jp/640x480.png", alt="サンプル画像")
-      .p-card__body
-        h3.p-card__ttl カードタイトル
-        p.p-card__txt 上部に画像があり、下部にテキストが続くモジュールを一般的に「カード」と呼ぶ。
-    .p-card
-      figure.p-card__img-wrapper
-        img(src="https://placehold.jp/640x480.png", alt="サンプル画像")
-      .p-card__body
-        h3.p-card__ttl カードタイトル
-        p.p-card__txt 上部に画像があり、下部にテキストが続くモジュールを一般的に「カード」と呼ぶ。
+    +card("https://placehold.jp/640x480.png", "サンプル画像", "カードタイトル1", "上部に画像があり、下部にテキストが続くモジュールを一般的に「カード」と呼ぶ。")
+    +card("https://placehold.jp/640x480.png", "サンプル画像", "カードタイトル2", "上部に画像があり、下部にテキストが続くモジュールを一般的に「カード」と呼ぶ。")
+    +card("https://placehold.jp/640x480.png", "サンプル画像", "カードタイトル3", "上部に画像があり、下部にテキストが続くモジュールを一般的に「カード」と呼ぶ。")
+    +card("https://placehold.jp/640x480.png", "サンプル画像", "カードタイトル4", "上部に画像があり、下部にテキストが続くモジュールを一般的に「カード」と呼ぶ。")
+    +card("https://placehold.jp/640x480.png", "サンプル画像", "カードタイトル5", "上部に画像があり、下部にテキストが続くモジュールを一般的に「カード」と呼ぶ。")
 
     
