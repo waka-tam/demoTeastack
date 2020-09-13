@@ -279,7 +279,7 @@ Foundationレイヤー以外のCSSモジュールはglobを用いてインポー
 ***
 
 #### Base
-サイトのベースとなるデフォルトスタイルを定義します。標準のリセットCSSにはCSS Remedyを採用しています。
+サイトのベースとなるデフォルトスタイルを定義します。
 
 **src/assets/_scss/foundation/_base.scss**
 
