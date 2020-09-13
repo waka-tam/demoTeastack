@@ -415,6 +415,38 @@ Web制作で頻繁に利用するプラグインを標準搭載しています�
 
 [画像埋め込み要素](https://developer.mozilla.org/ja/docs/Web/HTML/Element/img)
 
+
+#### レスポンシブ画像
+srcset属性を利用することで画像解像度に応じた読み込みが可能となります。
+
+```
+<img src="640x300.png" srcset="1280x600.png 2x, 1920x900.png 3x" alt="サンプル画像" />
+```
+
+srcset属性と共にsizes属性を利用することでビューポート幅に応じた読み込みが可能となります。
+
+```
+<img srcset="sample-320w.jpg 320w,
+             sample-480w.jpg 480w,
+             sample-800w.jpg 800w"
+     sizes="(max-width: 320px) 280px,
+            (max-width: 480px) 440px,
+            800px"
+     src="sample-800w.jpg" alt="サンプル画像">
+```
+
+picture要素とsource要素を組み合わせることでビューポート幅や次世代画像フォーマットに応じたアートディレクションが可能となります。
+
+```
+<picture>
+  <source media="(min-width: 1028px)" srcset="1200x600.png">
+  <source media="(min-width: 768px)" srcset="800x500.png">
+  <img src="300x300.png" alt="サンプル">
+</picture>
+```
+
+[レスポンシブ画像](https://developer.mozilla.org/ja/docs/Learn/HTML/Multimedia_and_embedding/Responsive_images)
+
 #### レイアウトシフト対策
 画像ロード時に起こる表示のガタつきを防ぐため、基本的に画像にはwidth属性、height属性を指定します。
 レイアウトシフトはLighthouse v6よりパフォーマンス計測対象となっています。

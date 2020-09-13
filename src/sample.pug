@@ -20,11 +20,13 @@ block content
     .wrapper
       h1 サンプル
       +picture("https://placehold.jp/300x300.png", "サンプル").responsiveImage
-           +source(lg, "https://placehold.jp/600x600.png")
-           +source(md, "https://placehold.jp/500x500.png")
-      
-      .api
-        h2 API通信サンプル処理
-        p 以下テキスト情報はGetリクエストで取得しています。
-        p.js-ttl
-        p.js-body
+        +source(lg, "https://placehold.jp/600x600.png")
+        +source(md, "https://placehold.jp/500x500.png")
+      //- レスポンシブ画像
+      .c-media
+        figure.c-media__img-wrapper
+          img(src="https://placehold.jp/640x300.png", srcset="https://placehold.jp/1280x600.png 2x, https://placehold.jp/1920x900.png 3x" alt="サンプル画像")
+        .c-media__body
+          h3.c-media__ttl テキストメディア画像
+          p.c-media__txt この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。
+          p.c-media__txt これはテキストメディア画像モジュールのサンプルです。
