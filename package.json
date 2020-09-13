@@ -1,7 +1,7 @@
 {
   "name": "web-static-dev",
   "version": "1.0.0",
-  "description": "",
+  "description": "静的Webサイトを構築する為のテンプレートです。",
   "main": "gulpfile.js",
   "scripts": {
     "start": "cross-env NODE_ENV=development gulp",
