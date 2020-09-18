@@ -38,6 +38,7 @@ const webpackConfig = require("./webpack.config");
 const imagemin = require("gulp-imagemin");
 const imageminMozjpeg = require("imagemin-mozjpeg");
 const imageminPngquant = require("imagemin-pngquant");
+const webp = require("gulp-webp");
 
 // SVG sprite
 const gulpSvgSprite = require("gulp-svg-sprite");
@@ -185,7 +186,7 @@ gulp.task("webpack", done => {
       .pipe(webpackStream(webpackConfig, webpack))
       .pipe(gulp.dest(dist.js))
       // エラー発生時に終了させない
-      .on("error", error => {
+      .on("error", () => {
         this.emit("end");
       })
   );
@@ -238,6 +239,27 @@ gulp.task("image", done => {
         imagemin.gifsicle()
       ])
     )
+    .pipe(gulp.dest(dist.img));
+  done();
+});
+
+/**
+ * WebP変換
+ */
+gulp.task("webp", done => {
+  return gulp
+    .src(src.img)
+    .pipe(changed(dist.img))
+    .pipe(
+      plumber({
+        errorHandler(err) {
+          // eslint-disable-next-line no-console
+          console.log(err.messageFormatted);
+          this.emit("end");
+        }
+      })
+    )
+    .pipe(webp())
     .pipe(gulp.dest(dist.img));
   done();
 });
@@ -389,6 +411,7 @@ gulp.task("watch", done => {
   gulp.watch(src.css, gulp.series("sass", "browserReload"));
   gulp.watch(src.ts, gulp.series("webpack", "browserReload"));
   gulp.watch(src.img, gulp.series("image", "browserReload"));
+  gulp.watch(src.img, gulp.series("webp", "browserReload"));
   gulp.watch(src.svgSprite, gulp.series("svgSprite", "browserReload"));
   done();
 });
@@ -402,7 +425,7 @@ gulp.task(
   "build",
   gulp.series(
     "clean",
-    gulp.parallel("pug", "sass", "webpack", "image", "svgSprite")
+    gulp.parallel("pug", "sass", "webpack", "image", "webp", "svgSprite")
   )
 );
 
@@ -413,7 +436,7 @@ gulp.task(
   "release",
   gulp.series(
     "clean",
-    gulp.parallel("pug", "sass", "webpack", "image", "svgSprite"),
+    gulp.parallel("pug", "sass", "webpack", "image", "webp", "svgSprite"),
     "cleanStyleGuide"
   )
 );

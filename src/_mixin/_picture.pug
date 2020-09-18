@@ -10,8 +10,13 @@
     source - [string]  画像へのパスを指定します。
     Pug： +source(md, 'https://placehold.jp/600x600.png')
     HTML： <source media="(min-width: 768px)" srcset="https://placehold.jp/600x600.png">
-mixin source(media, source)
-  source(media=media srcset=source)
+    Pug： +source(none, "/assets/img/share/note01.webp", "image/webp")
+    HTML： <source srcset="/assets/img/share/note01.webp" type="image/webp">
+mixin source(media, source, type)
+  if media == none
+    source(srcset=source type=type)
+  else
+    source(media=media srcset=source)
 
 //- <picture>でアートディレクションを使うためのmixinで、picturefill.jsに依存しています。
     引数は<img>に対する指定になります。

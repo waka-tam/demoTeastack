@@ -1,6 +1,6 @@
 # static-web-custom
 静的Webサイトを構築する為のテンプレートです。
-中〜大規模開発向けテンプレートの為、プロジェクト規模や用途に応じて使い分けてください。
+中〜大規模開発向けテンプレートのため、プロジェクト規模や用途に応じて使い分けてください。
 
 ## 利用メリット
 - Pugによるテンプレート管理によってHTMLファイルの保守性が高まる
@@ -11,7 +11,7 @@
 - 頻繁に使用するSCSSの変数やMixinが用意されている
 - 環境に応じてSCSSのトランスパイルができる（開発、公開環境による場合わけ）
 - 印刷用のprint.cssが用意されている
-- SVGスプライトでアイコンが容易
+- SVGスプライトでアイコン管理が容易
 - TypeScriptによる型定義ができる
 - ES2015基準でトランスパイルされる
 - Vue.js, jQueryを標準で利用することができる
@@ -20,7 +20,7 @@
 ## 利用デメリット
 - Pug, SCSS, FLOCSSに関する知識を前提とする
 - TypeScriptの利用で学習コストが上がる（configの設定次第で許容範囲の変更対応可能）
-- 利用パッケージが利用プロジェクトに対してオーバースペックになっている可能性がある
+- 利用パッケージがプロジェクトに対してオーバースペックになっている可能性がある
 
 ## 対応環境
 このテンプレートが保証する対応OS, ブラウザ環境は以下になります。
@@ -407,14 +407,14 @@ Web制作で頻繁に利用するプラグインを標準搭載しています�
 - **フォームバリデーション:** [VeeValidate](https://logaretm.github.io/vee-validate/)を利用することでフォームバリデーションを簡易実装できます。（標準ではIE非対応）
 
 ## 画像について
-画像ファイルは標準で解像度を80%に圧縮するよう設定されています。必要に応じてgulpfile.jsの設定を変更してください。
+画像ファイルは標準で解像度を80%に圧縮するよう設定されています。また、WebP（ウェッピー）の自動生成にも対応しています。
+必要に応じてgulpfile.jsの設定を変更してください。
 画像の自動圧縮は適宜 `npm run build` or `yarn build` を実行して不要な画像ファイルがdistディレクトリに残らないよう心がけてください。
 
 ### 画像の読み込み
 画像の読み込みは状況に応じて最適な形式で処理されるようにしてください。
 
 [画像埋め込み要素](https://developer.mozilla.org/ja/docs/Web/HTML/Element/img)
-
 
 #### レスポンシブ画像
 srcset属性を利用することで画像解像度に応じた読み込みが可能となります。
@@ -438,6 +438,7 @@ srcset属性と共にsizes属性を利用することでビューポート幅に
 picture要素とsource要素を組み合わせることでビューポート幅や次世代画像フォーマットに応じたアートディレクションが可能となります。
 
 ```
+/* ビューポート幅対応 */
 <picture>
   <source media="(min-width: 1028px)" srcset="1200x600.png">
   <source media="(min-width: 768px)" srcset="800x500.png">
@@ -445,7 +446,40 @@ picture要素とsource要素を組み合わせることでビューポート幅�
 </picture>
 ```
 
+当テンプレートでは便利なmixinが用意されています。
+
+```
++picture内にネストをして記述します。
+Pug： +source(md, 'https://placehold.jp/600x600.png')
+HTML： <source media="(min-width: 768px)" srcset="https://placehold.jp/600x600.png">
+```
 [レスポンシブ画像](https://developer.mozilla.org/ja/docs/Learn/HTML/Multimedia_and_embedding/Responsive_images)
+
+### WebP（ウェッピー）
+WebPはGoogleが開発した画像フォーマットです。WebPを利用することでより軽量に画像を読み込むことが可能となります。
+Googleの示した事例では、ファイルサイズは非可逆圧縮モードで（同一画像、同等画質の）JPEGと比較して25-34%小さくなり、可逆圧縮モードでPNGと比較して28%小さくなるとしている。
+
+[WebP](https://ja.wikipedia.org/wiki/WebP)
+
+[Can I use](https://caniuse.com/webp)
+
+以下のように記述すると対応ブラウザでのみWebP画像を表示できます。
+
+```
+/* 次世代画像フォーマット対応 */
+<picture>
+  <source srcset="sample.webp" type="image/webp"/>
+  <img src="sample.jpg" alt="サンプル"/>
+</picture>
+```
+
+当テンプレートでは便利なmixinが用意されています。
+
+```
++picture内にネストをして記述します。
+Pug： +source(none, "/assets/img/share/note01.webp", "image/webp")
+HTML： <source srcset="/assets/img/share/note01.webp" type="image/webp">
+```
 
 #### レイアウトシフト対策
 画像ロード時に起こる表示のガタつきを防ぐため、基本的に画像にはwidth属性、height属性を指定します。

@@ -50,6 +50,7 @@
     "gulp-sourcemaps": "^2.6.5",
     "gulp-svg-sprite": "^1.5.0",
     "gulp-w3cjs": "^1.3.2",
+    "gulp-webp": "^4.0.1",
     "imagemin-mozjpeg": "^8.0.0",
     "imagemin-pngquant": "^8.0.0",
     "postcss-flexbugs-fixes": "^4.1.0",
