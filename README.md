@@ -407,8 +407,8 @@ Web制作で頻繁に利用するプラグインを標準搭載しています�
 - **フォームバリデーション:** [VeeValidate](https://logaretm.github.io/vee-validate/)を利用することでフォームバリデーションを簡易実装できます。（標準ではIE非対応）
 
 ## 画像について
-画像ファイルは標準で解像度を80%に圧縮するよう設定されています。また、WebP（ウェッピー）の自動生成にも対応しています。
-必要に応じてgulpfile.jsの設定を変更してください。
+画像ファイルは標準で解像度を80%に圧縮するよう設定されています。また、WebP（ウェッピー）の自動生成にも対応しています。必要に応じてgulpfile.jsの設定を変更してください。
+
 画像の自動圧縮は適宜 `npm run build` or `yarn build` を実行して不要な画像ファイルがdistディレクトリに残らないよう心がけてください。
 
 ### 画像の読み込み
@@ -459,9 +459,9 @@ HTML： <source media="(min-width: 768px)" srcset="https://placehold.jp/600x600.
 WebPはGoogleが開発した画像フォーマットです。WebPを利用することでより軽量に画像を読み込むことが可能となります。
 Googleの示した事例では、ファイルサイズは非可逆圧縮モードで（同一画像、同等画質の）JPEGと比較して25-34%小さくなり、可逆圧縮モードでPNGと比較して28%小さくなるとしている。
 
-[WebP](https://ja.wikipedia.org/wiki/WebP)
+[WebPについて](https://ja.wikipedia.org/wiki/WebP)
 
-[Can I use](https://caniuse.com/webp)
+[対応ブラウザ](https://caniuse.com/webp)
 
 以下のように記述すると対応ブラウザでのみWebP画像を表示できます。
 
