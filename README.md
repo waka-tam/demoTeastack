@@ -217,7 +217,7 @@ stylelint-config-standardに基いてSCSSの補正を行います。開発時に
 
 ### Lighthouse CIコマンド
 Lighthouseによる品質監査を実行します。納品・開発時に利用します。
-検証設定は`.lighthouseci`に記述されています。
+検証設定は .lighthouseciに記述されています。
 
 `lhci autorun`
 
