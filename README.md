@@ -213,6 +213,14 @@ stylelint-config-standardに基いてSCSSの補正を行います。開発時に
 ※Yarnの場合
 `yarn styleguide:build`
 
+***
+
+### Lighthouse CIコマンド
+Lighthouseによる品質監査を実行します。納品・開発時に利用します。
+検証設定は`.lighthouseci`に記述されています。
+
+`lhci autorun`
+
 ## HTMLについて
 HTMLのメタ言語にPugを採用し、ファイルの分割管理ができるよう設計されています。
 共通パーツなどはPugのIncludesを利用して管理します。SSIで分割ファイルを任意の場所に出力することも可能です。  
@@ -607,12 +615,8 @@ styleguide-dev配下へスタイルガイドに掲載するUIパーツを作成�
 
 **src/styleguide-dev/**
 
-## 品質監査について
+## Lighthouse CIについて
 Lighthouse CIで定期的にプロダクトの品質監査を行うことができます。
-
-### Lighthouse CI
-Lighthouse CIはLighthouseによる監査結果を一定のタイミングで継続的に取得することができる自動化ツールです。
-監査対象ファイルや試行回数などは `lighthouserc.yml` ファイルで設定できます。
 
 #### ローカル環境で実行する場合
 コンテンツをdistフォルダー内にビルドした状態で以下コマンドを実行してください。
