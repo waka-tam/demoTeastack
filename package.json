@@ -71,6 +71,7 @@
     "webpack-stream": "^5.2.1"
   },
   "dependencies": {
+    "@lhci/cli": "^0.5.0",
     "@types/jquery": "^3.3.31",
     "@types/picturefill": "^3.0.0",
     "@types/svg4everybody": "^2.1.1",

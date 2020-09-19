@@ -1,0 +1,26 @@
+ci:
+  collect:
+    # 試行回数
+    numberOfRuns: 1
+    # 公開ディレクトリ
+    staticDistDir: './dist'
+    # 対象ファイル
+    url: ['/']
+
+  assert:
+    preset: 'lighthouse:no-pwa'
+    assertions:
+      uses-webp-images: 'off'
+      canonical: 'off'
+      installable-manifest: 'off'
+      offline-start-url: 'off'
+      service-worker: 'off'
+      splash-screen: 'off'
+      themed-omnibox: 'off'
+      uses-long-cache-ttl: 'off'
+      unused-css-rules: 'off'
+      unused-javascript: 'off'
+
+  # upload:
+  #   # GCP Cloud Storageに7日間一時的に監査結果が保存される
+  #   target: 'temporary-public-storage'

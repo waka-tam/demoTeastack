@@ -47,6 +47,7 @@ Android 6.0以降：Chrome最新版
 - [ESLint](https://eslint.org/) 
 - [stylelint](https://stylelint.io/) 
 - [Fractal](https://fractal.build/)
+- [Lighthouse CI](https://github.com/GoogleChrome/lighthouse-ci)
 
 ## 設定ファイル
 - [.editorconfig](https://editorconfig.org/) フォーマット統一
@@ -57,6 +58,7 @@ Android 6.0以降：Chrome最新版
 - [.gitignore](https://git-scm.com/docs/gitignore) Git管理に含めないファイル指定
 - [gulpfile.js](https://gulpjs.com/) Gulpで実行するタスク管理
 - [package.json](https://docs.npmjs.com/files/package.json) NPMでのパッケージ管理
+- [lighthouserc.yml](https://docs.npmjs.com/files/package.json) プロダクト品質監査の設定
 
 ## 利用方法
 「開発環境の設定」にしたがってコマンドを実行すると静的Webサイト構築で必要な環境が整います。
@@ -603,3 +605,34 @@ Fractalで利用されているテンプレートエンジンは通常Handlebars
 styleguide-dev配下へスタイルガイドに掲載するUIパーツを作成します。
 
 **src/styleguide-dev/**
+
+## 品質監査について
+Lighthouse CIで定期的にプロダクトの品質監査を行うことができます。
+
+### Lighthouse CI
+Lighthouse CIはLighthouseによる監査結果を一定のタイミングで継続的に取得することができる自動化ツールです。
+監査対象ファイルや試行回数などは `lighthouserc.yml` ファイルで設定できます。
+
+#### ローカル環境で実行する場合
+コンテンツをdistフォルダー内にビルドした状態で以下コマンドを実行してください。
+
+```
+lhci autorun
+```
+
+#### CI/CDで実行する場合
+CI/CDに組み込む場合、GitHub Actionsの利用を推奨します。
+
+[GitHub Actions](https://github.co.jp/features/actions)
+
+[GitHub Actionsで静的ファイルの自動デプロイ（CI / CD）環境を構築する方法](https://medium.com/@yonemoto/github-actions%E3%81%A7%E9%9D%99%E7%9A%84%E3%83%95%E3%82%A1%E3%82%A4%E3%83%AB%E3%81%AE%E8%87%AA%E5%8B%95%E3%83%87%E3%83%97%E3%83%AD%E3%82%A4-ci-cd-%E7%92%B0%E5%A2%83%E3%82%92%E6%A7%8B%E7%AF%89%E3%81%99%E3%82%8B%E6%96%B9%E6%B3%95-77de803851ba)
+
+#### 監査結果の確認
+ローカル環境で実行した場合、実行結果はターミナルと`.lighthouseci`フォルダーに出力されます。
+uploadオプションでtarget=temporary-public-storageにするとGCP Cloud Storageに7日間一時的に監査結果が保存されます。
+デフォルトではuploadオプションをコメントアウトしています。
+監査結果を確認する場合はGCP Cloud StorageにアップされたURLで確認するか`.lighthouseci`フォルダーに生成されたHTMLファイルを展開して確認できます。
+
+[Lighthouse CI](https://github.com/GoogleChrome/lighthouse-ci/blob/master/docs/getting-started.md#collect-lighthouse-results)
+
+[Lighthouse CIを利用したWebサイト品質監査の自動化](https://medium.com/@yonemoto/lighthouse-ci%E3%82%92%E5%88%A9%E7%94%A8%E3%81%97%E3%81%9Fweb%E3%82%B5%E3%82%A4%E3%83%88%E5%93%81%E8%B3%AA%E7%9B%A3%E6%9F%BB%E3%81%AE%E8%87%AA%E5%8B%95%E5%8C%96-9f1b3b431c54)
