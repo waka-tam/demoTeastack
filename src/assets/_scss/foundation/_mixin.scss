@@ -296,3 +296,45 @@ $z-map: (header, nav, navbtn);
     filter: alpha(opacity=#{$opacity * 100});
   }
 }
+
+// Under line
+// 複数行のテキストに下線を引く
+// ex) @include underLine(#07f, 65%);
+// --------------------------------------------------
+@mixin underLine($color, $height) {
+  background: linear-gradient(transparent $height, $color 0%);
+  display: inline;
+}
+
+// Clear fix
+// floatの解除
+// ex) @include cf;
+// --------------------------------------------------
+@mixin cf {
+  &:after {
+    content: "";
+    display: block;
+    clear: both;
+  }
+}
+
+// Gradation
+// 2色で均等の割合で色が変化するシンプルなグラデーション
+// ex) @include gradient(#fccf00, #002b69, ttob);
+// --------------------------------------------------
+@mixin gradient($startColor, $endColor, $orientation: ttob) {
+  background: $startColor;
+
+  // 縦方向
+  @if $orientation==ttob {
+    background: -webkit-linear-gradient(top, #{$startColor} 0%, #{$endColor} 100%);
+    background: linear-gradient(to bottom, #{$startColor} 0%, #{$endColor} 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#{$startColor}', endColorstr=' #{$endColor}', GradientType=0);
+  }
+  // 横方向
+  @else if $orientation==ltor {
+    background: -webkit-linear-gradient(right, #{$startColor} 0%, #{$endColor} 100%);
+    background: linear-gradient(to right, #{$startColor} 0%, #{$endColor} 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#{$startColor}', endColorstr=' #{$endColor}', GradientType=1);
+  }
+}
