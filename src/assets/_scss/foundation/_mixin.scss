@@ -164,7 +164,7 @@ $breakpoints: (
 // ex) @include background-image(bg01 + ".jpg");
 // ----------------------------------
 // 変数に画像フォルダまでのパスを設定
-$pathImg: "/assets/img/page/" !default;
+$pathImg: "/assets/img/" !default;
 
 @mixin background-image($fileName) {
   // ↓ フォルダまでのパス + 画像名 でパスの記載を省略
