@@ -52,49 +52,49 @@
 // Micromodal.jsモーダル標準モジュール
 // --------------------------------------------------
 .p-micromodal__overlay {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   position: fixed;
   top: 0;
-  left: 0;
   right: 0;
   bottom: 0;
-  background: rgba(0, 0, 0, 0.6);
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  left: 0;
+  background: rgba(0, 0, 0, .6);
 }
 
 .p-micromodal__container {
-  background-color: #fff;
-  padding: 30px;
-  max-width: 500px;
-  max-height: 100vh;
-  border-radius: 4px;
   overflow-y: auto;
   box-sizing: border-box;
+  max-width: 500px;
+  max-height: 100vh;
+  padding: 30px;
+  border-radius: 4px;
+  background-color: #fff;
 }
 
 .p-micromodal__header {
   display: flex;
-  justify-content: space-between;
   align-items: center;
+  justify-content: space-between;
 }
 
 .p-micromodal__title {
+  box-sizing: border-box;
   margin-top: 0;
   margin-bottom: 0;
-  font-weight: 600;
   font-size: 1.6rem;
+  font-weight: 600;
   line-height: 1.25;
   color: #00449e;
-  box-sizing: border-box;
 }
 
 .p-micromodal__close {
-  background: transparent;
   border: 0;
+  background: transparent;
 }
 
-.p-micromodal__header .p-micromodal__close:before {
+.p-micromodal__header .p-micromodal__close::before {
   content: "\2715";
 }
 
@@ -106,31 +106,31 @@
 }
 
 .p-micromodal__btn {
-  font-size: .875rem;
-  padding-left: 1rem;
-  padding-right: 1rem;
+  overflow: visible;
+  margin: 0;
   padding-top: .5rem;
+  padding-right: 1rem;
   padding-bottom: .5rem;
+  padding-left: 1rem;
+  text-transform: none;
+  font-size: .875rem;
+  line-height: 1.15;
+  border-width: 0;
+  border-style: none;
+  border-radius: .25rem;
   background-color: #e6e6e6;
   color: rgba(0, 0, 0, .8);
-  border-radius: .25rem;
-  border-style: none;
-  border-width: 0;
   cursor: pointer;
-  -webkit-appearance: button;
-  text-transform: none;
-  overflow: visible;
-  line-height: 1.15;
-  margin: 0;
-  will-change: transform;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-backface-visibility: hidden;
-  backface-visibility: hidden;
-  -webkit-transform: translateZ(0);
-  transform: translateZ(0);
   transition: -webkit-transform .25s ease-out;
   transition: transform .25s ease-out;
   transition: transform .25s ease-out, -webkit-transform .25s ease-out;
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+  -webkit-appearance: button;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -moz-osx-font-smoothing: grayscale;
+  will-change: transform;
 }
 
 .p-micromodal__btn:focus,
@@ -193,7 +193,7 @@
 }
 
 .p-micromodal-slide[aria-hidden="false"] .p-micromodal__overlay {
-  animation: mmfadeIn .3s cubic-bezier(0.0, 0.0, 0.2, 1);
+  animation: mmfadeIn .3s cubic-bezier(0, 0, .2, 1);
 }
 
 .p-micromodal-slide[aria-hidden="false"] .p-micromodal__container {
@@ -201,7 +201,7 @@
 }
 
 .p-micromodal-slide[aria-hidden="true"] .p-micromodal__overlay {
-  animation: mmfadeOut .3s cubic-bezier(0.0, 0.0, 0.2, 1);
+  animation: mmfadeOut .3s cubic-bezier(0, 0, .2, 1);
 }
 
 .p-micromodal-slide[aria-hidden="true"] .p-micromodal__container {

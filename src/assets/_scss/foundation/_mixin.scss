@@ -302,8 +302,8 @@ $z-map: (header, nav, navbtn);
 // ex) @include underLine(#07f, 65%);
 // --------------------------------------------------
 @mixin underLine($color, $height) {
-  background: linear-gradient(transparent $height, $color 0%);
   display: inline;
+  background: linear-gradient(transparent $height, $color 0%);
 }
 
 // Clear fix
@@ -311,10 +311,10 @@ $z-map: (header, nav, navbtn);
 // ex) @include cf;
 // --------------------------------------------------
 @mixin cf {
-  &:after {
+  &::after {
     content: "";
-    display: block;
     clear: both;
+    display: block;
   }
 }
 
@@ -329,12 +329,12 @@ $z-map: (header, nav, navbtn);
   @if $orientation==ttob {
     background: -webkit-linear-gradient(top, #{$startColor} 0%, #{$endColor} 100%);
     background: linear-gradient(to bottom, #{$startColor} 0%, #{$endColor} 100%);
-    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#{$startColor}', endColorstr=' #{$endColor}', GradientType=0);
+    filter: progid:dximagetransform.microsoft.gradient(startColorstr='#{$startColor}', endColorstr=' #{$endColor}', GradientType=0);
   }
   // 横方向
   @else if $orientation==ltor {
     background: -webkit-linear-gradient(right, #{$startColor} 0%, #{$endColor} 100%);
     background: linear-gradient(to right, #{$startColor} 0%, #{$endColor} 100%);
-    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#{$startColor}', endColorstr=' #{$endColor}', GradientType=1);
+    filter: progid:dximagetransform.microsoft.gradient(startColorstr='#{$startColor}', endColorstr=' #{$endColor}', GradientType=1);
   }
 }
