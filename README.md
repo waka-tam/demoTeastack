@@ -219,7 +219,10 @@ stylelint-config-standardに基いてSCSSの補正を行います。開発時に
 Lighthouseによる品質監査を実行します。納品・開発時に利用します。
 検証設定は .lighthouseciに記述されています。
 
-`lhci autorun`
+`npm run lighthouse`
+
+※Yarnの場合
+`yarn lighthouse`
 
 ## HTMLについて
 HTMLのメタ言語にPugを採用し、ファイルの分割管理ができるよう設計されています。
@@ -622,7 +625,7 @@ Lighthouse CIで定期的にプロダクトの品質監査を行うことがで�
 コンテンツをdistフォルダー内にビルドした状態で以下コマンドを実行してください。
 
 ```
-lhci autorun
+yarn lighthouse
 ```
 
 #### CI/CDで実行する場合

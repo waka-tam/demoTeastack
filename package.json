@@ -13,7 +13,8 @@
     "lint": "eslint src/**/*.ts",
     "lint:fix": "eslint --fix src/**/*.ts",
     "styleguide": "gulp styleguide:start",
-    "styleguide:build": "gulp styleguide:build"
+    "styleguide:build": "gulp styleguide:build",
+    "lighthouse": "lhci autorun"
   },
   "author": "Kazuki-tam",
   "license": "ISC",
