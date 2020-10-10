@@ -6,6 +6,9 @@
 // import * as $ from "jquery";
 // import Vue from "vue";
 
+// web-vitalsインポート
+import { getCLS, getFID, getLCP } from "web-vitals";
+
 // ベースファイル
 // Polyfill ポリフィル
 import "./polyfill";
@@ -42,3 +45,11 @@ sampleMicoModal();
 // Sample02処理実行
 sample02Banner();
 sample02Slider();
+
+// web-vitalsコンソール出力 production or development
+const environment = process.env.NODE_ENV || "production";
+if (environment == "development") {
+  getCLS(console.log);
+  getFID(console.log);
+  getLCP(console.log);
+}
