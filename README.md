@@ -421,6 +421,7 @@ Web制作で頻繁に利用するプラグインを標準搭載しています�
 - **モーダル:** [Micromodal.js](https://micromodal.now.sh/#introduction)を利用することで特定ライブラリに依存することなくWAI-ARIAガイドライン準拠のモーダルを簡易実装できます。（標準ではIE非対応）
 - **Vueコンポーネント:** [Vue Class Component](https://github.com/vuejs/vue-class-component)を利用することでVueコンポーネントを実装できます。
 - **フォームバリデーション:** [VeeValidate](https://logaretm.github.io/vee-validate/)を利用することでフォームバリデーションを簡易実装できます。（標準ではIE非対応）
+- **UX計測:** [web-vitals](https://github.com/GoogleChrome/web-vitals)を利用することでCore Web Vitalsの計測結果をブラウザのコンソールに出力できます。
 
 ## 画像について
 画像ファイルは標準で解像度を80%に圧縮するよう設定されています。
