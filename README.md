@@ -18,6 +18,7 @@
 - Vue.js, jQueryを標準で利用することができる
 - スタイルガイドの生成ができる
 - Lighthouseによる監査をローカル環境で実行できる
+- Core Web Vitalsの測定をローカル環境で実行できる
 
 ## 利用デメリット
 - Pug, SCSS, FLOCSSに関する知識を前提とする
@@ -644,3 +645,24 @@ uploadオプションでtarget=temporary-public-storageにするとGCP Cloud Sto
 [Lighthouse CI](https://github.com/GoogleChrome/lighthouse-ci/blob/master/docs/getting-started.md#collect-lighthouse-results)
 
 [Lighthouse CIを利用したWebサイト品質監査の自動化](https://medium.com/@yonemoto/lighthouse-ci%E3%82%92%E5%88%A9%E7%94%A8%E3%81%97%E3%81%9Fweb%E3%82%B5%E3%82%A4%E3%83%88%E5%93%81%E8%B3%AA%E7%9B%A3%E6%9F%BB%E3%81%AE%E8%87%AA%E5%8B%95%E5%8C%96-9f1b3b431c54)
+
+## Web Vitalsについて
+Web VitalsはGoolgeが提唱するUXを高品質に保つための指標です。
+核となる測定項目は「Core Web Vitals」と呼ばれます。測定項目は大きく以下3つに分けられます。
+
+* LCP(Largest Contentful Paint ): ユーザーがページでもっとも有意義なコンテンツをどのくらい早く見ることができるかを表します。
+* FID(First Input Delay ): 最初の入力までの遅延を表します。
+* CLS(Cumulative Layout Shift): ページがどのくらい安定しているように感じられるかを表します。
+
+ローカル環境ではCore Web Vitalsの計測結果をブラウザのコンソールに出力します。
+計測結果の判定は以下指標を参考にしてください。
+
+|  指標  |  良好  | 改善が必要 | 改善が必要 |
+| ---- | ---- | ---- |---- |
+|  LCP  |  2.5秒未満  | 4秒以下  | 4秒を超える  |
+|  FID  |  100ミリ秒未満  | 300ミリ秒未満  | 300ミリ秒を超える  |
+|  CLS  |  0.1未満 | 0.25以下  | 0.25を超える  |
+
+[Web Vitals](https://web.dev/vitals/)
+
+[Web Vitals の概要: サイトの健全性を示す重要指標](https://developers-jp.googleblog.com/2020/05/web-vitals.html)
