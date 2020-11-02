@@ -25,7 +25,7 @@ const autoprefixer = require("autoprefixer");
 const cleanCSS = require("gulp-clean-css");
 const sourcemaps = require("gulp-sourcemaps");
 const cssDeclarationSorter = require("css-declaration-sorter");
-const mqpacker = require("css-mqpacker");
+const combineMediaQuery = require("postcss-combine-media-query");
 // const stylelint = require("stylelint");
 // const reporter = require("postcss-reporter");
 
@@ -150,7 +150,7 @@ const postCssOption = [
   cssDeclarationSorter({
     order: "alphabetical"
   }),
-  mqpacker()
+  combineMediaQuery()
 ];
 gulp.task("sass", done => {
   return gulp
