@@ -54,6 +54,7 @@
     "gulp-webp": "^4.0.1",
     "imagemin-mozjpeg": "^8.0.0",
     "imagemin-pngquant": "^8.0.0",
+    "postcss-combine-media-query": "^1.0.1",
     "postcss-flexbugs-fixes": "^4.1.0",
     "postcss-reporter": "^6.0.1",
     "prettier": "^1.19.1",
